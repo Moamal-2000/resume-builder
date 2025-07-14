@@ -1,9 +1,14 @@
 import s from "./Button.module.scss";
 
-const Button = () => {
+const Button = ({ children, fillWidth, onClick }) => {
   return (
-    <button type="button" className={s.button}>
-      Button
+    <button
+      type="button"
+      className={s.button}
+      onClick={onClick}
+      style={{ width: fillWidth ? "100%" : "fit-content" }}
+    >
+      {children}
     </button>
   );
 };
