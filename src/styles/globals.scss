@@ -16,3 +16,25 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+button {
+  user-select: none;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+svg {
+  display: block;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
