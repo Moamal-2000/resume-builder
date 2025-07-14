@@ -1,1 +1,17 @@
-.button {}
+.button {
+  border: none;
+  background-color: #EB5757;
+  color: #FFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  border-radius: 8px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 27px;
+}
