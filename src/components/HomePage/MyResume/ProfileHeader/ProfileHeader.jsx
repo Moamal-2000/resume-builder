@@ -25,8 +25,7 @@ const ProfileHeader = () => {
       <p>
         I’m a Front-End Developer specializing in React/Next.js. I enjoy
         building clean, responsive web interfaces and continuously improving my
-        skills. Currently focused on creating modern, user-friendly
-        applications.
+        skills.
       </p>
     </section>
   );
