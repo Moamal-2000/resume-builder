@@ -16,7 +16,9 @@ const HeroSection = () => {
         sections to fit your unique background.
       </p>
 
-      <Button paddingInline="50px">Create Resume for free</Button>
+      <Button paddingInline="50px" href="/builder">
+        Create Resume for free
+      </Button>
     </section>
   );
 };

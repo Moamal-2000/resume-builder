@@ -16,7 +16,7 @@ const Header = () => {
         />
       </Link>
 
-      <Button>Get Started</Button>
+      <Button href="/builder">Get Started</Button>
     </header>
   );
 };
