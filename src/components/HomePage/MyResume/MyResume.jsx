@@ -1,3 +1,4 @@
+import Certifications from "./Certifications/Certifications";
 import Education from "./Education/Education";
 import s from "./MyResume.module.scss";
 import ProfileHeader from "./ProfileHeader/ProfileHeader";
@@ -9,6 +10,7 @@ const MyResume = () => {
       <ProfileHeader />
       <Education />
       <TechSkills />
+      <Certifications />
     </section>
   );
 };
