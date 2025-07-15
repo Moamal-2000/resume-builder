@@ -3,4 +3,11 @@
   background: #F5F6F7;
   border-radius: 20px;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.myResume>section {
+  padding: 30px 20px;
 }
