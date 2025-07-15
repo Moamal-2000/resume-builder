@@ -5,18 +5,22 @@ import JobExperience from "./JobExperience/JobExperience";
 const Experiences = () => {
   return (
     <section className={s.experiences}>
-      {MOCK_EXPERIENCE.map(
-        ({ title, company, startDate, endDate, description, id }) => (
-          <JobExperience
-            key={id}
-            title={title}
-            company={company}
-            startDate={startDate}
-            endDate={endDate}
-            description={description}
-          />
-        )
-      )}
+      <h2>Experiences</h2>
+
+      <div className={s.experiencesWrapper}>
+        {MOCK_EXPERIENCE.map(
+          ({ title, company, startDate, endDate, description, id }) => (
+            <JobExperience
+              key={id}
+              title={title}
+              company={company}
+              startDate={startDate}
+              endDate={endDate}
+              description={description}
+            />
+          )
+        )}
+      </div>
     </section>
   );
 };

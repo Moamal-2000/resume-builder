@@ -1,0 +1,15 @@
+.experiences>h2 {
+  font-family: var(--euclid-circular-font);
+  font-weight: 700;
+  font-size: 1.77rem;
+  line-height: 36px;
+  color: #393E4D;
+  text-transform: uppercase;
+}
+
+.experiences .experiencesWrapper {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
