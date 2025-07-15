@@ -1,0 +1,43 @@
+.education {
+  width: 507px;
+  height: 239px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+}
+
+.education>h2 {
+  font-family: var(--euclid-circular-font);
+  font-weight: 700;
+  font-size: 1.77rem;
+  line-height: 36px;
+  color: #393E4D;
+}
+
+.education .educationContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--euclid-circular-font);
+}
+
+.educationContent .degree {
+  font-weight: 500;
+  font-size: 1.18rem;
+  line-height: 32px;
+  color: #404553;
+}
+
+.educationContent .university {
+  font-weight: 400;
+  font-size: 1.18rem;
+  line-height: 32px;
+  color: #404553;
+}
+
+.educationContent .graduateDate {
+  font-weight: 400;
+  font-size: 1.18rem;
+  line-height: 32px;
+  color: #9fa1a8;
+}
