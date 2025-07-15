@@ -6,8 +6,8 @@ const Education = () => {
       <h2>Education</h2>
 
       <div className={s.educationContent}>
-        <p className={s.degree}>B.Sc in Computer Science</p>
-        <p className={s.university}>National Open University of Nigeria</p>
+        <p className={s.degree}>Write Degree Here</p>
+        <p className={s.university}>Your University Name Here</p>
         <div className={s.graduateDate}>2015 - 2019</div>
       </div>
     </section>
