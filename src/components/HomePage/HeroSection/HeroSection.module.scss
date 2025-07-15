@@ -1,0 +1,25 @@
+.heroSection {
+  width: 500px;
+  width: 527px;
+}
+
+.heroSection>h1 {
+  font-weight: 600;
+  line-height: 70px;
+  letter-spacing: .0025em;
+  font-size: 4rem;
+}
+
+.heroSection>h1::first-line {
+  color: #EB5757;
+  font-size: 6rem;
+}
+
+.heroSection>p {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 30px;
+  letter-spacing: .0025em;
+  color: #404653;
+  margin-block: 20px;
+}
