@@ -48,3 +48,42 @@ export const MY_TECH_SKILLS = [
   "FramerMotion",
   "PWA",
 ];
+
+export const MOCK_EXPERIENCE = [
+  {
+    title: "Front-End Developer",
+    company: "Company Name",
+    startDate: "September 2022",
+    endDate: "Present",
+    description:
+      "Explain briefly what you do at the company here in not more than 40 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,",
+    id: 1,
+  },
+  {
+    title: "Front-End Developer",
+    company: "Company Name",
+    startDate: "September 2022",
+    endDate: "Present",
+    description:
+      "Explain briefly what you do at the company here in not more than 40 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,",
+    id: 2,
+  },
+  {
+    title: "Front-End Developer",
+    company: "Company Name",
+    startDate: "September 2022",
+    endDate: "Present",
+    description:
+      "Explain briefly what you do at the company here in not more than 40 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,",
+    id: 3,
+  },
+  {
+    title: "Front-End Developer",
+    company: "Company Name",
+    startDate: "September 2022",
+    endDate: "Present",
+    description:
+      "Explain briefly what you do at the company here in not more than 40 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,",
+    id: 4,
+  },
+];
