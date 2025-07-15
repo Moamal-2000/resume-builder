@@ -1,0 +1,28 @@
+.certifications>h2 {
+  font-family: var(--euclid-circular-font);
+  font-weight: 700;
+  font-size: 1.77rem;
+  line-height: 33px;
+  color: #393E4D;
+  text-transform: uppercase;
+}
+
+.certifications .certificates {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.certificates>li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--euclid-circular-font);
+  font-weight: 400;
+  font-size: 1.18rem;
+  line-height: 32px;
+  color: #404553;
+}
+
+.certificates>li>img {}
