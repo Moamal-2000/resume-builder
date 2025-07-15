@@ -9,7 +9,7 @@ const JobExperience = ({ title, company, startDate, endDate, description }) => {
       <span className={s.date}>
         {startDate} - {endDate}
       </span>
-      <p>{description}</p>
+      <p className={s.description}>{description}</p>
     </div>
   );
 };
