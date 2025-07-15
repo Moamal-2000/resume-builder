@@ -3,8 +3,10 @@ import s from "./page.module.scss";
 
 export default function Home() {
   return (
-    <main className={s.home}>
-      <HeroSection />
-    </main>
+    <div className="container">
+      <main className={s.home}>
+        <HeroSection />
+      </main>
+    </div>
   );
 }
