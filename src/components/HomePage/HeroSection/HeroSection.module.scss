@@ -1,6 +1,21 @@
+@use "@/styles/mixins" as m;
+
 .heroSection {
   width: 527px;
   padding-top: 158px;
+}
+
+@media (max-width: 1400px) {
+  .heroSection {
+    padding-top: 100px;
+    width: 700px;
+  }
+}
+
+@include m.small {
+  .heroSection {
+    width: 100%;
+  }
 }
 
 .heroSection>h1 {
@@ -10,9 +25,35 @@
   font-size: 3rem;
 }
 
+@include m.small {
+  .heroSection>h1 {
+    font-size: 2.7rem;
+    line-height: 56px;
+  }
+}
+
+@include m.very-small {
+  .heroSection>h1 {
+    font-size: 2.2rem;
+    line-height: 50px;
+  }
+}
+
 .heroSection>h1::first-line {
   color: #EB5757;
   font-size: 5.4rem;
+}
+
+@include m.small {
+  .heroSection>h1::first-line {
+    font-size: 4.2rem;
+  }
+}
+
+@include m.very-small {
+  .heroSection>h1::first-line {
+    font-size: 3.5rem;
+  }
 }
 
 .heroSection>p {
@@ -22,4 +63,11 @@
   letter-spacing: .0025em;
   color: #404653;
   margin-block: 20px;
+}
+
+@include m.very-small {
+  .heroSection>p {
+    font-size: 1rem;
+    line-height: 26px;
+  }
 }

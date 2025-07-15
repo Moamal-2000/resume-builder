@@ -17,9 +17,15 @@ main {
   min-height: 100dvh;
 }
 
+@media (max-width: 850px) {
+  main {
+    min-height: auto;
+  }
+}
+
 .container {
   max-width: 1400px;
-  width: 86%;
+  width: 90%;
   margin: 0 auto;
 }
 

@@ -1,3 +1,5 @@
+@use "@/styles/mixins" as m;
+
 .myResume {
   background: #F5F6F7;
   display: flex;
@@ -8,6 +10,32 @@
   position: absolute;
   right: -212px;
   top: -160px;
+}
+
+@media (max-width: 1400px) {
+  .myResume {
+    position: static;
+    right: auto;
+    top: auto;
+    scale: 1;
+    width: fit-content;
+    margin-top: 70px;
+  }
+}
+
+@include m.large {
+  .myResume {
+    scale: .7;
+    position: absolute;
+    left: -160px;
+    top: 250px;
+  }
+}
+
+@media (max-width: 850px) {
+  .myResume {
+    display: none;
+  }
 }
 
 .myResume .wrapper {
