@@ -1,16 +1,29 @@
 .myResume {
-  position: relative;
   background: #F5F6F7;
+  display: flex;
+  gap: 17px;
   border-radius: 20px;
   padding: 30px;
+  scale: .6;
+  position: absolute;
+  right: -212px;
+  top: -160px;
+}
+
+.myResume .wrapper {
   display: flex;
   flex-direction: column;
   gap: 17px;
 }
 
-.myResume>section {
+.myResume>section,
+.myResume .wrapper>section {
   background-color: #fff;
   padding: 30px 20px;
   border-radius: 12px;
   width: 507px;
+}
+
+.myResume>section {
+  width: 479px;
 }

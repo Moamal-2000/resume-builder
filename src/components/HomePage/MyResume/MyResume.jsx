@@ -8,10 +8,13 @@ import TechSkills from "./TechSkills/TechSkills";
 const MyResume = () => {
   return (
     <section className={s.myResume}>
-      <ProfileHeader />
-      <Education />
-      <TechSkills />
-      <Certifications />
+      <div className={s.wrapper}>
+        <ProfileHeader />
+        <Education />
+        <TechSkills />
+        <Certifications />
+      </div>
+
       <Experiences />
     </section>
   );
