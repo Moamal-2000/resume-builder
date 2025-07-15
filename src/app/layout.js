@@ -1,4 +1,3 @@
-import Header from "@/components/Header/Header";
 import "../styles/globals.scss";
 import RootProviders from "./RootProviders";
 
@@ -9,14 +8,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <RootProviders>
-      <html lang="en">
-        <body>
-          <Header />
-          {children}
-        </body>
-      </html>
-    </RootProviders>
-  );
+  return <RootProviders>{children}</RootProviders>;
 }
