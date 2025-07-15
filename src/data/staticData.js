@@ -87,3 +87,42 @@ export const MOCK_EXPERIENCE = [
     id: 4,
   },
 ];
+
+export const BUILDER_SIDEBAR_PAGES = [
+  {
+    title: "Personal Information",
+    link: "/builder/personal-info",
+    iconName: "user",
+    id: 1,
+  },
+  {
+    title: "Experience",
+    link: "/builder/experience",
+    iconName: "",
+    id: 2,
+  },
+  {
+    title: "Technical Skills",
+    link: "/builder/technical-skills",
+    iconName: "stats",
+    id: 3,
+  },
+  {
+    title: "Education",
+    link: "/builder/education",
+    iconName: "graduationHat",
+    id: 4,
+  },
+  {
+    title: "Contact Information",
+    link: "/builder/contact-info",
+    iconName: "userInfo",
+    id: 5,
+  },
+  {
+    title: "Certification",
+    link: "/builder/certification",
+    iconName: "polygonCorrect",
+    id: 6,
+  },
+];

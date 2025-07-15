@@ -28,7 +28,7 @@ export const iconsData = [
     ),
   },
   {
-    name: "status",
+    name: "stats",
     icon: (
       <svg width="18" height="19" viewBox="0 0 18 19" fill="none">
         <path
