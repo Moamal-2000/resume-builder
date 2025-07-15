@@ -1,5 +1,5 @@
 import SvgIcon from "@/components/Shared/SvgIcon";
-import { BUILDER_SIDEBAR_PAGES } from "@/data/staticData";
+import { BUILDER_SIDEBAR_PAGES } from "@/data/builderPages";
 import Link from "next/link";
 import s from "./Sidebar.module.scss";
 
