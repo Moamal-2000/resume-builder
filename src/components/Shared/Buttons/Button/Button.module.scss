@@ -1,3 +1,5 @@
+@use "@/styles/mixins" as m;
+
 .button {
   border: none;
   background-color: #EB5757;
@@ -17,4 +19,11 @@
   line-height: 27px;
   text-wrap: nowrap;
   text-align: center;
+}
+
+@include m.small {
+  .button {
+    font-size: .9rem;
+    min-height: 46px;
+  }
 }
