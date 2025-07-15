@@ -35,3 +35,16 @@ export const MY_SOCIAL_MEDIA = [
     id: 5,
   },
 ];
+
+export const MY_TECH_SKILLS = [
+  "JavaScript",
+  "SASS",
+  "HTML5",
+  "React.js",
+  "Next.js",
+  "Redux/Toolkit",
+  "Zustand",
+  "I18Next",
+  "FramerMotion",
+  "PWA",
+];
