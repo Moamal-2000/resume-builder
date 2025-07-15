@@ -91,7 +91,7 @@ export const MOCK_EXPERIENCE = [
 export const BUILDER_SIDEBAR_PAGES = [
   {
     title: "Personal Information",
-    link: "/builder/personal-info",
+    link: "/builder",
     iconName: "user",
     id: 1,
   },
@@ -103,7 +103,7 @@ export const BUILDER_SIDEBAR_PAGES = [
   },
   {
     title: "Technical Skills",
-    link: "/builder/technical-skills",
+    link: "/builder/techSkills",
     iconName: "stats",
     id: 3,
   },
@@ -115,7 +115,7 @@ export const BUILDER_SIDEBAR_PAGES = [
   },
   {
     title: "Contact Information",
-    link: "/builder/contact-info",
+    link: "/builder/contactInfo",
     iconName: "userInfo",
     id: 5,
   },

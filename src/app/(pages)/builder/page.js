@@ -1,11 +1,5 @@
-import Sidebar from "@/components/BuilderPage/Sidebar/Sidebar/Sidebar";
-
 const BuilderPage = () => {
-  return (
-    <main>
-      <Sidebar />
-    </main>
-  );
+  return <main>PersonalInfo</main>;
 };
 
 export default BuilderPage;
