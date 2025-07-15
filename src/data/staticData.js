@@ -16,7 +16,7 @@ export const MY_SOCIAL_MEDIA = [
   {
     socialName: "Phone Number",
     title: "+964 7772181425",
-    link: "",
+    link: "tel:+9647772181425",
     iconName: "phone",
     id: 3,
   },
