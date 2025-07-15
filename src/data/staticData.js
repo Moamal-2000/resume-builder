@@ -3,7 +3,7 @@ export const MY_SOCIAL_MEDIA = [
     socialName: "Gmail",
     title: "moamalalaapro1@gmail.com",
     link: "mailto:moamalalaapro1@gmail.com",
-    iconName: "",
+    iconName: "email",
     id: 1,
   },
   {
@@ -31,7 +31,7 @@ export const MY_SOCIAL_MEDIA = [
     socialName: "Portfolio",
     title: "Portfolio",
     link: "https://moamalalaa.netlify.app",
-    iconName: "",
+    iconName: "myPortfolioLogo",
     id: 5,
   },
 ];
