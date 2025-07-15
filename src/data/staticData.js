@@ -98,7 +98,7 @@ export const BUILDER_SIDEBAR_PAGES = [
   {
     title: "Experience",
     link: "/builder/experience",
-    iconName: "",
+    iconName: "writingUser",
     id: 2,
   },
   {
