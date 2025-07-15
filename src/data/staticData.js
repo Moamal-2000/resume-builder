@@ -1,0 +1,37 @@
+export const MY_SOCIAL_MEDIA = [
+  {
+    socialName: "Gmail",
+    title: "moamalalaapro1@gmail.com",
+    link: "mailto:moamalalaapro1@gmail.com",
+    iconName: "",
+    id: 1,
+  },
+  {
+    socialName: "Linkedin",
+    title: "Linkedin",
+    link: "https://www.linkedin.com/in/moamal-alaa",
+    iconName: "linkedin",
+    id: 2,
+  },
+  {
+    socialName: "GitHub",
+    title: "GitHub",
+    link: "https://github.com/Moamal-2000",
+    iconName: "github",
+    id: 3,
+  },
+  {
+    socialName: "Portfolio",
+    title: "Portfolio",
+    link: "https://moamalalaa.netlify.app",
+    iconName: "",
+    id: 4,
+  },
+  {
+    socialName: "Phone Number",
+    title: "+964 7772181425",
+    link: "",
+    iconName: "phone",
+    id: 5,
+  },
+];
