@@ -16,6 +16,8 @@
   line-height: 22px;
   text-transform: capitalize;
   color: #404653;
+  text-wrap: nowrap;
+  transition: padding-left .2s .55s ease-in-out;
 
   &.active {
     background-color: #fbdddd;
@@ -31,7 +33,22 @@
   }
 }
 
+.pagesNav.closeMenu>ul>li>a {
+  transition: padding-left .2s .35s ease-in-out;
+  padding-left: 34.5px;
+}
+
 .pagesNav>ul>li>a>svg {
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
+}
+
+.pagesNav>ul>li>a .title {
+  transition: opacity .3s .5s ease-in-out;
+}
+
+.pagesNav.closeMenu>ul>li>a .title {
+  transition: opacity .01s .5s ease-in-out;
+  opacity: 0;
 }
