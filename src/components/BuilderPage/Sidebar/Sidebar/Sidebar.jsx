@@ -30,7 +30,7 @@ const Sidebar = () => {
       </button>
 
       <PagesNav />
-      <ProgressBar progress={resumeProgress} />
+      <ProgressBar progress={resumeProgress} relatedTo="sidebar" />
     </aside>
   );
 };

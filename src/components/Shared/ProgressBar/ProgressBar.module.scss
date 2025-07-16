@@ -1,6 +1,12 @@
 .progressBar {
   font-family: var(--poppins-font);
   padding-left: 40px;
+  transition: opacity .3s .7s ease-in-out;
+
+  &.hide {
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+  }
 }
 
 .progressBar span {
@@ -22,7 +28,7 @@
 }
 
 .progressBar .barWrapper .bar {
-  width: 152px;
+  min-width: 152px;
   height: 14px;
   border-radius: 20px;
   background-color: #e6e6e6;
