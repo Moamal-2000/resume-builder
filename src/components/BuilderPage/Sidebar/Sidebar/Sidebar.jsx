@@ -2,13 +2,10 @@
 
 import ProgressBar from "@/components/Shared/ProgressBar/ProgressBar";
 import SvgIcon from "@/components/Shared/SvgIcon";
-import { BUILDER_SIDEBAR_PAGES } from "@/data/builderPages";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import PagesNav from "./PagesNav/PagesNav";
 import s from "./Sidebar.module.scss";
 
 const Sidebar = () => {
-  const pathname = usePathname();
   const resumeProgress = "10%";
 
   return (
@@ -17,23 +14,7 @@ const Sidebar = () => {
         <SvgIcon name="menu" />
       </button>
 
-      <nav className={s.pagesNav}>
-        <ul>
-          {BUILDER_SIDEBAR_PAGES.map(({ title, link, iconName, id }) => {
-            const activeClass = link === pathname ? s.active : "";
-
-            return (
-              <li key={id}>
-                <Link href={link} className={activeClass}>
-                  <SvgIcon name={iconName} />
-                  {title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-
+      <PagesNav />
       <ProgressBar progress={resumeProgress} />
     </aside>
   );
