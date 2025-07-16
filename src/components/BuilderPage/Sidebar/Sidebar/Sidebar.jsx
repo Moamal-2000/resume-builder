@@ -6,6 +6,10 @@ import s from "./Sidebar.module.scss";
 const Sidebar = () => {
   return (
     <aside className={s.sidebar}>
+      <button type="button">
+        <SvgIcon name="menu" />
+      </button>
+
       <nav className={s.pagesNav}>
         <ul>
           {BUILDER_SIDEBAR_PAGES.map(({ title, link, iconName, id }) => (
