@@ -33,7 +33,7 @@ const Sidebar = () => {
       className={`${s.sidebar} ${closeClass} ${closedOnceClass}`}
       ref={sidebarRef}
     >
-      <button type="button" onClick={handleToggleAside}>
+      <button type="button" onClick={handleToggleAside} className={closeClass}>
         <SvgIcon name="menu" />
       </button>
 
