@@ -20,7 +20,9 @@
   height: 30px;
 }
 
-.pagesNav {}
+.pagesNav {
+  margin-bottom: 50px;
+}
 
 .pagesNav>ul {}
 
@@ -50,4 +52,46 @@
 .pagesNav>ul>li>a>svg {
   width: 20px;
   height: 20px;
+}
+
+.progressBar {
+  font-family: var(--poppins-font);
+  padding-left: 40px;
+}
+
+.progressBar span {
+  font-weight: 500;
+  font-size: .93rem;
+  line-height: 22px;
+  text-transform: capitalize;
+}
+
+.progressBar .title {
+  color: #545965;
+}
+
+.progressBar .barWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+}
+
+.progressBar .barWrapper .bar {
+  width: 152px;
+  height: 14px;
+  border-radius: 20px;
+  background-color: #e6e6e6;
+  overflow: hidden;
+}
+
+.progressBar .barWrapper .progress {
+  height: 14px;
+  width: attr(data-progress);
+  border-radius: 20px 0 0 20px;
+  background-color: #ea6565;
+}
+
+.progressBar .barWrapper .percentage {
+  color: #a3a3a3;
 }
