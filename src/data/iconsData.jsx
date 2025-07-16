@@ -10,7 +10,13 @@ export const iconsData = [
   {
     name: "writingUser",
     icon: (
-      <svg viewBox="0 0 19 21" fill="none" stroke="#404653">
+      <svg
+        viewBox="0 0 19 21"
+        fill="none"
+        stroke="#404653"
+        strokeWidth="1.6"
+        data-hover="stroke"
+      >
         <path d="M5.78 19.5H1c0-3.973 3.329-7.194 7.436-7.194q.267 0 .53.018m3.719-7.213c0 2.27-1.903 4.111-4.25 4.111s-4.248-1.84-4.248-4.11S6.089 1 8.436 1s4.249 1.84 4.249 4.111ZM10.125 19.5l2.15-.416c.188-.037.282-.055.37-.088a1 1 0 0 0 .219-.114c.077-.052.145-.117.28-.248l4.416-4.273a1.42 1.42 0 0 0 0-2.055 1.54 1.54 0 0 0-2.124 0l-4.417 4.272a2 2 0 0 0-.256.271 1 1 0 0 0-.118.213 2 2 0 0 0-.09.357z" />
       </svg>
     ),
@@ -34,7 +40,13 @@ export const iconsData = [
   {
     name: "userInfo",
     icon: (
-      <svg viewBox="3.5 3 33 33" fill="none" stroke="#404653" strokeWidth="1.6">
+      <svg
+        viewBox="3.5 3 33 33"
+        fill="none"
+        stroke="#404653"
+        strokeWidth="1.6"
+        data-hover="stroke"
+      >
         <path d="M9 8a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h22a5 5 0 0 0 5-5V13a5 5 0 0 0-5-5zm15 9a1 1 0 0 1 1-1h6a1 1 0 0 1 0 2h-6a1 1 0 0 1-1-1Zm1 5h6a1 1 0 0 1 0 2h-6a1 1 0 0 1 0-2Zm-17-.5A1.5 1.5 0 0 1 9.5 20h6a1.5 1.5 0 0 1 1.5 1.5V23s0 .046-.0.13A2.8 2.8 0 0 1 16 24.9c-.6.5-1.7 1-3 1C8 26 8 23 8 23zm4.5-3.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Zm8.5-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-2.13 7.9a4.5 4 0 0 0 .1-.82l.004-.056V21.5c0-.536-.12-1.046-.336-1.5H20a2 2 0 0 1 2 2 3 3 0 0 1-3 3h-.524c.196-.384.32-.746.394-1.046Z" />
       </svg>
     ),
@@ -42,7 +54,7 @@ export const iconsData = [
   {
     name: "polygonCorrect",
     icon: (
-      <svg viewBox="1 0 18 18" fill="none" stroke="#4E4D4D">
+      <svg viewBox="1 0 18 18" fill="none" stroke="#4E4D4D" data-hover="stroke">
         <path d="m6 9.2 1.8 2L12 6.7M1.5 9l3.7-6.45h7.5L16.5 9l-3.75 6.4h-7.5z" />
       </svg>
     ),

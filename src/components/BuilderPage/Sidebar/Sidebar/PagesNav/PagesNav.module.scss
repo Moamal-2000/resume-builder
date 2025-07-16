@@ -20,6 +20,14 @@
   &.active {
     background-color: #fbdddd;
     color: #000112;
+
+    &>svg[data-hover=stroke] {
+      stroke: #000112;
+    }
+
+    &>svg:not([data-hover=stroke]) {
+      fill: #000112;
+    }
   }
 }
 
