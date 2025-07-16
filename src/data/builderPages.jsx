@@ -1,9 +1,15 @@
+import CertificationPage from "@/components/BuilderPage/SubPages/CertificationPage/CertificationPage";
+import ContactInfoPage from "@/components/BuilderPage/SubPages/ContactInfoPage/ContactInfoPage";
+import EducationPage from "@/components/BuilderPage/SubPages/EducationPage/EducationPage";
+import ExperiencePage from "@/components/BuilderPage/SubPages/ExperiencePage/ExperiencePage";
+import TechSkillsPage from "@/components/BuilderPage/SubPages/TechSkillsPage/TechSkillsPage";
+
 export const BUILDER_PAGES = {
-  experience: () => <main>Experience UI</main>,
-  techSkills: () => <main>TechSkills UI</main>,
-  education: () => <main>Education UI</main>,
-  contactInfo: () => <main>ContactInfo UI</main>,
-  certification: () => <main>Certifications UI</main>,
+  experience: () => <ExperiencePage />,
+  techSkills: () => <TechSkillsPage />,
+  education: () => <EducationPage />,
+  contactInfo: () => <ContactInfoPage />,
+  certification: () => <CertificationPage />,
 };
 
 export const BUILDER_SIDEBAR_PAGES = [
