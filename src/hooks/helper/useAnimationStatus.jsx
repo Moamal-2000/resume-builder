@@ -23,6 +23,8 @@ const useAnimationStatus = (animateElement) => {
     animateElement.current.addEventListener("animationend", handleAnimationEnd);
 
     return () => {
+      if (!animateElement.current) return;
+
       animateElement.current.removeEventListener(
         "animationstart",
         handleAnimationStart
