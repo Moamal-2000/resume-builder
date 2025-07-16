@@ -1,8 +1,13 @@
 import { BUILDER_PAGES } from "@/data/builderPages";
+import { notFound } from "next/navigation";
 
 async function RoutesPage({ params }) {
   const { route } = await params;
-  return BUILDER_PAGES[route]();
+  const page = BUILDER_PAGES?.[route]?.();
+
+  if (!page) notFound();
+
+  return page;
 }
 
 export default RoutesPage;

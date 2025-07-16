@@ -3,7 +3,7 @@ export const BUILDER_PAGES = {
   techSkills: () => <main>TechSkills UI</main>,
   education: () => <main>Education UI</main>,
   contactInfo: () => <main>ContactInfo UI</main>,
-  certifications: () => <main>Certifications UI</main>,
+  certification: () => <main>Certifications UI</main>,
 };
 
 export const BUILDER_SIDEBAR_PAGES = [
