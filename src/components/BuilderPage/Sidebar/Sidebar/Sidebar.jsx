@@ -2,8 +2,9 @@
 
 import ProgressBar from "@/components/Shared/ProgressBar/ProgressBar";
 import SvgIcon from "@/components/Shared/SvgIcon";
+import useAnimationStatus from "@/hooks/helper/useAnimationStatus";
 import { updateGlobalState } from "@/redux/slices/globalSlice";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PagesNav from "./PagesNav/PagesNav";
 import s from "./Sidebar.module.scss";
@@ -12,9 +13,9 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const { isAsideOpen } = useSelector((s) => s.global);
 
-  const isSidebarAnimating = useRef(false);
-  const closedOnce = useRef(false);
   const sidebarRef = useRef();
+  const closedOnce = useRef(false);
+  const isSidebarAnimating = useAnimationStatus(sidebarRef);
 
   const closeClass = isAsideOpen ? s.open : s.close;
   const closedOnceClass = closedOnce.current ? s.closedOnce : "";
@@ -26,32 +27,6 @@ const Sidebar = () => {
 
     dispatch(updateGlobalState({ key: "isAsideOpen", value: !isAsideOpen }));
   }
-
-  useEffect(() => {
-    if (!sidebarRef.current) return;
-
-    function handleAnimationStart() {
-      isSidebarAnimating.current = true;
-    }
-
-    function handleAnimationEnd() {
-      isSidebarAnimating.current = false;
-    }
-
-    sidebarRef.current.addEventListener("animationstart", handleAnimationStart);
-    sidebarRef.current.addEventListener("animationend", handleAnimationEnd);
-
-    return () => {
-      sidebarRef.current.removeEventListener(
-        "animationstart",
-        handleAnimationStart
-      );
-      sidebarRef.current.removeEventListener(
-        "animationend",
-        handleAnimationEnd
-      );
-    };
-  }, []);
 
   return (
     <aside
