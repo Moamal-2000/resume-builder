@@ -1,7 +1,5 @@
 const BuilderPage = () => {
-  return <main>
-    
-  </main>;
+  return <main></main>;
 };
 
 export default BuilderPage;

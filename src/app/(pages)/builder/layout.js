@@ -6,7 +6,7 @@ const BuilderLayout = ({ children }) => {
     <div className={s.builderLayout}>
       <Sidebar />
       {children}
-      <h2>Live Resume Component</h2>
+      {/* Live Resume Component */}
     </div>
   );
 };
