@@ -1,9 +1,19 @@
 .sidebar {
-  width: 304px;
   background-color: #fff;
   border-right: solid 2px #e4e7eb;
   position: relative;
   padding-top: 70px;
+  width: 304px;
+  overflow: hidden;
+  transition: width .9s ease-in-out;
+
+  &.open.closedOnce {
+    animation: open-menu .9s ease-in-out forwards;
+  }
+
+  &.close {
+    animation: close-menu .9s ease-in-out forwards;
+  }
 }
 
 .sidebar>button {
@@ -18,4 +28,32 @@
 .sidebar>button>svg {
   width: 30px;
   height: 30px;
+}
+
+@keyframes open-menu {
+  0% {
+    width: 90px;
+  }
+
+  60% {
+    width: 70px;
+  }
+
+  100% {
+    width: 304px;
+  }
+}
+
+@keyframes close-menu {
+  0% {
+    width: 304px;
+  }
+
+  60% {
+    width: 70px;
+  }
+
+  100% {
+    width: 90px;
+  }
 }
