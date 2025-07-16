@@ -1,5 +1,6 @@
 "use client";
 
+import ProgressBar from "@/components/Shared/ProgressBar/ProgressBar";
 import SvgIcon from "@/components/Shared/SvgIcon";
 import { BUILDER_SIDEBAR_PAGES } from "@/data/builderPages";
 import Link from "next/link";
@@ -33,16 +34,7 @@ const Sidebar = () => {
         </ul>
       </nav>
 
-      <div className={s.progressBar}>
-        <span className={s.title}>Progress</span>
-
-        <div className={s.barWrapper}>
-          <div className={s.bar}>
-            <div className={s.progress} style={{ width: resumeProgress }}></div>
-          </div>
-          <span className={s.percentage}>{resumeProgress}</span>
-        </div>
-      </div>
+      <ProgressBar progress={resumeProgress} />
     </aside>
   );
 };
