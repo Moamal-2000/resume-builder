@@ -1,7 +1,7 @@
 import s from "./CertificationPage.module.scss";
 
 const CertificationPage = () => {
-  return <main className={s.certificationPage}></main>;
+  return <div className={s.certificationPage}></div>;
 };
 
 export default CertificationPage;

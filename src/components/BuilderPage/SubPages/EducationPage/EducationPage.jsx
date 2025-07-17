@@ -1,7 +1,7 @@
 import s from "./EducationPage.module.scss";
 
 const EducationPage = () => {
-  return <main className={s.educationPage}></main>;
+  return <div className={s.educationPage}></div>;
 };
 
 export default EducationPage;

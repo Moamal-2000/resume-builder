@@ -1,7 +1,7 @@
 import s from "./ExperiencePage.module.scss";
 
 const ExperiencePage = () => {
-  return <main className={s.experiencePage}></main>;
+  return <div className={s.experiencePage}></div>;
 };
 
 export default ExperiencePage;

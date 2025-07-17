@@ -1,7 +1,7 @@
 import s from "./TechSkillsPage.module.scss";
 
 const TechSkillsPage = () => {
-  return <main className={s.techSkillsPage}></main>;
+  return <div className={s.techSkillsPage}></div>;
 };
 
 export default TechSkillsPage;

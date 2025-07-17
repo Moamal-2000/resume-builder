@@ -5,8 +5,10 @@ const BuilderLayout = ({ children }) => {
   return (
     <div className={s.builderLayout}>
       <Sidebar />
-      {children}
-      {/* Live Resume Component */}
+      <main>
+        {children}
+        {/* Live Resume Component */}
+      </main>
     </div>
   );
 };
