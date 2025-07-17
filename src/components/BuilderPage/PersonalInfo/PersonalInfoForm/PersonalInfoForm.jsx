@@ -13,15 +13,18 @@ const PersonalInfoForm = () => {
   return (
     <form className={s.personalInfoForm} onSubmit={handleSubmit}>
       <div className={s.inputs}>
-        {PERSONAL_INFO_INPUTS.map(({ label, name, placeholder, type, id }) => (
-          <Input
-            key={id}
-            label={label}
-            name={name}
-            placeholder={placeholder}
-            type={type}
-          />
-        ))}
+        {PERSONAL_INFO_INPUTS.map(
+          ({ label, name, placeholder, type, required, id }) => (
+            <Input
+              key={id}
+              label={label}
+              name={name}
+              placeholder={placeholder}
+              type={type}
+              required={required}
+            />
+          )
+        )}
       </div>
 
       <Button fillWidth={true} type="submit">

@@ -7,10 +7,15 @@ const Input = ({
   placeholder,
   value,
   onChange,
+  required,
 }) => {
   return (
     <div className={s.input}>
-      {label && <label htmlFor={name}>{label}</label>}
+      {label && (
+        <label htmlFor={name} data-required={required}>
+          {label}
+        </label>
+      )}
 
       <input
         type={type}
@@ -19,6 +24,7 @@ const Input = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        required={required}
       />
     </div>
   );
