@@ -1,5 +1,11 @@
+import PersonalInfoForm from "@/components/BuilderPage/PersonalInfo/PersonalInfoForm/PersonalInfoForm";
+
 const BuilderPage = () => {
-  return <main></main>;
+  return (
+    <main>
+      <PersonalInfoForm />
+    </main>
+  );
 };
 
 export default BuilderPage;
