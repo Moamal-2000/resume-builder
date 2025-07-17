@@ -1,0 +1,40 @@
+.profileHeader>h2 {
+  font-family: var(--roboto-font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 33px;
+  text-transform: capitalize;
+  color: #393E4D;
+}
+
+.profileHeader .socialMedia {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 18px;
+  margin-block: 6px 20px;
+}
+
+.profileHeader .media {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .8rem;
+  text-wrap: nowrap;
+  width: fit-content;
+  color: #404553;
+}
+
+.profileHeader svg {
+  width: 20px;
+  height: 20px;
+  stroke: #404553;
+}
+
+.profileHeader>p {
+  font-family: var(--euclid-circular-font);
+  font-weight: 400;
+  font-size: .8rem;
+  line-height: 22px;
+  color: #404553;
+}

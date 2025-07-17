@@ -3,6 +3,7 @@
   border-right: solid 2px #e4e7eb;
   position: relative;
   padding-top: 70px;
+  min-width: 304px;
   width: 304px;
   overflow: hidden;
   transition: width .9s ease-in-out;
@@ -18,28 +19,34 @@
 
 @keyframes open-menu {
   0% {
+    min-width: 90px;
     width: 90px;
   }
 
   60% {
+    min-width: 70px;
     width: 70px;
   }
 
   100% {
+    min-width: 304px;
     width: 304px;
   }
 }
 
 @keyframes close-menu {
   0% {
+    min-width: 304px;
     width: 304px;
   }
 
   60% {
+    min-width: 70px;
     width: 70px;
   }
 
   100% {
+    min-width: 90px;
     width: 90px;
   }
 }

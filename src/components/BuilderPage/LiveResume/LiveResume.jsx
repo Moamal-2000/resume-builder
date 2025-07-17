@@ -1,8 +1,23 @@
-import { forwardRef } from "react";
+import Certifications from "./Certifications/Certifications";
+import Education from "./Education/Education";
+import Experiences from "./Experiences/Experiences";
 import s from "./LiveResume.module.scss";
+import ProfileHeader from "./ProfileHeader/ProfileHeader";
+import TechSkills from "./TechSkills/TechSkills";
 
-const LiveResume = forwardRef((props, ref) => {
-  return <section className={s.liveResume} ref={ref}></section>;
-});
+const LiveResume = () => {
+  return (
+    <section className={s.liveResume}>
+      <div className={s.wrapper}>
+        <ProfileHeader />
+        <Education />
+        <TechSkills />
+        <Certifications />
+      </div>
+
+      <Experiences />
+    </section>
+  );
+};
 
 export default LiveResume;

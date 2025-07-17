@@ -1,1 +1,27 @@
-.liveResume {}
+@use "@/styles/mixins" as m;
+
+.liveResume {
+  display: flex;
+  gap: 10px;
+  border-radius: 20px;
+  margin-top: 6px;
+}
+
+.liveResume .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.liveResume>section,
+.liveResume .wrapper>section {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 377px !important;
+  border: solid 2px #e4e7eb;
+}
+
+.liveResume>section {
+  width: 479px;
+}
