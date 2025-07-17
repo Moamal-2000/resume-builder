@@ -16,26 +16,6 @@
   }
 }
 
-.sidebar>button {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  transition: right .3s .5s ease-in-out;
-}
-
-.sidebar.close>button {
-  transition: right .3s ease-in-out;
-  right: 28px;
-}
-
-.sidebar>button>svg {
-  width: 30px;
-  height: 30px;
-}
-
 @keyframes open-menu {
   0% {
     width: 90px;

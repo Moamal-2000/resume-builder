@@ -1,0 +1,19 @@
+.button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  transition: right .3s .5s ease-in-out;
+
+  &.close {
+    transition: right .3s ease-in-out;
+    right: 28px;
+  }
+}
+
+.button>svg {
+  width: 30px;
+  height: 30px;
+}
