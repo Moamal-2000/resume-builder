@@ -11,6 +11,11 @@
 
 body {
   font-family: var(--poppins-font);
+  background-color: #f9f9f9;
+}
+
+body.homePage {
+  background-color: #fff;
 }
 
 main {
