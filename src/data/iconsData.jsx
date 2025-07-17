@@ -84,7 +84,13 @@ export const iconsData = [
   {
     name: "burgerMenu",
     icon: (
-      <svg viewBox="0 0 30 30" fill="none" stroke="#404653">
+      <svg
+        viewBox="0 0 30 30"
+        fill="none"
+        stroke="#404653"
+        strokeWidth="2"
+        strokeLinecap="round"
+      >
         <path d="M25 8.75H5M25 15H5m20 6.25H5" />
       </svg>
     ),
