@@ -1,4 +1,4 @@
-import Sidebar from "@/components/BuilderPage/Sidebar/Sidebar/Sidebar";
+import Sidebar from "@/components/BuilderPage/Sidebar/Sidebar";
 import s from "./Layout.module.scss";
 
 const BuilderLayout = ({ children }) => {
