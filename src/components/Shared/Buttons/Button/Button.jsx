@@ -5,6 +5,7 @@ const Button = ({
   children,
   fillWidth,
   paddingInline = "20px",
+  type = "button",
   onClick,
   href,
 }) => {
@@ -26,7 +27,7 @@ const Button = ({
 
   return (
     <button
-      type="button"
+      type={type}
       className={s.button}
       onClick={onClick}
       style={{
