@@ -1,14 +1,14 @@
 "use client";
 
 import ProgressBar from "@/components/Shared/ProgressBar/ProgressBar";
+import useGlobalStore from "@/stores/global.store/global.store";
 import { useRef } from "react";
-import { useSelector } from "react-redux";
 import PagesNav from "./PagesNav/PagesNav";
 import s from "./Sidebar.module.scss";
 import SidebarIcon from "./SidebarIcon/SidebarIcon";
 
 const Sidebar = () => {
-  const { isAsideOpen } = useSelector((s) => s.global);
+  const isAsideOpen = useGlobalStore((s) => s.isAsideOpen);
 
   const sidebarRef = useRef();
   const closedOnceRef = useRef(false);

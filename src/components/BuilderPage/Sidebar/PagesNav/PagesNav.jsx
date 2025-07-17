@@ -2,14 +2,14 @@
 
 import SvgIcon from "@/components/Shared/SvgIcon";
 import { BUILDER_SIDEBAR_PAGES } from "@/data/builderPages";
+import useGlobalStore from "@/stores/global.store/global.store";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSelector } from "react-redux";
 import s from "./PagesNav.module.scss";
 
 const PagesNav = () => {
   const pathname = usePathname();
-  const { isAsideOpen } = useSelector((s) => s.global);
+  const isAsideOpen = useGlobalStore((s) => s.isAsideOpen);
   const closeMenuClass = isAsideOpen ? "" : s.closeMenu;
 
   return (

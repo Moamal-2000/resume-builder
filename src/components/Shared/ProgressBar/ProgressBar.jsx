@@ -1,10 +1,10 @@
 "use client";
 
-import { useSelector } from "react-redux";
+import useGlobalStore from "@/stores/global.store/global.store";
 import s from "./ProgressBar.module.scss";
 
 const ProgressBar = ({ progress, relatedTo }) => {
-  const { isAsideOpen } = useSelector((s) => s.global);
+  const isAsideOpen = useGlobalStore((s) => s.isAsideOpen);
   const shouldShow = relatedTo === "sidebar" ? isAsideOpen : true;
   const hideClass = shouldShow ? "" : s.hide;
 
