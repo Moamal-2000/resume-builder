@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PagesNav from "./PagesNav/PagesNav";
 import s from "./Sidebar.module.scss";
+import SidebarIcon from "./SidebarIcon/SidebarIcon";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ const Sidebar = () => {
       className={`${s.sidebar} ${closeClass} ${closedOnceClass}`}
       ref={sidebarRef}
     >
+      <SidebarIcon />
       <button type="button" onClick={handleToggleAside} className={closeClass}>
         <SvgIcon name={sidebarIconName} />
       </button>
