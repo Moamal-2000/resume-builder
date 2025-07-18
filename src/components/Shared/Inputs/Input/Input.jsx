@@ -7,6 +7,7 @@ const Input = ({
   placeholder,
   value,
   onChange,
+  pattern,
   required,
 }) => {
   return (
@@ -25,6 +26,7 @@ const Input = ({
         value={value}
         onChange={onChange}
         required={required}
+        pattern={pattern}
       />
     </div>
   );
