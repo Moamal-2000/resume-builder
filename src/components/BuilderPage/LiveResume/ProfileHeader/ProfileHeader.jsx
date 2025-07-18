@@ -1,11 +1,19 @@
+"use client";
+
 import SvgIcon from "@/components/Shared/SvgIcon";
 import { MY_SOCIAL_MEDIA } from "@/data/staticData";
+import { getInputValueOrFallback } from "@/functions/helper";
+import useFormsStore from "@/stores/forms.store/forms.store";
 import s from "./ProfileHeader.module.scss";
 
 const ProfileHeader = () => {
+  const personalInfoInputs = useFormsStore((s) => s.personalInfoInputs);
+
+  const fullName = getInputValueOrFallback(personalInfoInputs[0]);
+
   return (
     <section className={s.profileHeader}>
-      <h2>Moamal Alaa</h2>
+      <h2>{fullName}</h2>
 
       <div className={s.socialMedia}>
         {MY_SOCIAL_MEDIA.map(({ socialName, title, link, iconName, id }) => (
