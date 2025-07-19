@@ -1,4 +1,4 @@
-import SvgIcon from "../../SvgIcon";
+import Checkbox from "../Checkbox/Checkbox";
 import s from "./Input.module.scss";
 
 const Input = ({
@@ -13,33 +13,7 @@ const Input = ({
   fillWidth = false,
 }) => {
   if (type === "checkbox")
-    return (
-      <div className={`${s.checkboxWrapper}`}>
-        <div className={s.checkbox}>
-          <input
-            type={type}
-            name={name}
-            id={name}
-            checked={value}
-            value={value}
-            onChange={onChange}
-            required={required}
-            pattern={pattern}
-          />
-          {type === "checkbox" && (
-            <div className={s.icon}>
-              <SvgIcon name="correctMark" />
-            </div>
-          )}
-        </div>
-
-        {label && (
-          <label htmlFor={name} data-required={required}>
-            {label}
-          </label>
-        )}
-      </div>
-    );
+    return <Checkbox {...{ label, name, value, onChange, required }} />;
 
   return (
     <div className={s.input}>
