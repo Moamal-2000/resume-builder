@@ -3,13 +3,20 @@
 import Button from "@/components/Shared/Buttons/Button/Button";
 import Input from "@/components/Shared/Inputs/Input/Input";
 import useFormsStore from "@/stores/forms.store/forms.store";
+import { useRouter } from "next/navigation";
 import s from "./PersonalInfoForm.module.scss";
 
 const PersonalInfoForm = () => {
   const { personalInfoInputs, updateInputValue } = useFormsStore((s) => s);
+  const router = useRouter();
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    const isValidForm = event.target.checkValidity();
+    if (!isValidForm) return;
+
+    router.push("/builder/experience");
   }
 
   function handleOnChange(event) {
