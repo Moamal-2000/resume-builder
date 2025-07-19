@@ -1,4 +1,5 @@
 import Checkbox from "../Checkbox/Checkbox";
+import Textarea from "../Textarea/Textarea";
 import s from "./Input.module.scss";
 
 const Input = ({
@@ -14,6 +15,11 @@ const Input = ({
 }) => {
   if (type === "checkbox")
     return <Checkbox {...{ label, name, value, onChange, required }} />;
+
+  if (type === "textarea")
+    return (
+      <Textarea {...{ label, name, value, onChange, required, placeholder }} />
+    );
 
   return (
     <div className={s.input}>
