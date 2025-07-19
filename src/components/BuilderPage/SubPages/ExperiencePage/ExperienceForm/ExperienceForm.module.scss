@@ -1,7 +1,13 @@
 .experienceForm {
   margin-top: 45px;
+  max-width: 352px;
 }
 
 .inputs {
   margin-bottom: calc(25px + 15px); // Gap + Last Input's Margin
+}
+
+.inputs .wrapper {
+  display: flex;
+  gap: 6px;
 }

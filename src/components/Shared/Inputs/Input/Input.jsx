@@ -9,6 +9,7 @@ const Input = ({
   onChange,
   pattern,
   required,
+  fillWidth = false,
 }) => {
   return (
     <div className={s.input}>
@@ -27,6 +28,7 @@ const Input = ({
         onChange={onChange}
         required={required}
         pattern={pattern}
+        style={{ minWidth: fillWidth ? "100%" : "352px" }}
       />
     </div>
   );

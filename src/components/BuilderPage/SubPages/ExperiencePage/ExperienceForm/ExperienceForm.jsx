@@ -34,32 +34,30 @@ const ExperienceForm = () => {
   return (
     <form className={s.experienceForm} onSubmit={handleSubmit}>
       <div className={s.inputs}>
-        {experienceInputs.map(
-          ({
-            label,
-            name,
-            placeholder,
-            type,
-            required,
-            pattern,
-            value,
-            id,
-          }) => {
+        {experienceInputs.map((dataCell, index) => {
+          const isArray = Array.isArray(dataCell);
+
+          if (isArray) {
             return (
-              <Input
-                key={id}
-                label={label}
-                name={name}
-                placeholder={placeholder}
-                type={type}
-                required={required}
-                value={value}
-                pattern={pattern}
-                onChange={handleOnChange}
-              />
+              <div className={s.wrapper} key={`inputs-wrapper-${index}`}>
+                {dataCell.map((dataCell) => {
+                  return (
+                    <Input
+                      key={dataCell.id}
+                      {...dataCell}
+                      onChange={handleOnChange}
+                      fillWidth={true}
+                    />
+                  );
+                })}
+              </div>
             );
           }
-        )}
+
+          return (
+            <Input key={dataCell.id} {...dataCell} onChange={handleOnChange} />
+          );
+        })}
       </div>
 
       <Button fillWidth={true} type="submit">
