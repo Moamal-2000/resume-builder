@@ -119,12 +119,13 @@ export const useFormsStore = create((set, get) => ({
     },
   ],
 
-  updateInputValue: ({ name, value, isValidValue, inputGroupKey }) => {
+  updateInputValue: ({ name, value, type, isValidValue, inputGroupKey }) => {
     const inputs = get()[inputGroupKey];
     const updatedInputs = getUpdatedInputs({
       inputs,
       name,
       value,
+      type,
       isValidValue,
     });
 
@@ -134,21 +135,21 @@ export const useFormsStore = create((set, get) => ({
 
 export default useFormsStore;
 
-function getUpdatedInputs({ inputs, name, value, isValidValue }) {
+function getUpdatedInputs({ inputs, name, value, type, isValidValue }) {
   return inputs.map((input) => {
     const hasSubInputs = Array.isArray(input);
 
     if (hasSubInputs) {
       return input.map((subInput) =>
-        updateValue(subInput, name, value, isValidValue)
+        updateValue({ input: subInput, name, value, type, isValidValue })
       );
     }
 
-    return updateValue(input, name, value, isValidValue);
+    return updateValue({ input, name, value, type, isValidValue });
   });
 }
 
-function updateValue(input, name, value, isValidValue) {
+function updateValue({ input, name, type, value, isValidValue }) {
   if (input.name !== name) return input;
 
   return { ...input, value, isValidValue };

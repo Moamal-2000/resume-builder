@@ -8,11 +8,12 @@ const ExperienceInputs = () => {
   const { experienceInputs, updateInputValue } = useFormsStore((s) => s);
 
   function handleOnChange({ target }) {
-    const { name, value, validity } = target;
+    const { name, value, checked, type, validity } = target;
 
     updateInputValue({
       name,
-      value,
+      type,
+      value: type === "checkbox" ? checked : value,
       isValidValue: validity.valid,
       inputGroupKey: "experienceInputs",
     });
