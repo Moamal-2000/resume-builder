@@ -1,9 +1,45 @@
-import s from './ExperienceInputs.module.scss'
+"use client";
+
+import Input from "@/components/Shared/Inputs/Input/Input";
+import useFormsStore from "@/stores/forms.store/forms.store";
+import s from "./ExperienceInputs.module.scss";
 
 const ExperienceInputs = () => {
-  return (
-    <div>ExperienceInputs</div>
-  )
-}
+  const { experienceInputs, updateInputValue } = useFormsStore((s) => s);
 
-export default ExperienceInputs
+  function handleOnChange({ target }) {
+    const { name, value, validity } = target;
+
+    updateInputValue({
+      name,
+      value,
+      isValidValue: validity.valid,
+      inputGroupKey: "experienceInputs",
+    });
+  }
+
+  return experienceInputs.map((item, index) => {
+    const isArray = Array.isArray(item);
+
+    if (isArray) {
+      return (
+        <div className={s.wrapper} key={`inputs-wrapper-${index}`}>
+          {item.map((subItem) => {
+            return (
+              <Input
+                key={subItem.id}
+                {...subItem}
+                onChange={handleOnChange}
+                fillWidth={true}
+              />
+            );
+          })}
+        </div>
+      );
+    }
+
+    return <Input key={item.id} {...item} onChange={handleOnChange} />;
+  });
+};
+
+export default ExperienceInputs;
