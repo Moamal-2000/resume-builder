@@ -25,16 +25,14 @@ const ExperienceInputs = () => {
     if (isArray) {
       return (
         <div className={s.wrapper} key={`inputs-wrapper-${index}`}>
-          {item.map((subItem) => {
-            return (
-              <Input
-                key={subItem.id}
-                {...subItem}
-                onChange={handleOnChange}
-                fillWidth={true}
-              />
-            );
-          })}
+          {item.map((subItem) => (
+            <Input
+              key={subItem.id}
+              {...subItem}
+              onChange={handleOnChange}
+              fillWidth={true}
+            />
+          ))}
         </div>
       );
     }
