@@ -1,28 +1,16 @@
 "use client";
 
+import useDidValueDecrease from "@/hooks/helper/useDidValueDecrease";
 import useGlobalStore from "@/stores/global.store/global.store";
-import { useEffect, useRef, useState } from "react";
 import s from "./ProgressBar.module.scss";
 
 const ProgressBar = ({ progress, relatedTo }) => {
   const isAsideOpen = useGlobalStore((s) => s.isAsideOpen);
   const shouldShow = relatedTo === "sidebar" ? isAsideOpen : true;
   const hideClass = shouldShow ? "" : s.hide;
-  const previousProgress = useRef(progress);
-  const [progressDecrease, setProgressDecrease] = useState(false);
+  const isProgressDecreased = useDidValueDecrease(progress);
 
-  const decreaseClass = progressDecrease ? s.decrease : "";
-
-  useEffect(() => {
-    const isProgressDecreased =
-      parseInt(progress) < parseInt(previousProgress.current);
-
-    setProgressDecrease(isProgressDecreased);
-
-    if (progress !== previousProgress.current) {
-      previousProgress.current = progress;
-    }
-  }, [progress]);
+  const decreaseClass = isProgressDecreased ? s.decrease : "";
 
   return (
     <div className={`${s.progressBar} ${hideClass} ${decreaseClass}`}>
