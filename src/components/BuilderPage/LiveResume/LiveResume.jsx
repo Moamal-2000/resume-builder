@@ -8,13 +8,10 @@ import TechSkills from "./TechSkills/TechSkills";
 const LiveResume = () => {
   return (
     <section className={s.liveResume}>
-      <div className={s.wrapper}>
-        <ProfileHeader />
-        <Education />
-        <TechSkills />
-        <Certifications />
-      </div>
-
+      <ProfileHeader />
+      <Education />
+      <TechSkills />
+      <Certifications />
       <Experiences />
     </section>
   );

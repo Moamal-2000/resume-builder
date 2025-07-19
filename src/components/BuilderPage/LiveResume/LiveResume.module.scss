@@ -1,27 +1,41 @@
 @use "@/styles/mixins" as m;
 
 .liveResume {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 377px);
   gap: 10px;
   border-radius: 20px;
   margin-top: 6px;
-}
-
-.liveResume .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.liveResume>section,
-.liveResume .wrapper>section {
-  background-color: #fff;
-  padding: 30px 20px;
-  border-radius: 12px;
-  width: 377px !important;
-  border: solid 2px #e4e7eb;
+  grid-template-areas:
+    "personal personal"
+    "skills experience"
+    "education experience"
+    "certifications experience";
 }
 
 .liveResume>section {
-  width: 479px;
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  border: solid 2px #e4e7eb;
+}
+
+.liveResume>section:nth-child(1) {
+  grid-area: personal;
+}
+
+.liveResume>section:nth-child(2) {
+  grid-area: education;
+}
+
+.liveResume>section:nth-child(3) {
+  grid-area: skills;
+}
+
+.liveResume>section:nth-child(4) {
+  grid-area: certifications;
+}
+
+.liveResume>section:nth-child(5) {
+  grid-area: experience;
 }
