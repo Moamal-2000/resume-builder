@@ -1,7 +1,7 @@
-import s from "./ExperiencePage.module.scss";
+import ExperienceForm from "./ExperienceForm/ExperienceForm";
 
 const ExperiencePage = () => {
-  return <div className={s.experiencePage}></div>;
+  return <ExperienceForm />;
 };
 
 export default ExperiencePage;
