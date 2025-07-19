@@ -10,6 +10,7 @@ export const useFormsStore = create((set, get) => ({
       pattern: "^[a-zA-Z ]+$",
       placeholder: "John Doe",
       required: true,
+      isValidValue: false,
       id: 1,
     },
     {
@@ -19,6 +20,7 @@ export const useFormsStore = create((set, get) => ({
       value: "",
       placeholder: "e.g. Software Engineer",
       required: true,
+      isValidValue: false,
       id: 2,
     },
     {
@@ -28,6 +30,7 @@ export const useFormsStore = create((set, get) => ({
       value: "",
       placeholder: "john.doe@example.com",
       required: true,
+      isValidValue: false,
       id: 3,
     },
     {
@@ -37,17 +40,19 @@ export const useFormsStore = create((set, get) => ({
       value: "",
       placeholder: "City, Country (e.g. Baghdad, Iraq)",
       required: false,
+      isValidValue: true,
       id: 4,
     },
   ],
 
-  updateInputValue: ({ name, value, inputGroupKey }) => {
+  updateInputValue: ({ name, value, isValidValue, inputGroupKey }) => {
     const inputs = get()[inputGroupKey];
 
     set({
       [inputGroupKey]: inputs.map((input) => ({
         ...input,
         value: input.name === name ? value : input.value,
+        isValidValue: input.name === name ? isValidValue : input.isValidValue,
       })),
     });
   },

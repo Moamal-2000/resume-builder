@@ -1,6 +1,8 @@
 "use client";
 
 import ProgressBar from "@/components/Shared/ProgressBar/ProgressBar";
+import { getResumeProgress } from "@/functions/helper";
+import useFormsStore from "@/stores/forms.store/forms.store";
 import useGlobalStore from "@/stores/global.store/global.store";
 import { useRef } from "react";
 import PagesNav from "./PagesNav/PagesNav";
@@ -9,13 +11,14 @@ import SidebarIcon from "./SidebarIcon/SidebarIcon";
 
 const Sidebar = () => {
   const isAsideOpen = useGlobalStore((s) => s.isAsideOpen);
+  const formsStore = useFormsStore((s) => s);
 
   const sidebarRef = useRef();
   const closedOnceRef = useRef(false);
 
   const closeClass = isAsideOpen ? s.open : s.close;
   const closedOnceClass = closedOnceRef.current ? s.closedOnce : "";
-  const resumeProgress = "10%";
+  const resumeProgress = getResumeProgress(formsStore);
 
   return (
     <aside

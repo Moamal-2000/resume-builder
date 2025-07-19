@@ -14,7 +14,14 @@ const PersonalInfoForm = () => {
 
   function handleOnChange(event) {
     const { name, value } = event.target;
-    updateInputValue({ name, value, inputGroupKey: "personalInfoInputs" });
+    const isValidValue = event.target.validity.valid;
+
+    updateInputValue({
+      name,
+      value,
+      isValidValue,
+      inputGroupKey: "personalInfoInputs",
+    });
   }
 
   return (
