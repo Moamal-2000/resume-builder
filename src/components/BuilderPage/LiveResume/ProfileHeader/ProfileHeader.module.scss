@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4px 18px;
-  margin-block: 6px 20px;
+  margin-block: 6px 14px;
 }
 
 .profileHeader .media {
@@ -22,19 +22,33 @@
   font-size: .8rem;
   text-wrap: nowrap;
   width: fit-content;
-  color: #404553;
+  color: #545865;
 }
 
 .profileHeader svg {
   width: 20px;
   height: 20px;
-  stroke: #404553;
+  stroke: #545865;
 }
 
-.profileHeader>p {
+.profileHeader .textBox:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.profileHeader .textBox>h2 {
+  font-family: var(--poppins-font);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 26px;
+  color: #4d525f;
+  text-transform: capitalize;
+}
+
+.profileHeader .textBox>p {
   font-family: var(--euclid-circular-font);
   font-weight: 400;
   font-size: .8rem;
   line-height: 22px;
-  color: #404553;
+  color: #666a75;
+  max-width: 380px;
 }

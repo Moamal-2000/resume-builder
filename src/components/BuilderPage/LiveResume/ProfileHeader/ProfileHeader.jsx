@@ -8,10 +8,11 @@ import s from "./ProfileHeader.module.scss";
 const ProfileHeader = () => {
   const personalInfoInputs = useFormsStore((s) => s.personalInfoInputs);
 
-  const [fullName, profession, email] = [
+  const [fullName, profession, email, address] = [
     getInputValueOrFallback(personalInfoInputs[0]),
     getInputValueOrFallback(personalInfoInputs[1]),
     getInputValueOrFallback(personalInfoInputs[2]),
+    getInputValueOrFallback(personalInfoInputs[3]),
   ];
 
   return (
@@ -21,7 +22,7 @@ const ProfileHeader = () => {
 
       <div className={s.socialMedia}>
         <a
-          href={email}
+          href={`mailto:${email}`}
           className={s.media}
           target="_blank"
           rel="noreferrer noopenner"
@@ -31,11 +32,19 @@ const ProfileHeader = () => {
         </a>
       </div>
 
-      <p>
-        I’m a Front-End Developer specializing in React/Next.js. I enjoy
-        building clean, responsive web interfaces and continuously improving my
-        skills.
-      </p>
+      <div className={s.textBox}>
+        <h2>Address</h2>
+        <p>{address}</p>
+      </div>
+
+      <div className={s.textBox}>
+        <h2>Summery</h2>
+        <p>
+          Explain briefly who you are and your background here in not more than
+          3 lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
+          aliquam,
+        </p>
+      </div>
     </section>
   );
 };
