@@ -1,9 +1,9 @@
-$fonts-path: "/assets/fonts/";
+@use "./mixins/generateFontFaces" as gfc;
 
 $poppins-font-map: (
   name: "Poppins",
   format: 'truetype',
-  file-extension: "ttf",
+  ext: "ttf",
   weights: ("300": "Light",
     400: "Regular",
     500: "Medium",
@@ -14,7 +14,7 @@ $poppins-font-map: (
 $euclid-circular-font-map: (
   name: "Euclid Circular A",
   format: 'truetype',
-  file-extension: "ttf",
+  ext: "ttf",
   weights: (300: "Light",
     400: "Regular",
     500: "Medium",
@@ -25,7 +25,7 @@ $euclid-circular-font-map: (
 $roboto-font-map: (
   name: "Roboto",
   format: 'truetype',
-  file-extension: "ttf",
+  ext: "ttf",
   weights: (300: "Light",
     400: "Regular",
     500: "Medium",
@@ -36,7 +36,7 @@ $roboto-font-map: (
 $dm-sans-font-map: (
   name: "DMSans",
   format: 'truetype',
-  file-extension: "ttf",
+  ext: "ttf",
   weights: (300: "Light",
     400: "Regular",
     500: "Medium",
@@ -44,28 +44,7 @@ $dm-sans-font-map: (
   )
 );
 
-@mixin generate-font-faces($font-map) {
-  $font-weights: map-get($font-map, weights);
-  $file-extension: map-get($font-map, file-extension);
-
-  @each $weight, $label in $font-weights {
-    $font-name: map-get($poppins-font-map, name);
-    $format: map-get($poppins-font-map, format);
-
-    $file-name: "#{$font-name}-#{$label}.#{$file-extension}";
-    $path: "#{$fonts-path}#{$font-name}/#{$file-name}";
-
-    @font-face {
-      font-family: $font-name;
-      src: url($path) format($format);
-      font-weight: $weight;
-      font-style: normal;
-      font-display: swap;
-    }
-  }
-}
-
-@include generate-font-faces($poppins-font-map);
-@include generate-font-faces($euclid-circular-font-map);
-@include generate-font-faces($roboto-font-map);
-@include generate-font-faces($dm-sans-font-map);
+@include gfc.generate-font-faces($poppins-font-map);
+@include gfc.generate-font-faces($euclid-circular-font-map);
+@include gfc.generate-font-faces($roboto-font-map);
+@include gfc.generate-font-faces($dm-sans-font-map);

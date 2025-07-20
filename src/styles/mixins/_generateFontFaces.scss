@@ -1,0 +1,22 @@
+$fonts-path: "/assets/fonts/";
+
+@mixin generate-font-faces($font-map) {
+  $font-weights: map-get($font-map, weights);
+  $ext: map-get($font-map, ext);
+
+  @each $weight, $label in $font-weights {
+    $font-name: map-get($font-map, name);
+    $format: map-get($font-map, format);
+
+    $file-name: "#{$font-name}-#{$label}.#{$ext}";
+    $path: "#{$fonts-path}#{$font-name}/#{$file-name}";
+
+    @font-face {
+      font-family: $font-name;
+      src: url($path) format($format);
+      font-weight: $weight;
+      font-style: normal;
+      font-display: swap;
+    }
+  }
+}
