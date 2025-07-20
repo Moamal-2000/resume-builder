@@ -115,3 +115,36 @@ export const experienceInputs = [
     id: 7,
   },
 ];
+
+export const skillsInputs = [
+  {
+    label: "Skill 1",
+    name: "skill1",
+    type: "text",
+    value: "",
+    placeholder: "e.g. JavaScript",
+    required: true,
+    isValidValue: false,
+    id: 1,
+  },
+  {
+    label: "Skill 2",
+    name: "skill2",
+    type: "text",
+    value: "",
+    placeholder: "e.g. JavaScript",
+    required: true,
+    isValidValue: false,
+    id: 2,
+  },
+  {
+    label: "Skill 3",
+    name: "skill3",
+    type: "text",
+    value: "",
+    placeholder: "e.g. JavaScript",
+    required: true,
+    isValidValue: false,
+    id: 3,
+  },
+];
