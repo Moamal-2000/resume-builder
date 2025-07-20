@@ -4,7 +4,7 @@ export function getInputValueOrFallback(input) {
   return input.value === "" ? input.placeholder : input.value;
 }
 
-export function getResumeProgress(formsStore) {
+export function getResumeProgress(formsStore, decimalPlaces = 0) {
   const allFormsInputs = Object.values(formsStore).slice(0, -1).flat();
   const totalInputs = allFormsInputs.length;
   const validInputs = allFormsInputs.filter(
@@ -13,5 +13,5 @@ export function getResumeProgress(formsStore) {
 
   const percentageValue = (validInputs / totalInputs) * 100;
 
-  return `${percentageValue.toFixed(1)}%`;
+  return `${percentageValue.toFixed(decimalPlaces)}%`;
 }
