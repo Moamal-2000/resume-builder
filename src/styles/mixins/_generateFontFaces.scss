@@ -1,3 +1,30 @@
+/*
+ * Mixin: generate-font-faces
+ * ---------------------------
+ * This mixin dynamically generates @font-face rules based on a given font map.
+ *
+ * Parameters:
+ *   $font-map (Map): A SCSS map describing the font family.
+ *
+ * Example structure of
+ * $font-map: (
+ *   name: "Poppins",           // Font family name
+ *   format: "truetype",        // Format used in 'format()' (e.g., "truetype", "woff2")
+ *   ext: "ttf",                // File extension
+ *   weights: (                 // Font weights and their corresponding filename labels
+ *     300: "Light",
+ *     400: "Regular",
+ *     500: "Medium",
+ *     600: "SemiBold"
+ *   )
+ * )
+ *
+ * Example usage:
+ * @include generate-font-faces($poppins-font-map);
+ *
+ * Note: The font files should be placed in the "public/assets/fonts" directory.
+ */
+
 $fonts-path: "/assets/fonts/";
 
 @mixin generate-font-faces($font-map) {
