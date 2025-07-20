@@ -11,5 +11,7 @@ export function getResumeProgress(formsStore) {
     (input) => input.isValidValue
   ).length;
 
-  return `${(validInputs / totalInputs) * 100}%`;
+  const percentageValue = (validInputs / totalInputs) * 100;
+
+  return `${percentageValue.toFixed(1)}%`;
 }
