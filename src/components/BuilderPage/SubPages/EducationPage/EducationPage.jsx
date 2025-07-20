@@ -1,7 +1,7 @@
-import s from "./EducationPage.module.scss";
+import EducationForm from "./EducationForm/EducationForm";
 
 const EducationPage = () => {
-  return <div className={s.educationPage}></div>;
+  return <EducationForm />;
 };
 
 export default EducationPage;
