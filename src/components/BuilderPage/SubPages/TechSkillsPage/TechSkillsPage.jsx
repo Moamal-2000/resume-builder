@@ -1,7 +1,7 @@
-import s from "./TechSkillsPage.module.scss";
+import TechSkillsForm from "./TechSkillsForm/TechSkillsForm";
 
 const TechSkillsPage = () => {
-  return <div className={s.techSkillsPage}></div>;
+  return <TechSkillsForm />;
 };
 
 export default TechSkillsPage;
