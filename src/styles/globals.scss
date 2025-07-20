@@ -1,6 +1,6 @@
 @use "./colors";
 @use "./variables";
-@use "./mixins" as m;
+@use "./mixins/mixins" as m;
 @import "./fonts.scss";
 
 * {
