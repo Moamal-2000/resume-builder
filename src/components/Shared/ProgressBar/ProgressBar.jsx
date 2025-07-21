@@ -1,5 +1,6 @@
 "use client";
 
+import { getProgressBarClasses } from "@/functions/classNames";
 import useDidValueDecrease from "@/hooks/helper/useDidValueDecrease";
 import useGlobalStore from "@/stores/global.store/global.store";
 import s from "./ProgressBar.module.scss";
@@ -7,13 +8,16 @@ import s from "./ProgressBar.module.scss";
 const ProgressBar = ({ progress, relatedTo }) => {
   const isAsideOpen = useGlobalStore((s) => s.isAsideOpen);
   const shouldShow = relatedTo === "sidebar" ? isAsideOpen : true;
-  const hideClass = shouldShow ? "" : s.hide;
   const isProgressDecreased = useDidValueDecrease(progress);
 
-  const decreaseClass = isProgressDecreased ? s.decrease : "";
+  const progressBarClasses = getProgressBarClasses({
+    cssModule: s,
+    shouldShow,
+    isProgressDecreased,
+  });
 
   return (
-    <div className={`${s.progressBar} ${hideClass} ${decreaseClass}`}>
+    <div className={progressBarClasses}>
       <span className={s.title}>Progress</span>
 
       <div className={s.barWrapper}>

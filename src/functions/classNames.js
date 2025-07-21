@@ -13,3 +13,14 @@ export function getFormLinkClasses({
 
   return `${activeClass} ${disableClass} ${hideTitleClass}`;
 }
+
+export function getProgressBarClasses({
+  cssModule,
+  shouldShow,
+  isProgressDecreased,
+}) {
+  const hideClass = shouldShow ? "" : cssModule.hide;
+  const decreaseClass = isProgressDecreased ? cssModule.decrease : "";
+
+  return `${cssModule.progressBar} ${hideClass} ${decreaseClass}`;
+}
