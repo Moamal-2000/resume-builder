@@ -1,5 +1,6 @@
 .pagesNav {
   margin-bottom: 50px;
+  user-select: none;
 }
 
 .pagesNav>ul>li>a {
@@ -31,6 +32,11 @@
       fill: #000112;
     }
   }
+
+  &.disabled {
+    pointer-events: none;
+    color: #B1B2B9;
+  }
 }
 
 .pagesNav.closeMenu>ul>li>a {
@@ -42,6 +48,14 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+}
+
+.pagesNav>ul>li>a.disabled>svg:not([data-hover=stroke]) {
+  fill: #B1B2B9;
+}
+
+.pagesNav>ul>li>a.disabled>svg[data-hover=stroke] {
+  stroke: #B1B2B9;
 }
 
 .pagesNav>ul>li>a .title {
