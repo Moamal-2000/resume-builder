@@ -1,0 +1,63 @@
+.listItem>a {
+  display: block;
+  width: 100%;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 40px;
+  font-family: var(--poppins-font);
+  font-weight: 500;
+  font-size: .93rem;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #404653;
+  text-wrap: nowrap;
+  transition: padding-left .2s .55s ease-in-out;
+
+  &.active {
+    background-color: #fbdddd;
+    color: #000112;
+
+    &>svg[data-hover=stroke] {
+      stroke: #000112;
+    }
+
+    &>svg:not([data-hover=stroke]) {
+      fill: #000112;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    color: #B1B2B9;
+  }
+}
+
+.pagesNav.closeMenu>ul>li>a {
+  transition: padding-left .2s .35s ease-in-out;
+  padding-left: 34.5px;
+}
+
+.listItem>a>svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.listItem>a.disabled>svg:not([data-hover=stroke]) {
+  fill: #B1B2B9;
+}
+
+.listItem>a.disabled>svg[data-hover=stroke] {
+  stroke: #B1B2B9;
+}
+
+.listItem>a .title {
+  transition: opacity .3s .5s ease-in-out;
+}
+
+.listItem>a.hideTitle .title {
+  transition: opacity .01s .5s ease-in-out;
+  opacity: 0;
+}
