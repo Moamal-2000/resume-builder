@@ -13,7 +13,6 @@ const BuilderInputs = ({ inputGroupKey }) => {
 
     updateInputValue({
       name,
-      type,
       value: type === "checkbox" ? checked : value,
       isValidValue: validity.valid,
       inputGroupKey,

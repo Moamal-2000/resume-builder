@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { getUpdatedInputs } from "./methods";
+import { getUpdatedInputs, updateEndDateRequiredByStatus } from "./methods";
 import {
   certificationInputs,
   contactInfoInputs,
@@ -17,15 +17,19 @@ export const useFormsStore = create((set, get) => ({
   contactInfoInputs,
   certificationInputs,
 
-  updateInputValue: ({ name, value, type, isValidValue, inputGroupKey }) => {
+  updateInputValue: ({ name, value, isValidValue, inputGroupKey }) => {
     const inputs = get()[inputGroupKey];
-    const updatedInputs = getUpdatedInputs({
+
+    let updatedInputs = getUpdatedInputs({
       inputs,
       name,
       value,
-      type,
       isValidValue,
     });
+
+    if (name === "currentlyWorking") {
+      updatedInputs = updateEndDateRequiredByStatus(updatedInputs);
+    }
 
     set(() => ({ [inputGroupKey]: updatedInputs }));
   },

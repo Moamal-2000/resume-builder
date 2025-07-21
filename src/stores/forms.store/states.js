@@ -90,7 +90,7 @@ export const experienceInputs = [
       type: "text",
       value: "",
       placeholder: "MM / YYYY",
-      required: false, // Not required if "Currently working here" is checked
+      required: true,
       isValidValue: true,
       id: 5,
     },
