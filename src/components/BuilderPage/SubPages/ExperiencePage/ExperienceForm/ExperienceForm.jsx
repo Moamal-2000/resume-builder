@@ -1,9 +1,9 @@
 "use client";
 
 import Button from "@/components/Shared/Buttons/Button/Button";
+import BuilderInputs from "@/components/Shared/Inputs/BuilderInputs/BuilderInputs";
 import { useRouter } from "next/navigation";
 import s from "./ExperienceForm.module.scss";
-import ExperienceInputs from "./ExperienceInputs/ExperienceInputs";
 
 const ExperienceForm = () => {
   const router = useRouter();
@@ -20,7 +20,7 @@ const ExperienceForm = () => {
   return (
     <form className={s.experienceForm} onSubmit={handleSubmit}>
       <div className={s.inputs}>
-        <ExperienceInputs />
+        <BuilderInputs inputGroupKey="experienceInputs" />
       </div>
 
       <Button fillWidth={true} type="submit">
