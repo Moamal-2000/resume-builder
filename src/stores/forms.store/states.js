@@ -256,3 +256,36 @@ export const contactInfoInputs = [
     id: 8,
   },
 ];
+
+export const certificationInputs = [
+  {
+    label: "Certification #1",
+    name: "certification1",
+    type: "text",
+    value: "",
+    placeholder: "e.g Certificate of Engineering",
+    required: false,
+    isValidValue: true,
+    id: 1,
+  },
+  {
+    label: "Certification #2",
+    name: "certification2",
+    type: "text",
+    value: "",
+    placeholder: "e.g Certificate of Engineering",
+    required: false,
+    isValidValue: true,
+    id: 2,
+  },
+  {
+    label: "Certification #3",
+    name: "certification3",
+    type: "text",
+    value: "",
+    placeholder: "e.g Certificate of Engineering",
+    required: false,
+    isValidValue: true,
+    id: 3,
+  },
+];

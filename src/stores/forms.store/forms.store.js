@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { getUpdatedInputs } from "./methods";
 import {
+  certificationInputs,
   contactInfoInputs,
   educationInputs,
   experienceInputs,
@@ -14,6 +15,7 @@ export const useFormsStore = create((set, get) => ({
   skillsInputs,
   educationInputs,
   contactInfoInputs,
+  certificationInputs,
 
   updateInputValue: ({ name, value, type, isValidValue, inputGroupKey }) => {
     const inputs = get()[inputGroupKey];
