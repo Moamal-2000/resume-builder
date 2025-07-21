@@ -1,7 +1,7 @@
-import s from "./ContactInfoPage.module.scss";
+import ContactInfoForm from "./ContactInfoForm/ContactInfoForm";
 
 const ContactInfoPage = () => {
-  return <div className={s.contactInfoPage}></div>;
+  return <ContactInfoForm />;
 };
 
 export default ContactInfoPage;

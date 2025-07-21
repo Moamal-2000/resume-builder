@@ -213,3 +213,46 @@ export const educationInputs = [
     },
   ],
 ];
+
+export const contactInfoInputs = [
+  {
+    label: "Phone Number",
+    name: "phoneNumber",
+    type: "tel",
+    value: "",
+    placeholder: "e.g. +1 (123) 456-7890",
+    required: true,
+    isValidValue: false,
+    id: 5,
+  },
+  {
+    label: "Linkedin Profile Link",
+    name: "linkedin",
+    type: "url",
+    value: "",
+    placeholder: "e.g https://johndoe.com",
+    required: false,
+    isValidValue: true,
+    id: 6,
+  },
+  {
+    label: "GitHub Profile Link",
+    name: "github",
+    type: "url",
+    value: "",
+    placeholder: "e.g https://johndoe.com",
+    required: false,
+    isValidValue: true,
+    id: 7,
+  },
+  {
+    label: "Portfolio Link",
+    name: "portfolio",
+    type: "url",
+    value: "",
+    placeholder: "e.g https://johndoe.com",
+    required: false,
+    isValidValue: true,
+    id: 8,
+  },
+];
