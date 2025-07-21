@@ -41,14 +41,7 @@
   height: 14px;
   border-radius: 20px 0 0 20px;
   background-color: #ea6565;
-}
-
-.progressBar.decrease .barWrapper .progress {
   transition: width .5s .6s ease-in-out;
-}
-
-.progressBar:not(.decrease) .barWrapper .progress {
-  transition: width .5s ease-in-out;
 }
 
 .progressBar .barWrapper .futureProgress {
