@@ -1,6 +1,8 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
+import { getFormLinkClasses } from "@/functions/classNames";
+import { hasFormFilled } from "@/functions/helper";
 import useFormsStore from "@/stores/forms.store/forms.store";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,26 +12,23 @@ const FormLink = ({ linkData, shouldHideTitle }) => {
   const { title, link, iconName, unlockAfter } = linkData;
   const formsStore = useFormsStore((s) => s);
   const pathname = usePathname();
-  const activeClass = link === pathname ? s.active : "";
 
-  const formInputs = Object?.values(
-    formsStore?.[unlockAfter] || formsStore.personalInfoInputs
-  );
+  const isFormFilled = hasFormFilled({
+    formGroupKey: unlockAfter,
+    formsStore,
+  });
 
-  const isFormFilled = formInputs
-    .flat()
-    .every((input) => input.isValidValue || !input.required);
-
-  let disableClass = !isFormFilled ? s.disabled : "";
-  const hideTitleClass = shouldHideTitle ? s.hideTitle : "";
-  if (unlockAfter === "none") disableClass = "";
+  const formLinkClasses = getFormLinkClasses({
+    cssModule: s,
+    isActive: link === pathname,
+    unlockAfter,
+    isFormFilled,
+    shouldHideTitle,
+  });
 
   return (
     <li className={s.listItem}>
-      <Link
-        href={link}
-        className={`${activeClass} ${disableClass} ${hideTitleClass}`}
-      >
+      <Link href={link} className={formLinkClasses}>
         <SvgIcon name={iconName} />
         <span className={s.title}>{title}</span>
       </Link>

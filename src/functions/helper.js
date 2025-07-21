@@ -15,3 +15,11 @@ export function getResumeProgress(formsStore, decimalPlaces = 0) {
 
   return `${percentageValue.toFixed(decimalPlaces)}%`;
 }
+
+export function hasFormFilled({ formGroupKey, formsStore }) {
+  const formInputs = Object?.values(
+    formsStore?.[formGroupKey] || formsStore.personalInfoInputs
+  ).flat();
+
+  return formInputs.every((input) => input.isValidValue || !input.required);
+}
