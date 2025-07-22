@@ -24,7 +24,7 @@ export const BUILDER_SIDEBAR_PAGES = [
     title: "Education",
     link: "/builder/education",
     iconName: "graduationHat",
-    unlockAfter: "skillsInputs",
+    unlockAfter: "techSkillsInputs",
     id: 4,
   },
   {
@@ -42,3 +42,12 @@ export const BUILDER_SIDEBAR_PAGES = [
     id: 6,
   },
 ];
+
+export const builderInputKeysToPath = {
+  personalInfoInputs: "/builder",
+  experienceInputs: "/builder/experience",
+  techSkillsInputs: "/builder/techSkills",
+  educationInputs: "/builder/education",
+  contactInfoInputs: "/builder/contactInfo",
+  certificationInputs: "/builder/certification",
+};

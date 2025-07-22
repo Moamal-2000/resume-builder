@@ -122,7 +122,7 @@ export const experienceInputs = [
   },
 ];
 
-export const skillsInputs = [
+export const techSkillsInputs = [
   {
     label: "Skill 1",
     name: "skill1",

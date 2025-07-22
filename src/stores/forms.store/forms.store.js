@@ -6,13 +6,13 @@ import {
   educationInputs,
   experienceInputs,
   personalInfoInputs,
-  skillsInputs,
+  techSkillsInputs,
 } from "./states";
 
 export const useFormsStore = create((set, get) => ({
   personalInfoInputs,
   experienceInputs,
-  skillsInputs,
+  techSkillsInputs,
   educationInputs,
   contactInfoInputs,
   certificationInputs,

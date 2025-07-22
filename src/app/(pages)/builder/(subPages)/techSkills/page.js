@@ -3,7 +3,7 @@ import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
 const TechSkillsPage = () => {
   return (
     <BuilderForm
-      inputGroupKey="skillsInputs"
+      inputGroupKey="techSkillsInputs"
       nextPageRoute="/builder/education"
       submitButtonText="Next"
     />
