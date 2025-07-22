@@ -1,6 +1,6 @@
 "use client";
 
-import { BUILDER_SIDEBAR_PAGES } from "@/data/builderPages";
+import { BUILDER_SIDEBAR_PAGES } from "@/data/builderSidebarLinks";
 import useGlobalStore from "@/stores/global.store/global.store";
 import FormLink from "./FormLink/FormLink";
 import s from "./PagesNav.module.scss";
