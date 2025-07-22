@@ -13,6 +13,8 @@ const Input = (
     onChange,
     required,
     fillWidth = false,
+    min,
+    max,
   },
   ref
 ) => {
@@ -36,6 +38,8 @@ const Input = (
         onChange={onChange}
         required={required}
         placeholder={placeholder}
+        min={min}
+        max={max}
       />
     );
 
@@ -56,6 +60,8 @@ const Input = (
         onChange={onChange}
         required={required}
         style={{ minWidth: fillWidth ? "100%" : "352px" }}
+        min={min}
+        max={max}
         ref={ref}
       />
     </div>

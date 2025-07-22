@@ -13,7 +13,9 @@ const ExperienceForm = () => {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const isValidForm = experienceInputs.every((input) => input.hasValidValue);
+    const isValidForm = experienceInputs.flat().every(
+      (input) => input.hasValidValue || !input.required
+    );
 
     if (!isValidForm) return;
 

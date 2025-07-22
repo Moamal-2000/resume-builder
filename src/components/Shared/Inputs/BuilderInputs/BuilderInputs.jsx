@@ -15,7 +15,7 @@ const BuilderInputs = ({ inputGroupKey }) => {
   function handleOnChange(target, index) {
     const { name, value, checked, type, validity } = target;
     const inputRegex = inputsData[index]?.pattern;
-    const regexTest = inputRegex?.test(value);
+    const regexTest = inputRegex ? inputRegex?.test(value) : true;
 
     updateInputValue({
       name,

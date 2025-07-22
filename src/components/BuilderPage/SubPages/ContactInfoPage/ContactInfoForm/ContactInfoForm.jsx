@@ -13,7 +13,11 @@ const ContactInfoForm = () => {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const isValidForm = contactInfoInputs.every((input) => input.hasValidValue);
+    const isValidForm = contactInfoInputs.every(
+      (input) => input.hasValidValue || !input.required
+    );
+
+    console.log(contactInfoInputs.flat());
     if (!isValidForm) return;
 
     router.push("/builder/certification");
