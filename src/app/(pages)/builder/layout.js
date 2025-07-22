@@ -2,7 +2,7 @@
 
 import LiveResume from "@/components/BuilderPage/LiveResume/LiveResume";
 import Sidebar from "@/components/BuilderPage/Sidebar/Sidebar";
-import useProtectBuilderStep from "@/hooks/app/useProtectBuilderStep/useProtectBuilderStep";
+import useProtectBuilderStep from "@/hooks/app/useProtectBuilderStep";
 import s from "./Layout.module.scss";
 
 const BuilderLayout = ({ children }) => {
