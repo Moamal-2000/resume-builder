@@ -26,7 +26,7 @@ const BuilderForm = ({
   }
 
   return (
-    <form className={s.certificationForm} onSubmit={handleSubmit}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <div className={s.inputs}>
         <BuilderInputs inputGroupKey={inputGroupKey} />
       </div>
