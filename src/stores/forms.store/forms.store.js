@@ -33,6 +33,14 @@ export const useFormsStore = create((set, get) => ({
 
     set(() => ({ [inputGroupKey]: updatedInputs }));
   },
+
+  checkFormValidity: (inputGroupKey) => {
+    const inputs = get()?.[inputGroupKey]?.flat();
+
+    if (!inputs) return false;
+
+    return inputs.every((input) => input.hasValidValue || !input.required);
+  },
 }));
 
 export default useFormsStore;

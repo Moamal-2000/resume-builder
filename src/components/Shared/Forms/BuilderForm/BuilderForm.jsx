@@ -11,15 +11,13 @@ const BuilderForm = ({
   nextPageRoute,
   submitButtonText = "Submit",
 }) => {
-  const inputs = useFormsStore((s) => s[inputGroupKey]);
+  const checkFormValidity = useFormsStore((s) => s.checkFormValidity);
   const router = useRouter();
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    const isValidForm = inputs.every(
-      (input) => input.hasValidValue || !input.required
-    );
+    const isValidForm = checkFormValidity(inputGroupKey);
     if (!isValidForm) return;
 
     router.push(nextPageRoute);
