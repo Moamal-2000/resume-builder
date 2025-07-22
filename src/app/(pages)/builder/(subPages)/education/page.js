@@ -1,7 +1,13 @@
-import EducationForm from "@/components/BuilderPage/SubPages/EducationPage/EducationForm/EducationForm";
+import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
 
 const EducationPages = () => {
-  return <EducationForm />;
+  return (
+    <BuilderForm
+      inputGroupKey="educationInputs"
+      nextPageRoute="/builder/contactInfo"
+      submitButtonText="Next"
+    />
+  );
 };
 
 export default EducationPages;

@@ -1,7 +1,13 @@
-import PersonalInfoForm from "@/components/BuilderPage/PersonalInfo/PersonalInfoForm/PersonalInfoForm";
+import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
 
 const BuilderPage = () => {
-  return <PersonalInfoForm />;
+  return (
+    <BuilderForm
+      inputGroupKey="personalInfoInputs"
+      nextPageRoute="/builder/experience"
+      submitButtonText="Next"
+    />
+  );
 };
 
 export default BuilderPage;

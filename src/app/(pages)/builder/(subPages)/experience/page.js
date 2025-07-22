@@ -1,7 +1,13 @@
-import ExperienceForm from "@/components/BuilderPage/SubPages/ExperiencePage/ExperienceForm/ExperienceForm";
+import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
 
 const Experiencepage = () => {
-  return <ExperienceForm />;
+  return (
+    <BuilderForm
+      inputGroupKey="experienceInputs"
+      nextPageRoute="/builder/techSkills"
+      submitButtonText="Next"
+    />
+  );
 };
 
 export default Experiencepage;
