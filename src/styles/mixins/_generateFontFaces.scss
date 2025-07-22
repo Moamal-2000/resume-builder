@@ -25,15 +25,17 @@
  * Note: The font files should be placed in the "public/assets/fonts" directory.
  */
 
+@use "sass:map";
+
 $fonts-path: "/assets/fonts/";
 
 @mixin generate-font-faces($font-map) {
-  $font-weights: map-get($font-map, weights);
-  $ext: map-get($font-map, ext);
+  $font-weights: map.get($font-map, weights);
+  $ext: map.get($font-map, ext);
 
   @each $weight, $label in $font-weights {
-    $font-name: map-get($font-map, name);
-    $format: map-get($font-map, format);
+    $font-name: map.get($font-map, name);
+    $format: map.get($font-map, format);
 
     $file-name: "#{$font-name}-#{$label}.#{$ext}";
     $path: "#{$fonts-path}#{$font-name}/#{$file-name}";

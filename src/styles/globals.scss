@@ -1,7 +1,7 @@
 @use "./colors";
+@use "./fonts";
 @use "./variables";
 @use "./mixins/mixins" as m;
-@import "./fonts.scss";
 
 * {
   box-sizing: border-box;
