@@ -4,10 +4,10 @@ export const personalInfoInputs = [
     name: "fullName",
     type: "text",
     value: "",
-    pattern: "^[A-Za-z]{2,}([ '-][A-Za-z.]+)*$",
+    pattern: /^[A-Za-z]{2,}([ '-][A-Za-z.]+)*$/,
     placeholder: "John Doe",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 1,
   },
   {
@@ -15,10 +15,10 @@ export const personalInfoInputs = [
     name: "profession",
     type: "text",
     value: "",
-    pattern: "^[A-Za-z][A-Za-z /&.-]{1,49}$",
+    pattern: /^[A-Za-z][A-Za-z /&.-]{1,49}$/,
     placeholder: "Software Engineer",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 2,
   },
   {
@@ -26,10 +26,10 @@ export const personalInfoInputs = [
     name: "email",
     type: "email",
     value: "",
-    pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$",
+    pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/,
     placeholder: "john.doe@example.com",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 3,
   },
   {
@@ -37,10 +37,10 @@ export const personalInfoInputs = [
     name: "address",
     type: "text",
     value: "",
-    pattern: "^[A-Za-z0-9s,.'-/]{2,100}$",
+    pattern: /^[A-Za-z0-9s,.'-/]{2,100}$/,
     placeholder: "City, Country (e.g. Baghdad, Iraq)",
     required: false,
-    isValidValue: true,
+    hasValidValue: true,
     id: 4,
   },
 ];
@@ -53,7 +53,7 @@ export const experienceInputs = [
     value: "",
     placeholder: "e.g. Front-End Developer",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 1,
   },
   {
@@ -63,7 +63,7 @@ export const experienceInputs = [
     value: "",
     placeholder: "e.g. Google",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 2,
   },
   {
@@ -73,7 +73,7 @@ export const experienceInputs = [
     value: "",
     placeholder: "City, Country (e.g. Baghdad, Iraq)",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 3,
   },
   [
@@ -84,7 +84,7 @@ export const experienceInputs = [
       value: "",
       placeholder: "MM / YYYY",
       required: true,
-      isValidValue: false,
+      hasValidValue: false,
       id: 4,
     },
     {
@@ -94,7 +94,7 @@ export const experienceInputs = [
       value: "",
       placeholder: "MM / YYYY",
       required: true,
-      isValidValue: true,
+      hasValidValue: true,
       id: 5,
     },
   ],
@@ -105,7 +105,7 @@ export const experienceInputs = [
     value: "",
     placeholder: "Describe your responsibilities, achievements, and skills...",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 6,
   },
   {
@@ -114,7 +114,7 @@ export const experienceInputs = [
     type: "checkbox",
     value: false,
     required: false,
-    isValidValue: true,
+    hasValidValue: true,
     id: 7,
   },
 ];
@@ -127,7 +127,7 @@ export const skillsInputs = [
     value: "",
     placeholder: "e.g. JavaScript",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 1,
   },
   {
@@ -137,7 +137,7 @@ export const skillsInputs = [
     value: "",
     placeholder: "e.g. React",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 2,
   },
   {
@@ -147,7 +147,7 @@ export const skillsInputs = [
     value: "",
     placeholder: "e.g. Node.js",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 3,
   },
 ];
@@ -160,7 +160,7 @@ export const educationInputs = [
     value: "",
     placeholder: "e.g University of Lagos",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 1,
   },
   {
@@ -170,7 +170,7 @@ export const educationInputs = [
     value: "",
     placeholder: "e.g Lagos",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 2,
   },
   {
@@ -180,7 +180,7 @@ export const educationInputs = [
     value: "",
     placeholder: "e.g Bachelor of Science",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 3,
   },
   {
@@ -190,7 +190,7 @@ export const educationInputs = [
     value: "",
     placeholder: "e.g Computer Science",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 4,
   },
   [
@@ -201,7 +201,7 @@ export const educationInputs = [
       value: "",
       placeholder: "Month Number",
       required: true,
-      isValidValue: false,
+      hasValidValue: false,
       id: 5,
     },
     {
@@ -211,7 +211,7 @@ export const educationInputs = [
       value: "",
       placeholder: "Year Number",
       required: true,
-      isValidValue: false,
+      hasValidValue: false,
       id: 6,
     },
   ],
@@ -225,7 +225,7 @@ export const contactInfoInputs = [
     value: "",
     placeholder: "e.g. +1 (123) 456-7890",
     required: true,
-    isValidValue: false,
+    hasValidValue: false,
     id: 5,
   },
   {
@@ -235,7 +235,7 @@ export const contactInfoInputs = [
     value: "",
     placeholder: "e.g https://johndoe.com",
     required: false,
-    isValidValue: true,
+    hasValidValue: true,
     id: 6,
   },
   {
@@ -245,7 +245,7 @@ export const contactInfoInputs = [
     value: "",
     placeholder: "e.g https://johndoe.com",
     required: false,
-    isValidValue: true,
+    hasValidValue: true,
     id: 7,
   },
   {
@@ -255,7 +255,7 @@ export const contactInfoInputs = [
     value: "",
     placeholder: "e.g https://johndoe.com",
     required: false,
-    isValidValue: true,
+    hasValidValue: true,
     id: 8,
   },
 ];
@@ -268,7 +268,7 @@ export const certificationInputs = [
     value: "",
     placeholder: "e.g Certificate of Engineering",
     required: false,
-    isValidValue: true,
+    hasValidValue: true,
     id: 1,
   },
   {
@@ -278,7 +278,7 @@ export const certificationInputs = [
     value: "",
     placeholder: "e.g Certificate of Engineering",
     required: false,
-    isValidValue: true,
+    hasValidValue: true,
     id: 2,
   },
   {
@@ -288,7 +288,7 @@ export const certificationInputs = [
     value: "",
     placeholder: "e.g Certificate of Engineering",
     required: false,
-    isValidValue: true,
+    hasValidValue: true,
     id: 3,
   },
 ];

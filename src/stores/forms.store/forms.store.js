@@ -17,14 +17,14 @@ export const useFormsStore = create((set, get) => ({
   contactInfoInputs,
   certificationInputs,
 
-  updateInputValue: ({ name, value, isValidValue, inputGroupKey }) => {
+  updateInputValue: ({ name, value, hasValidValue, inputGroupKey }) => {
     const inputs = get()[inputGroupKey];
 
     let updatedInputs = getUpdatedInputs({
       inputs,
       name,
       value,
-      isValidValue,
+      hasValidValue,
     });
 
     if (name === "currentlyWorking") {

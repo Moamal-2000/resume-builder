@@ -12,13 +12,15 @@ const BuilderInputs = ({ inputGroupKey }) => {
   const firstInputRef = useRef();
   useFocusOnMount(firstInputRef);
 
-  function handleOnChange({ target }) {
+  function handleOnChange(target, index) {
     const { name, value, checked, type, validity } = target;
+    const inputRegex = inputsData[index]?.pattern;
+    const regexTest = inputRegex?.test(value);
 
     updateInputValue({
       name,
       value: type === "checkbox" ? checked : value,
-      isValidValue: validity.valid,
+      hasValidValue: validity.valid && regexTest,
       inputGroupKey,
     });
   }
@@ -33,7 +35,7 @@ const BuilderInputs = ({ inputGroupKey }) => {
             <Input
               key={subItem.id}
               {...subItem}
-              onChange={handleOnChange}
+              onChange={({ target }) => handleOnChange(target, index)}
               fillWidth={true}
             />
           ))}
@@ -45,7 +47,7 @@ const BuilderInputs = ({ inputGroupKey }) => {
       <Input
         key={item.id}
         {...item}
-        onChange={handleOnChange}
+        onChange={({ target }) => handleOnChange(target, index)}
         ref={index === 0 ? firstInputRef : null}
       />
     );

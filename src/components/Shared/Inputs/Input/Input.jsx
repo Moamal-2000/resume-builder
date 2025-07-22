@@ -11,7 +11,6 @@ const Input = (
     placeholder,
     value,
     onChange,
-    pattern,
     required,
     fillWidth = false,
   },
@@ -56,7 +55,6 @@ const Input = (
         value={value}
         onChange={onChange}
         required={required}
-        pattern={pattern}
         style={{ minWidth: fillWidth ? "100%" : "352px" }}
         ref={ref}
       />

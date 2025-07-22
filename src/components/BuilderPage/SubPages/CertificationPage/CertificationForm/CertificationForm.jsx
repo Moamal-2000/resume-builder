@@ -2,16 +2,20 @@
 
 import Button from "@/components/Shared/Buttons/Button/Button";
 import BuilderInputs from "@/components/Shared/Inputs/BuilderInputs/BuilderInputs";
+import useFormsStore from "@/stores/forms.store/forms.store";
 import { useRouter } from "next/navigation";
 import s from "./CertificationForm.module.scss";
 
 const CertificationForm = () => {
+  const certificationInputs = useFormsStore((s) => s.certificationInputs);
   const router = useRouter();
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    const isValidForm = event.target.checkValidity();
+    const isValidForm = certificationInputs.every(
+      (input) => input.hasValidValue
+    );
     if (!isValidForm) return;
 
     router.push("/download");

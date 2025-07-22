@@ -8,7 +8,7 @@ export function getResumeProgress(formsStore, decimalPlaces = 0) {
   const allFormsInputs = Object.values(formsStore).slice(0, -1).flat();
   const totalInputs = allFormsInputs.length;
   const validInputs = allFormsInputs.filter(
-    (input) => input.isValidValue
+    (input) => input.hasValidValue
   ).length;
 
   const percentageValue = (validInputs / totalInputs) * 100;
@@ -21,5 +21,5 @@ export function hasFormFilled({ formGroupKey, formsStore }) {
     formsStore?.[formGroupKey] || formsStore.personalInfoInputs
   ).flat();
 
-  return formInputs.every((input) => input.isValidValue || !input.required);
+  return formInputs.every((input) => input.hasValidValue || !input.required);
 }

@@ -3,7 +3,7 @@ export function getUpdatedInputs({
   name,
   value,
   required,
-  isValidValue,
+  hasValidValue,
 }) {
   return inputs.map((input) => {
     const hasSubInputs = Array.isArray(input);
@@ -15,23 +15,23 @@ export function getUpdatedInputs({
           name,
           value,
           required,
-          isValidValue,
+          hasValidValue,
         })
       );
     }
 
-    return updateValue({ input, name, value, required, isValidValue });
+    return updateValue({ input, name, value, required, hasValidValue });
   });
 }
 
-export function updateValue({ input, name, value, required, isValidValue }) {
+export function updateValue({ input, name, value, required, hasValidValue }) {
   if (input.name !== name) return input;
 
   return {
     ...input,
     value: value !== undefined ? value : input.value,
     required: required !== undefined ? required : input.required,
-    isValidValue,
+    hasValidValue,
   };
 }
 
