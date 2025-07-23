@@ -1,6 +1,6 @@
 "use client";
 
-import useFormsStore from "@/stores/forms.store/forms.store";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRouter } from "next/navigation";
 import Button from "../../Buttons/Button/Button";
 import BuilderInputs from "../../Inputs/BuilderInputs/BuilderInputs";

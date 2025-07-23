@@ -2,7 +2,7 @@
 
 import SvgIcon from "@/components/Shared/SvgIcon";
 import { getInputValueOrFallback } from "@/functions/helper";
-import useFormsStore from "@/stores/forms.store/forms.store";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ProfileHeader.module.scss";
 
 const ProfileHeader = () => {

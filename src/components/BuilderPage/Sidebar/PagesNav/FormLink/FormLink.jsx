@@ -3,7 +3,7 @@
 import SvgIcon from "@/components/Shared/SvgIcon";
 import { getFormLinkClasses } from "@/functions/classNames";
 import { hasFormFilled } from "@/functions/helper";
-import useFormsStore from "@/stores/forms.store/forms.store";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import s from "./FormLink.module.scss";

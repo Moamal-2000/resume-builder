@@ -2,7 +2,7 @@
 
 import Input from "@/components/Shared/Inputs/Input/Input";
 import useFocusOnMount from "@/hooks/helper/useFocusOnMount";
-import useFormsStore from "@/stores/forms.store/forms.store";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRef } from "react";
 import s from "./BuilderInputs.module.scss";
 

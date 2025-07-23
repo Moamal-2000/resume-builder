@@ -2,7 +2,7 @@
 
 import Button from "@/components/Shared/Buttons/Button/Button";
 import BuilderInputs from "@/components/Shared/Inputs/BuilderInputs/BuilderInputs";
-import useFormsStore from "@/stores/forms.store/forms.store";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRouter } from "next/navigation";
 import s from "./PersonalInfoForm.module.scss";
 

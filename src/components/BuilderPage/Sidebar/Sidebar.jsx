@@ -2,7 +2,7 @@
 
 import ProgressBar from "@/components/Shared/ProgressBar/ProgressBar";
 import { getResumeProgress } from "@/functions/helper";
-import useFormsStore from "@/stores/forms.store/forms.store";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
 import useGlobalStore from "@/stores/global.store/global.store";
 import { useRef } from "react";
 import PagesNav from "./PagesNav/PagesNav";

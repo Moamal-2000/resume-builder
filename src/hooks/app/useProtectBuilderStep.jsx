@@ -4,7 +4,7 @@ import {
   BUILDER_SIDEBAR_PAGES,
   builderInputKeysToPath,
 } from "@/data/builderSidebarLinks";
-import useFormsStore from "@/stores/forms.store/forms.store";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { usePathname, useRouter } from "next/navigation";
 import { useLayoutEffect } from "react";
 
