@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 import { getUpdatedInputs, updateEndDateRequiredByStatus } from "./methods";
 import {
   certificationInputs,
@@ -9,7 +10,7 @@ import {
   techSkillsInputs,
 } from "./states";
 
-export const useFormsStore = create((set, get) => ({
+const formsStore = (set, get) => ({
   personalInfoInputs,
   experienceInputs,
   techSkillsInputs,
@@ -41,6 +42,8 @@ export const useFormsStore = create((set, get) => ({
 
     return inputs.every((input) => input.hasValidValue || !input.required);
   },
-}));
+});
+
+export const useFormsStore = create(persist(formsStore, { name: "forms" }));
 
 export default useFormsStore;
