@@ -42,6 +42,33 @@ const formsStore = (set, get) => ({
 
     return inputs.every((input) => input.hasValidValue || !input.required);
   },
+
+  addCertificationField: () => {
+    const { certificationInputs } = get();
+    const numericalId = certificationInputs.length + 1;
+
+    if (numericalId > 10) {
+      alert("You cannot add more than 10 certifications.");
+      return certificationInputs;
+    }
+
+    const newCertificationField = {
+      label: `Certification ${numericalId}`,
+      name: `certification${numericalId}`,
+      type: "text",
+      pattern: "^[a-zA-Z0-9\\/&.\\-#' ]{2,100}$",
+      value: "",
+      placeholder: "Certificate of Engineering",
+      required: false,
+      hasValidValue: true,
+      id: numericalId,
+    };
+
+    certificationInputs.push(newCertificationField);
+    set({ certificationInputs });
+
+    return certificationInputs;
+  },
 });
 
 export const useFormsStore = create(persist(formsStore, { name: "forms" }));
