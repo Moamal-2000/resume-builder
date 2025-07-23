@@ -1,5 +1,6 @@
 "use client";
 
+import AddCertificationField from "@/components/BuilderPage/SubPages/CertificationPage/AddCertificationField/AddCertificationField";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRouter } from "next/navigation";
 import Button from "../../Buttons/Button/Button";
@@ -10,9 +11,12 @@ const BuilderForm = ({
   inputGroupKey,
   nextPageRoute,
   submitButtonText = "Submit",
+  hasAdditionalElements = false,
 }) => {
   const checkFormValidity = useFormsStore((s) => s.checkFormValidity);
   const router = useRouter();
+
+  const hasElementsClass = hasAdditionalElements ? s.hasElements : "";
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -24,10 +28,16 @@ const BuilderForm = ({
   }
 
   return (
-    <form className={s.form} onSubmit={handleSubmit}>
+    <form className={`${s.form} ${hasElementsClass}`} onSubmit={handleSubmit}>
       <div className={s.inputs}>
         <BuilderInputs inputGroupKey={inputGroupKey} />
       </div>
+
+      {hasAdditionalElements && (
+        <div className={s.additionalElements}>
+          <AddCertificationField />
+        </div>
+      )}
 
       <Button fillWidth={true} type="submit">
         {submitButtonText}

@@ -6,3 +6,11 @@
 .inputs {
   margin-bottom: calc(25px + 15px); // Gap + Last Input's Margin
 }
+
+.form.hasElements .inputs {
+  margin-bottom: 0;
+}
+
+.additionalElements {
+  margin-bottom: 60px;
+}

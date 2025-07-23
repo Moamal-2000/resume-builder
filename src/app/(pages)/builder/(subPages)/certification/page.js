@@ -5,6 +5,7 @@ const CertificationPage = () => {
     <BuilderForm
       inputGroupKey="certificationInputs"
       nextPageRoute="/download"
+      hasAdditionalElements
     />
   );
 };
