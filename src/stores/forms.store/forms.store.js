@@ -1,3 +1,4 @@
+import { CERTIFICATION_MAX_COUNT } from "@/data/constents";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { getUpdatedInputs, updateEndDateRequiredByStatus } from "./methods";
@@ -47,7 +48,7 @@ const formsStore = (set, get) => ({
     const { certificationInputs } = get();
     const numericalId = certificationInputs.length + 1;
 
-    if (numericalId > 10) {
+    if (numericalId > CERTIFICATION_MAX_COUNT) {
       alert("You cannot add more than 10 certifications.");
       return certificationInputs;
     }

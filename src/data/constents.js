@@ -1,0 +1,1 @@
+export const CERTIFICATION_MAX_COUNT = 10
