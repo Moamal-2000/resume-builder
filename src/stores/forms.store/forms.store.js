@@ -45,5 +45,3 @@ const formsStore = (set, get) => ({
 });
 
 export const useFormsStore = create(persist(formsStore, { name: "forms" }));
-
-export default useFormsStore;
