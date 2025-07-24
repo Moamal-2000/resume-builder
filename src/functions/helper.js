@@ -1,4 +1,4 @@
-import { DESCRIPTION_PLACEHOLDER } from "@/data/constents";
+import { DESCRIPTION_PLACEHOLDER, MONTH_NAMES } from "@/data/constents";
 
 export function getInputValueOrFallback(input) {
   if (!input) throw Error("'Input' parameter is undefined");
@@ -30,8 +30,20 @@ export function getJobExperienceProps(experienceData) {
   return {
     title: getInputValueOrFallback(experienceData[0]),
     company: getInputValueOrFallback(experienceData[1]),
-    startDate: experienceData[2][0].value || "February 2021",
-    endDate: experienceData[2][1].value || "Present",
+    startDate: getFormattedDate(experienceData[2][0].value) || "February 2021",
+    endDate: getFormattedDate(experienceData[2][1].value) || "Present",
     description: experienceData[3].value || DESCRIPTION_PLACEHOLDER,
   };
+}
+
+export function getMonthName(monthNumber) {
+  if (monthNumber < 1 || monthNumber > 12) return "Invalid month";
+  return MONTH_NAMES[monthNumber - 1];
+}
+
+export function getFormattedDate(dateStr) {
+  if (!dateStr) return false;
+
+  const [year, month] = dateStr.split("-");
+  return `${getMonthName(month)} ${year}`;
 }
