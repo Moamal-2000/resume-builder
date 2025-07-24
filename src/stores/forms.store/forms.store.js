@@ -75,7 +75,11 @@ const formsStore = (set, get) => ({
     const { experiencesInputs } = get();
 
     experiencesInputs.push(experienceInputs);
-    set({ experiencesInputs });
+
+    set({
+      experiencesInputs,
+      experiencesTabIndex: experiencesInputs.length - 1,
+    });
 
     return experiencesInputs;
   },
