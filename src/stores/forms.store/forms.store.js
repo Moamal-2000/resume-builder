@@ -20,7 +20,12 @@ const formsStore = (set, get) => ({
   experiencesTabIndex: 0,
 
   updateInputValue: ({ name, value, hasValidValue, inputGroupKey }) => {
-    const inputs = get()[inputGroupKey];
+    const { experiencesTabIndex, experiencesInputs } = get();
+    const isExperiencesInputs = inputGroupKey === "experiencesInputs";
+
+    const inputs = isExperiencesInputs
+      ? get()[inputGroupKey][experiencesTabIndex]
+      : get()[inputGroupKey];
 
     let updatedInputs = getUpdatedInputs({
       inputs,
@@ -31,6 +36,12 @@ const formsStore = (set, get) => ({
 
     if (name === "currentlyWorking") {
       updatedInputs = updateEndDateRequiredByStatus(updatedInputs);
+    }
+
+    if (isExperiencesInputs) {
+      experiencesInputs[experiencesTabIndex] = updatedInputs;
+      set({ experiencesInputs });
+      return;
     }
 
     set(() => ({ [inputGroupKey]: updatedInputs }));
