@@ -1,3 +1,19 @@
-.experienceTabs {}
+.experienceTabs {
+  display: flex;
+  gap: 6px;
+}
 
-.experienceTabs>button {}
+.experienceTabs>button {
+  border: solid 2px #dadfec;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #0a1125;
+  font-size: 1rem;
+  border-radius: 6px;
+
+  &.active {
+    background-color: #f35558;
+    border-color: #f35558;
+    color: #fff;
+  }
+}

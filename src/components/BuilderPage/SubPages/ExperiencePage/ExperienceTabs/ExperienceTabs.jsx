@@ -10,7 +10,10 @@ const ExperienceTabs = () => {
 
   return (
     <div className={s.experienceTabs}>
-      <button type="button">{mainTabTitle}</button>
+      <button type="button" className={`${s.mainTab} ${s.active}`}>
+        {mainTabTitle}
+      </button>
+      <button type="button">+ Add Experience</button>
     </div>
   );
 };
