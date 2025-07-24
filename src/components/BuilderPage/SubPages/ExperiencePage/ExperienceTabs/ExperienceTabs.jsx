@@ -1,5 +1,6 @@
 "use client";
 
+import SvgIcon from "@/components/Shared/SvgIcon";
 import { EXPERIENCE_MAX_COUNT } from "@/data/constents";
 import { getInputValueOrFallback } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
@@ -34,6 +35,9 @@ const ExperienceTabs = () => {
           onClick={() => updateTabIndex(index + 1)}
         >
           {getInputValueOrFallback(experienceInput[0])}
+          <span className={s.xMark}>
+            <SvgIcon name="xMark" />
+          </span>
         </button>
       ))}
 
