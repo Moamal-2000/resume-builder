@@ -83,6 +83,8 @@ const formsStore = (set, get) => ({
 
     return experiencesInputs;
   },
+
+  updateTabIndex: (index) => set(() => ({ experiencesTabIndex: index })),
 });
 
 // export const useFormsStore = create(persist(formsStore, { name: "forms" }));

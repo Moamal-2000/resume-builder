@@ -5,8 +5,12 @@ import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ExperienceTabs.module.scss";
 
 const ExperienceTabs = () => {
-  const { addExperience, experiencesInputs, experiencesTabIndex } =
-    useFormsStore((s) => s);
+  const {
+    addExperience,
+    experiencesInputs,
+    experiencesTabIndex,
+    updateTabIndex,
+  } = useFormsStore((s) => s);
   const mainExperienceInputs = experiencesInputs[0];
   const mainTabTitle = getInputValueOrFallback(mainExperienceInputs[0]);
 
@@ -15,6 +19,7 @@ const ExperienceTabs = () => {
       <button
         type="button"
         className={`${s.mainTab} ${experiencesTabIndex === 0 ? s.active : ""}`}
+        onClick={() => updateTabIndex(0)}
       >
         {mainTabTitle}
       </button>
@@ -24,6 +29,7 @@ const ExperienceTabs = () => {
           type="button"
           key={index}
           className={index + 1 === experiencesTabIndex ? s.active : ""}
+          onClick={() => updateTabIndex(index + 1)}
         >
           {getInputValueOrFallback(experienceInput[0])}
         </button>
