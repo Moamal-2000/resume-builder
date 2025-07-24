@@ -108,6 +108,16 @@ const formsStore = (set, get) => ({
     return experiencesInputs;
   },
 
+  removeExperience: (clickedIndex) => {
+    const { experiencesInputs } = get();
+    if (experiencesInputs.length <= 1) return experiencesInputs;
+
+    const filteredInputs = experiencesInputs.filter(
+      (_, index) => index !== clickedIndex
+    );
+    set({ experiencesInputs: filteredInputs, experiencesTabIndex: 0 });
+  },
+
   updateTabIndex: (index) => set(() => ({ experiencesTabIndex: index })),
 });
 
