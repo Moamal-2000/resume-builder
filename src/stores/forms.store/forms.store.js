@@ -42,8 +42,9 @@ const formsStore = (set, get) => ({
     }
 
     if (isExperiencesInputs) {
-      experiencesInputs[experiencesTabIndex] = updatedInputs;
-      set({ experiencesInputs });
+      const copyInputs = [...experiencesInputs];
+      copyInputs[experiencesTabIndex] = updatedInputs;
+      set({ experiencesInputs: copyInputs });
       return;
     }
 
