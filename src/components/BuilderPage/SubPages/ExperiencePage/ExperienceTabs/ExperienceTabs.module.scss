@@ -1,8 +1,7 @@
 .experienceTabs {
-  max-width: 352px;
   display: flex;
+  flex-direction: column;
   gap: 6px;
-  flex-wrap: wrap;
 }
 
 .experienceTabs>button {
@@ -10,16 +9,34 @@
   padding: 10px 12px;
   background-color: transparent;
   color: #0a1125;
-  font-size: .9rem;
+  font-size: .8rem;
+  font-family: var(--poppins-font);
+  font-weight: 500;
   border-radius: 6px;
   text-wrap: nowrap;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 3px;
+  transition:
+    background-color .1s ease-in-out,
+    border-color .1s ease-in-out,
+    color .1s ease-in-out;
 
-  &.active {
-    background-color: #f35558;
-    border-color: #f35558;
+  &.active,
+  &:not(.active):hover {
+    background-color: #ff6c6f;
+    border-color: #ff6c6f;
+    color: #fff;
+
+    &>span>svg {
+      fill: #fff;
+    }
+  }
+
+  &:active {
+    background-color: #ff5e61;
+    border-color: #ff5e61;
     color: #fff;
   }
 }
@@ -29,6 +46,11 @@
 }
 
 .experienceTabs>button .xMark>svg {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
+  fill: #0a0a0a;
+}
+
+.experienceTabs .addTab {
+  border: dashed 2px #808080;
 }

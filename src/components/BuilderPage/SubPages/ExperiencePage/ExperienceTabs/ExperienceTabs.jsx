@@ -64,7 +64,7 @@ const ExperienceTabs = () => {
       ))}
 
       {!shouldHideAddButton && (
-        <button type="button" onClick={addExperience}>
+        <button type="button" onClick={addExperience} className={s.addTab}>
           + Add Experience
         </button>
       )}
