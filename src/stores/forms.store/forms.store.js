@@ -1,4 +1,7 @@
-import { CERTIFICATION_MAX_COUNT } from "@/data/constents";
+import {
+  CERTIFICATION_MAX_COUNT,
+  EXPERIENCE_MAX_COUNT,
+} from "@/data/constents";
 import { create } from "zustand";
 import { getUpdatedInputs, updateEndDateRequiredByStatus } from "./methods";
 import {
@@ -60,7 +63,9 @@ const formsStore = (set, get) => ({
     const numericalId = certificationInputs.length + 1;
 
     if (numericalId > CERTIFICATION_MAX_COUNT) {
-      alert("You cannot add more than 10 certifications.");
+      alert(
+        `You cannot add more than ${CERTIFICATION_MAX_COUNT} certifications.`
+      );
       return certificationInputs;
     }
 
@@ -84,9 +89,16 @@ const formsStore = (set, get) => ({
 
   addExperience: () => {
     const { experiencesInputs } = get();
+    const totalJobExperience = experiencesInputs.length + 1;
+
+    if (totalJobExperience > EXPERIENCE_MAX_COUNT) {
+      alert(
+        `You cannot add more than ${EXPERIENCE_MAX_COUNT} job experiences.`
+      );
+      return experiencesInputs;
+    }
 
     const updatedExperiencesInputs = [...experiencesInputs, experienceInputs];
-
     set({
       experiencesInputs: updatedExperiencesInputs,
       experiencesTabIndex: updatedExperiencesInputs.length - 1,

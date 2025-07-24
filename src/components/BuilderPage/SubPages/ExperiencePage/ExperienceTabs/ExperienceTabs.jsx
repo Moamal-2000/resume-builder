@@ -1,5 +1,6 @@
 "use client";
 
+import { EXPERIENCE_MAX_COUNT } from "@/data/constents";
 import { getInputValueOrFallback } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ExperienceTabs.module.scss";
@@ -13,6 +14,7 @@ const ExperienceTabs = () => {
   } = useFormsStore((s) => s);
   const mainExperienceInputs = experiencesInputs[0];
   const mainTabTitle = getInputValueOrFallback(mainExperienceInputs[0]);
+  const shouldHideAddButton = experiencesInputs.length >= EXPERIENCE_MAX_COUNT;
 
   return (
     <div className={s.experienceTabs}>
@@ -35,9 +37,11 @@ const ExperienceTabs = () => {
         </button>
       ))}
 
-      <button type="button" onClick={addExperience}>
-        + Add Experience
-      </button>
+      {!shouldHideAddButton && (
+        <button type="button" onClick={addExperience}>
+          + Add Experience
+        </button>
+      )}
     </div>
   );
 };
