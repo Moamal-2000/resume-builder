@@ -57,6 +57,7 @@ const ExperienceTabs = () => {
           <span
             className={s.xMark}
             onClick={(event) => handleRemoveExperience(event, index)}
+            title="Remove experience"
           >
             <SvgIcon name="xMark" />
           </span>
