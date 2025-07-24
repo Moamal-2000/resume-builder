@@ -68,17 +68,6 @@ export const experienceInputs = [
     hasValidValue: false,
     id: 2,
   },
-  {
-    label: "Location",
-    name: "location",
-    type: "text",
-    value: "",
-    pattern: "^[a-zA-Z0-9,.\\-\\/ ]{2,60}$",
-    placeholder: "City, Country (e.g. Baghdad, Iraq)",
-    required: true,
-    hasValidValue: false,
-    id: 3,
-  },
   [
     {
       label: "Start Date",
@@ -88,7 +77,7 @@ export const experienceInputs = [
       min: "1990-01",
       required: true,
       hasValidValue: false,
-      id: 4,
+      id: 3,
     },
     {
       label: "End Date",
@@ -97,7 +86,7 @@ export const experienceInputs = [
       value: "",
       required: true,
       hasValidValue: true,
-      id: 5,
+      id: 4,
     },
   ],
   {
@@ -109,7 +98,7 @@ export const experienceInputs = [
     placeholder: "Describe your responsibilities, achievements, and skills...",
     required: true,
     hasValidValue: false,
-    id: 6,
+    id: 5,
   },
   {
     label: "Currently work here",
@@ -118,7 +107,7 @@ export const experienceInputs = [
     value: false,
     required: false,
     hasValidValue: true,
-    id: 7,
+    id: 6,
   },
 ];
 

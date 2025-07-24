@@ -1,3 +1,5 @@
+import { DESCRIPTION_PLACEHOLDER } from "@/data/constents";
+
 export function getInputValueOrFallback(input) {
   if (!input) throw Error("'Input' parameter is undefined");
 
@@ -22,4 +24,14 @@ export function hasFormFilled({ formGroupKey, formsStore }) {
   ).flat();
 
   return formInputs.every((input) => input.hasValidValue || !input.required);
+}
+
+export function getJobExperienceProps(experienceData) {
+  return {
+    title: getInputValueOrFallback(experienceData[0]),
+    company: getInputValueOrFallback(experienceData[1]),
+    startDate: experienceData[2][0].value || "February 2021",
+    endDate: experienceData[2][1].value || "Present",
+    description: experienceData[3].value || DESCRIPTION_PLACEHOLDER,
+  };
 }

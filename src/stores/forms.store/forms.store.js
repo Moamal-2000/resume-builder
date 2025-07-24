@@ -85,11 +85,11 @@ const formsStore = (set, get) => ({
   addExperience: () => {
     const { experiencesInputs } = get();
 
-    experiencesInputs.push(experienceInputs);
+    const updatedExperiencesInputs = [...experiencesInputs, experienceInputs];
 
     set({
-      experiencesInputs,
-      experiencesTabIndex: experiencesInputs.length - 1,
+      experiencesInputs: updatedExperiencesInputs,
+      experiencesTabIndex: updatedExperiencesInputs.length - 1,
     });
 
     return experiencesInputs;
