@@ -1,9 +1,18 @@
-import s from './ExperienceTabs.module.scss'
+"use client";
+
+import { getInputValueOrFallback } from "@/functions/helper";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
+import s from "./ExperienceTabs.module.scss";
 
 const ExperienceTabs = () => {
-  return (
-    <div>ExperienceTabs</div>
-  )
-}
+  const experienceInputs = useFormsStore((s) => s.experienceInputs);
+  const mainTabTitle = getInputValueOrFallback(experienceInputs[0]);
 
-export default ExperienceTabs
+  return (
+    <div className={s.experienceTabs}>
+      <button type="button">{mainTabTitle}</button>
+    </div>
+  );
+};
+
+export default ExperienceTabs;
