@@ -88,7 +88,7 @@ export const experienceInputs = [
       max: getCurrentYearAndMonth(),
       value: "",
       required: true,
-      hasValidValue: true,
+      hasValidValue: false,
       id: 4,
     },
   ],

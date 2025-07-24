@@ -22,11 +22,12 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
     const { name, value, checked, type, validity } = target;
     const inputRegex = inputsData[index]?.pattern;
     const regexTest = inputRegex ? RegExp(inputRegex)?.test(value) : true;
+    const isRequiredAndEmpty = value === "" && inputsData[index]?.required;
 
     updateInputValue({
       name,
       value: type === "checkbox" ? checked : value,
-      hasValidValue: validity.valid && regexTest,
+      hasValidValue: validity.valid && regexTest && !isRequiredAndEmpty,
       inputGroupKey,
     });
   }

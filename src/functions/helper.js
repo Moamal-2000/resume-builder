@@ -20,7 +20,7 @@ export function getResumeProgress(formsStore, decimalPlaces = 0) {
 
 export function hasFormFilled({ formGroupKey, formsStore }) {
   const formInputs = Object?.values(
-    formsStore?.[formGroupKey] || formsStore.personalInfoInputs
+    formsStore?.[formGroupKey]?.flat() || formsStore.personalInfoInputs
   ).flat();
 
   return formInputs.every((input) => input.hasValidValue || !input.required);
