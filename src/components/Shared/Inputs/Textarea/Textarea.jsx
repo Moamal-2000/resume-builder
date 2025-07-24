@@ -1,6 +1,14 @@
 import s from "./Textarea.module.scss";
 
-const Textarea = ({ label, name, value, onChange, required, placeholder }) => {
+const Textarea = ({
+  label,
+  name,
+  value,
+  onChange,
+  required,
+  disabled,
+  placeholder,
+}) => {
   return (
     <div className={s.textarea}>
       {label && (
@@ -16,6 +24,7 @@ const Textarea = ({ label, name, value, onChange, required, placeholder }) => {
         value={value}
         onChange={onChange}
         required={required}
+        disabled={disabled}
       ></textarea>
     </div>
   );

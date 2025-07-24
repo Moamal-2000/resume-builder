@@ -12,6 +12,7 @@ const Input = (
     value,
     onChange,
     required,
+    disabled = false,
     fillWidth = false,
     min,
     max,
@@ -26,6 +27,7 @@ const Input = (
         value={value}
         onChange={onChange}
         required={required}
+        disabled={disabled}
       />
     );
 
@@ -37,6 +39,7 @@ const Input = (
         value={value}
         onChange={onChange}
         required={required}
+        disabled={disabled}
         placeholder={placeholder}
         min={min}
         max={max}
@@ -58,6 +61,7 @@ const Input = (
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        disabled={disabled}
         required={required}
         style={{ minWidth: fillWidth ? "100%" : "352px" }}
         min={min}

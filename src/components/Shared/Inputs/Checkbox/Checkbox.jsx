@@ -1,7 +1,7 @@
 import SvgIcon from "../../SvgIcon";
 import s from "./Checkbox.module.scss";
 
-const Checkbox = ({ label, name, value, onChange, required }) => {
+const Checkbox = ({ label, name, value, onChange, required, disabled }) => {
   return (
     <div className={`${s.checkboxWrapper}`}>
       <div className={s.checkbox}>
@@ -13,6 +13,7 @@ const Checkbox = ({ label, name, value, onChange, required }) => {
           value={value}
           onChange={onChange}
           required={required}
+          disabled={disabled}
         />
         <div className={s.icon}>
           <SvgIcon name="correctMark" />
