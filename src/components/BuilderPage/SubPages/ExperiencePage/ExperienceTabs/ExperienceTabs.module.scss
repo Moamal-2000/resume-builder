@@ -1,15 +1,18 @@
 .experienceTabs {
+  max-width: 352px;
   display: flex;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .experienceTabs>button {
   border: solid 2px #dadfec;
-  padding: 10px 20px;
+  padding: 10px 12px;
   background-color: transparent;
   color: #0a1125;
-  font-size: 1rem;
+  font-size: .9rem;
   border-radius: 6px;
+  text-wrap: nowrap;
 
   &.active {
     background-color: #f35558;
