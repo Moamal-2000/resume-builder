@@ -5,7 +5,7 @@ import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ExperienceTabs.module.scss";
 
 const ExperienceTabs = () => {
-  const experienceInputs = useFormsStore((s) => s.experienceInputs);
+  const experienceInputs = useFormsStore((s) => s.experienceInputs[0]);
   const mainTabTitle = getInputValueOrFallback(experienceInputs[0]);
 
   return (

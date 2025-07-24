@@ -12,6 +12,7 @@ const BuilderForm = ({
   nextPageRoute,
   submitButtonText = "Submit",
   hasAdditionalElements = false,
+  hasTabs,
 }) => {
   const checkFormValidity = useFormsStore((s) => s.checkFormValidity);
   const router = useRouter();
@@ -30,7 +31,7 @@ const BuilderForm = ({
   return (
     <form className={`${s.form} ${hasElementsClass}`} onSubmit={handleSubmit}>
       <div className={s.inputs}>
-        <BuilderInputs inputGroupKey={inputGroupKey} />
+        <BuilderInputs inputGroupKey={inputGroupKey} hasTabs={hasTabs} />
       </div>
 
       {hasAdditionalElements && (

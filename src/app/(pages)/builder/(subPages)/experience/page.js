@@ -10,6 +10,7 @@ const Experiencepage = () => {
         inputGroupKey="experienceInputs"
         nextPageRoute="/builder/techSkills"
         submitButtonText="Next"
+        hasTabs
       />
     </div>
   );

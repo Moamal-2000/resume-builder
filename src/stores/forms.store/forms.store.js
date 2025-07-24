@@ -13,11 +13,12 @@ import {
 
 const formsStore = (set, get) => ({
   personalInfoInputs,
-  experienceInputs,
+  experienceInputs: [experienceInputs],
   techSkillsInputs,
   educationInputs,
   contactInfoInputs,
   certificationInputs,
+  experienceTabIndex: 0,
 
   updateInputValue: ({ name, value, hasValidValue, inputGroupKey }) => {
     const inputs = get()[inputGroupKey];
@@ -72,4 +73,5 @@ const formsStore = (set, get) => ({
   },
 });
 
-export const useFormsStore = create(persist(formsStore, { name: "forms" }));
+// export const useFormsStore = create(persist(formsStore, { name: "forms" }));
+export const useFormsStore = create(formsStore);

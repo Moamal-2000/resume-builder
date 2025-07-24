@@ -6,9 +6,15 @@ import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRef } from "react";
 import s from "./BuilderInputs.module.scss";
 
-const BuilderInputs = ({ inputGroupKey }) => {
+const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
   const { updateInputValue } = useFormsStore((s) => s);
-  const inputsData = useFormsStore((s) => s[inputGroupKey]);
+  const activeTabIndex = useFormsStore(
+    (s) => s[inputGroupKey.replace("Inputs", "TabIndex")]
+  );
+  const inputsData = useFormsStore((s) =>
+    hasTabs ? s[inputGroupKey][activeTabIndex] : s[inputGroupKey]
+  );
+
   const firstInputRef = useRef();
   useFocusOnMount(firstInputRef);
 
