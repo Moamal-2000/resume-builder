@@ -1,3 +1,5 @@
+import { getCurrentYearAndMonth } from "@/functions/helper";
+
 export const personalInfoInputs = [
   {
     label: "Full Name",
@@ -83,6 +85,7 @@ export const experienceInputs = [
       label: "End Date",
       name: "endDate",
       type: "month",
+      max: getCurrentYearAndMonth(),
       value: "",
       required: true,
       hasValidValue: true,

@@ -47,3 +47,10 @@ export function getFormattedDate(dateStr) {
   const [year, month] = dateStr.split("-");
   return `${getMonthName(month)} ${year}`;
 }
+
+export function getCurrentYearAndMonth() {
+  const now = new Date(new Date().getTime());
+  const currentYear = now.getFullYear();
+  const currentMonth = `${now.getMonth() + 1}`.padStart(2, "0");
+  return `${currentYear}-${currentMonth}`;
+}
