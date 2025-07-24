@@ -17,7 +17,7 @@ export const BUILDER_SIDEBAR_PAGES = [
     title: "Technical Skills",
     link: "/builder/techSkills",
     iconName: "stats",
-    unlockAfter: "experienceInputs",
+    unlockAfter: "experiencesInputs",
     id: 3,
   },
   {
@@ -45,7 +45,7 @@ export const BUILDER_SIDEBAR_PAGES = [
 
 export const builderInputKeysToPath = {
   personalInfoInputs: "/builder",
-  experienceInputs: "/builder/experience",
+  experiencesInputs: "/builder/experience",
   techSkillsInputs: "/builder/techSkills",
   educationInputs: "/builder/education",
   contactInfoInputs: "/builder/contactInfo",

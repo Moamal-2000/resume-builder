@@ -7,7 +7,7 @@ import { useRef } from "react";
 import s from "./BuilderInputs.module.scss";
 
 const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
-  const { updateInputValue } = useFormsStore((s) => s);
+  const updateInputValue = useFormsStore((s) => s.updateInputValue);
   const activeTabIndex = useFormsStore(
     (s) => s[inputGroupKey.replace("Inputs", "TabIndex")]
   );

@@ -7,7 +7,7 @@ const Experiencepage = () => {
     <div className={s.experiencePage}>
       <ExperienceTabs />
       <BuilderForm
-        inputGroupKey="experienceInputs"
+        inputGroupKey="experiencesInputs"
         nextPageRoute="/builder/techSkills"
         submitButtonText="Next"
         hasTabs

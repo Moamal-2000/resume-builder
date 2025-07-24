@@ -1,6 +1,5 @@
 import { CERTIFICATION_MAX_COUNT } from "@/data/constents";
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 import { getUpdatedInputs, updateEndDateRequiredByStatus } from "./methods";
 import {
   certificationInputs,
@@ -13,12 +12,12 @@ import {
 
 const formsStore = (set, get) => ({
   personalInfoInputs,
-  experienceInputs: [experienceInputs],
+  experiencesInputs: [experienceInputs],
   techSkillsInputs,
   educationInputs,
   contactInfoInputs,
   certificationInputs,
-  experienceTabIndex: 0,
+  experiencesTabIndex: 0,
 
   updateInputValue: ({ name, value, hasValidValue, inputGroupKey }) => {
     const inputs = get()[inputGroupKey];
@@ -70,6 +69,15 @@ const formsStore = (set, get) => ({
     set({ certificationInputs });
 
     return certificationInputs;
+  },
+
+  addExperience: () => {
+    const { experiencesInputs } = get();
+
+    experiencesInputs.push(experienceInputs);
+    set({ experiencesInputs });
+
+    return experiencesInputs;
   },
 });
 
