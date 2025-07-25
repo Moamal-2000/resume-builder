@@ -1,8 +1,8 @@
 "use client";
 
-import AddCertificationField from "@/components/BuilderPage/SubPages/CertificationPage/AddCertificationField/AddCertificationField";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRouter } from "next/navigation";
+import AddFieldButton from "../../Buttons/AddFieldButton/AddFieldButton";
 import Button from "../../Buttons/Button/Button";
 import BuilderInputs from "../../Inputs/BuilderInputs/BuilderInputs";
 import s from "./BuilderForm.module.scss";
@@ -14,7 +14,7 @@ const BuilderForm = ({
   hasAdditionalElements = false,
   hasTabs,
 }) => {
-  const checkFormValidity = useFormsStore((s) => s.checkFormValidity);
+  const { checkFormValidity, addCertificationField } = useFormsStore((s) => s);
   const router = useRouter();
 
   const hasElementsClass = hasAdditionalElements ? s.hasElements : "";
@@ -36,7 +36,10 @@ const BuilderForm = ({
 
       {hasAdditionalElements && (
         <div className={s.additionalElements}>
-          <AddCertificationField />
+          <AddFieldButton
+            label="Add Certification / License"
+            onClick={addCertificationField}
+          />
         </div>
       )}
 
