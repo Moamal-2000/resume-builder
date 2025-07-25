@@ -1,7 +1,4 @@
-import {
-  CERTIFICATION_MAX_COUNT,
-  EXPERIENCE_MAX_COUNT,
-} from "@/data/constents";
+import { EXPERIENCE_MAX_COUNT } from "@/data/constents";
 import { create } from "zustand";
 import {
   getCurrentlyWorkingStatus,
@@ -67,33 +64,24 @@ const formsStore = (set, get) => ({
     return inputs.every((input) => input.hasValidValue || !input.required);
   },
 
-  addCertificationField: () => {
-    const { certificationInputs } = get();
-    const numericalId = certificationInputs.length + 1;
+  addField: ({ inputGroupKey, limitation, fieldData }) => {
+    const inputs = get()?.[inputGroupKey];
+    const numericalId = inputs.length + 1;
 
-    if (numericalId > CERTIFICATION_MAX_COUNT) {
-      alert(
-        `You cannot add more than ${CERTIFICATION_MAX_COUNT} certifications.`
-      );
-      return certificationInputs;
+    if (numericalId > limitation) {
+      alert(`You cannot add more than ${limitation} certifications.`);
+      return inputs;
     }
 
-    const newCertificationField = {
-      label: `Certification ${numericalId}`,
-      name: `certification${numericalId}`,
-      type: "text",
-      pattern: "^[a-zA-Z0-9\\/&.\\-#' ]{2,100}$",
-      value: "",
-      placeholder: "Certificate of Engineering",
-      required: false,
-      hasValidValue: true,
-      id: numericalId,
-    };
+    const copyFieldData = { ...fieldData };
+    copyFieldData.id = numericalId;
+    copyFieldData.label = `${fieldData.label} ${numericalId}`;
+    copyFieldData.name = `${fieldData.name}${numericalId}`;
 
-    certificationInputs.push(newCertificationField);
-    set({ certificationInputs });
+    inputs.push(copyFieldData);
+    set({ [inputGroupKey]: inputs });
 
-    return certificationInputs;
+    return inputs;
   },
 
   addExperience: () => {
