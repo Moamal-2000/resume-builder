@@ -89,6 +89,7 @@ export const experienceInputs = [
       value: "",
       required: true,
       hasValidValue: false,
+      disabled: false,
       id: 4,
     },
   ],

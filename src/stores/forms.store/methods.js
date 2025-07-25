@@ -3,6 +3,7 @@ export function getUpdatedInputs({
   name,
   value,
   required,
+  disabled,
   hasValidValue,
 }) {
   return inputs.map((input) => {
@@ -15,16 +16,31 @@ export function getUpdatedInputs({
           name,
           value,
           required,
+          disabled,
           hasValidValue,
         })
       );
     }
 
-    return updateValue({ input, name, value, required, hasValidValue });
+    return updateValue({
+      input,
+      name,
+      value,
+      required,
+      disabled,
+      hasValidValue,
+    });
   });
 }
 
-export function updateValue({ input, name, value, required, hasValidValue }) {
+export function updateValue({
+  input,
+  name,
+  value,
+  required,
+  disabled = false,
+  hasValidValue,
+}) {
   if (input.name !== name) return input;
 
   return {
@@ -32,19 +48,27 @@ export function updateValue({ input, name, value, required, hasValidValue }) {
     value: value !== undefined ? value : input.value,
     required: required !== undefined ? required : input.required,
     hasValidValue,
+    disabled,
   };
 }
 
-export function updateEndDateRequiredByStatus(updatedInputs) {
-  const currentlyWorkingInput = updatedInputs.find(
-    ({ name }) => name === "currentlyWorking"
-  );
+export function getCurrentlyWorkingStatus(inputs) {
+  return inputs.find(({ name }) => name === "currentlyWorking")?.value;
+}
 
-  const currentlyWorkingChecked = currentlyWorkingInput?.value;
-
+export function setEndDateRequired(inputs, isRequired) {
   return getUpdatedInputs({
-    inputs: updatedInputs,
+    inputs,
     name: "endDate",
-    required: !currentlyWorkingChecked,
+    required: isRequired,
+  });
+}
+
+export function setEndDateDisabled(inputs, isDisabled) {
+  return getUpdatedInputs({
+    inputs,
+    name: "endDate",
+    hasValidValue: !isDisabled,
+    disabled: isDisabled,
   });
 }

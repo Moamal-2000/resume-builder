@@ -3,7 +3,12 @@ import {
   EXPERIENCE_MAX_COUNT,
 } from "@/data/constents";
 import { create } from "zustand";
-import { getUpdatedInputs, updateEndDateRequiredByStatus } from "./methods";
+import {
+  getCurrentlyWorkingStatus,
+  getUpdatedInputs,
+  setEndDateDisabled,
+  setEndDateRequired,
+} from "./methods";
 import {
   certificationInputs,
   contactInfoInputs,
@@ -38,7 +43,10 @@ const formsStore = (set, get) => ({
     });
 
     if (name === "currentlyWorking") {
-      updatedInputs = updateEndDateRequiredByStatus(updatedInputs);
+      const isCurrentlyWorking = getCurrentlyWorkingStatus(updatedInputs);
+
+      updatedInputs = setEndDateRequired(updatedInputs, !isCurrentlyWorking);
+      updatedInputs = setEndDateDisabled(updatedInputs, isCurrentlyWorking);
     }
 
     if (isExperiencesInputs) {
