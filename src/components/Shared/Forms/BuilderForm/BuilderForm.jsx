@@ -1,7 +1,5 @@
 "use client";
 
-import { CERTIFICATION_MAX_COUNT } from "@/data/constents";
-import { newCertificationField } from "@/data/fields";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRouter } from "next/navigation";
 import AddFieldButton from "../../Buttons/AddFieldButton/AddFieldButton";
@@ -15,6 +13,7 @@ const BuilderForm = ({
   submitButtonText = "Submit",
   hasAdditionalElements = false,
   hasTabs,
+  addFieldInfo,
 }) => {
   const { checkFormValidity, addField } = useFormsStore((s) => s);
   const router = useRouter();
@@ -39,14 +38,13 @@ const BuilderForm = ({
       {hasAdditionalElements && (
         <div className={s.additionalElements}>
           <AddFieldButton
-            label="Add Certification / License"
-            onClick={() =>
-              addField({
-                inputGroupKey,
-                limitation: CERTIFICATION_MAX_COUNT,
-                fieldData: newCertificationField,
-              })
-            }
+            label={addFieldInfo?.label}
+            onClick={() => {
+              if (!addFieldInfo) return;
+              const { limitation, fieldData } = addFieldInfo;
+
+              addField({ inputGroupKey, limitation, fieldData });
+            }}
           />
         </div>
       )}
