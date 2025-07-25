@@ -26,14 +26,23 @@ export function hasFormFilled({ formGroupKey, formsStore }) {
   return formInputs.every((input) => input.hasValidValue || !input.required);
 }
 
-export function getJobExperienceProps(experienceData) {
-  return {
-    title: getInputValueOrFallback(experienceData[0]),
-    company: getInputValueOrFallback(experienceData[1]),
-    startDate: getFormattedDate(experienceData[2][0].value) || "February 2021",
-    endDate: getFormattedDate(experienceData[2][1].value) || "Present",
-    description: experienceData[3].value || DESCRIPTION_PLACEHOLDER,
-  };
+export function getJobExperienceProps([
+  titleInput,
+  companyInput,
+  [startDateInput, endDateInput],
+  descriptionInput,
+]) {
+  const title = getInputValueOrFallback(titleInput);
+  const company = getInputValueOrFallback(companyInput);
+
+  const startDate = getFormattedDate(startDateInput.value) || "February 2021";
+
+  const formattedEndDate = getFormattedDate(endDateInput.value) || "Present";
+  const endDate = endDateInput.disabled ? "Present" : formattedEndDate;
+
+  const description = descriptionInput.value || DESCRIPTION_PLACEHOLDER;
+
+  return { title, company, startDate, endDate, description };
 }
 
 export function getMonthName(monthNumber) {
