@@ -9,3 +9,15 @@ export const newCertificationField = {
   hasValidValue: true,
   id: null,
 };
+
+export const newSkillField = {
+  label: "Skill",
+  name: "skill",
+  type: "text",
+  value: "",
+  pattern: "^[a-zA-Z0-9.+\\-]{2,30}$",
+  placeholder: "JavaScript",
+  required: true,
+  hasValidValue: false,
+  id: null,
+};
