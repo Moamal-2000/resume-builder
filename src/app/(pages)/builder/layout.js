@@ -6,7 +6,7 @@ import useProtectBuilderStep from "@/hooks/app/useProtectBuilderStep";
 import s from "./Layout.module.scss";
 
 const BuilderLayout = ({ children }) => {
-  // useProtectBuilderStep();
+  useProtectBuilderStep();
 
   return (
     <div className={s.builderLayout}>

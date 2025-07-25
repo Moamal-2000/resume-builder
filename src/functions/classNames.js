@@ -11,5 +11,5 @@ export function getFormLinkClasses({
   let disableClass = !isFormFilled ? cssModule.disabled : "";
   if (unlockAfter === "none") disableClass = "";
 
-  return `${activeClass} ${hideTitleClass}`;
+  return `${activeClass} ${disableClass} ${hideTitleClass}`;
 }
