@@ -77,6 +77,7 @@ export const experienceInputs = [
       type: "month",
       value: "",
       min: "1990-01",
+      max: getCurrentYearAndMonth(),
       required: true,
       hasValidValue: false,
       id: 3,
