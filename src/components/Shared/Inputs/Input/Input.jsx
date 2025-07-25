@@ -67,6 +67,7 @@ const Input = (
         min={min}
         max={max}
         ref={ref}
+        title={disabled ? "Disabled input" : ""}
       />
     </div>
   );
