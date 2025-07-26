@@ -1,5 +1,9 @@
+export const metadata = {
+  title: "Resume Builder | Preview",
+};
+
 const PreviewPage = () => {
-  return <main>PreviewPage</main>;
+  return <main>Preview Page not yet implemented</main>;
 };
 
 export default PreviewPage;
