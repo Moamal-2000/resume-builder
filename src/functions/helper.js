@@ -6,11 +6,12 @@ export function getInputValueOrFallback(input) {
   return input.value === "" ? input.placeholder : input.value;
 }
 
-export function getResumeProgress(formsStore, decimalPlaces = 0) {
-  const allFormsInputs = Object.values(formsStore).slice(0, -1).flat();
+export function getResumeProgress(formStore, decimalPlaces = 0) {
+  const allFormsInputs = formStore.getAllInputs();
+
   const totalInputs = allFormsInputs.length;
   const validInputs = allFormsInputs.filter(
-    (input) => input.hasValidValue
+    (input) => input.hasValidValue || !input.required || input.value !== ""
   ).length;
 
   const percentageValue = (validInputs / totalInputs) * 100;

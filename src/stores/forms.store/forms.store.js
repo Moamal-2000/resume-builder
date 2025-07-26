@@ -24,6 +24,19 @@ const formsStore = (set, get) => ({
   certificationInputs,
   experiencesTabIndex: 0,
 
+  getAllInputs: () => {
+    const state = get();
+
+    return [
+      state.personalInfoInputs,
+      state.experiencesInputs,
+      state.techSkillsInputs,
+      state.contactInfoInputs,
+      state.certificationInputs,
+      state.educationInputs,
+    ].flat(Infinity);
+  },
+
   updateInputValue: ({ name, value, hasValidValue, inputGroupKey }) => {
     const { experiencesTabIndex, experiencesInputs } = get();
     const isExperiencesInputs = inputGroupKey === "experiencesInputs";
