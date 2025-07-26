@@ -150,6 +150,17 @@ export const techSkillsInputs = [
     hasValidValue: false,
     id: 3,
   },
+  {
+    label: "Skill 4",
+    name: "skill4",
+    type: "text",
+    value: "",
+    pattern: "^[a-zA-Z0-9.+\\-]{2,30}$",
+    placeholder: "MongoDB",
+    required: true,
+    hasValidValue: false,
+    id: 4,
+  },
 ];
 
 export const educationInputs = [
