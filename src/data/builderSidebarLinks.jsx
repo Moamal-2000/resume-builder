@@ -31,7 +31,7 @@ export const BUILDER_SIDEBAR_PAGES = [
     title: "Contact Information",
     link: "/builder/contactInfo",
     iconName: "userInfo",
-    unlockAfter: "educationInputs",
+    unlockAfter: "techSkillsInputs",
     id: 5,
   },
   {
