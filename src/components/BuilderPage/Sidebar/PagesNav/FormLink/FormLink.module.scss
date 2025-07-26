@@ -29,7 +29,7 @@
   }
 
   &.disabled {
-    pointer-events: none;
+    cursor: default;
     color: #B1B2B9;
   }
 }

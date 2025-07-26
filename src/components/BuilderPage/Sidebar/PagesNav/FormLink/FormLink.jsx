@@ -8,15 +8,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import s from "./FormLink.module.scss";
 
-const FormLink = ({ linkData, shouldHideTitle }) => {
-  const { title, link, iconName, unlockAfter } = linkData;
+const FormLink = ({
+  linkData: { title, link, iconName, unlockAfter },
+  shouldHideTitle,
+}) => {
   const formsStore = useFormsStore((s) => s);
   const pathname = usePathname();
 
-  const isFormFilled = hasFormFilled({
-    formGroupKey: unlockAfter,
-    formsStore,
-  });
+  const isFormFilled = hasFormFilled({ formGroupKey: unlockAfter, formsStore });
 
   const formLinkClasses = getFormLinkClasses({
     cssModule: s,
@@ -28,7 +27,12 @@ const FormLink = ({ linkData, shouldHideTitle }) => {
 
   return (
     <li className={s.listItem}>
-      <Link href={link} className={formLinkClasses}>
+      <Link
+        className={formLinkClasses}
+        href={isFormFilled ? link : ""}
+        title={shouldHideTitle ? title : ""}
+        aria-disabled={!isFormFilled}
+      >
         <SvgIcon name={iconName} />
         <span className={s.title}>{title}</span>
       </Link>
