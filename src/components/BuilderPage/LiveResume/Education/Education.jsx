@@ -25,12 +25,13 @@ const Education = () => {
           <strong>{degree}</strong>
         </p>
         <p className={s.fieldOfStudy}>{fieldOfStudy}</p>
+
         <p className={s.university}>
           <strong>{universityName}</strong>, {universityLocation}
         </p>
-        <div className={s.graduateDate}>
+        <p className={s.graduateDate}>
           <SvgIcon name="schedule" /> Graduated: {graduateMonth} {graduateYear}
-        </div>
+        </p>
       </div>
     </section>
   );
