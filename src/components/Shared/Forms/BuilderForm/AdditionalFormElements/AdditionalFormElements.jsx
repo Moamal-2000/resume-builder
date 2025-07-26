@@ -1,9 +1,27 @@
-import s from './AdditionalFormElements.module.scss'
+import AddFieldButton from "@/components/Shared/Buttons/AddFieldButton/AddFieldButton";
+import s from "./AdditionalFormElements.module.scss";
 
-const AdditionalFormElements = () => {
+const AdditionalFormElements = ({
+  hasAdditionalElements,
+  addFieldInfo,
+  addField,
+  inputGroupKey,
+}) => {
+  if (!hasAdditionalElements) return null;
+
   return (
-    <div>AdditionalFormElements</div>
-  )
-}
+    <div className={s.additionalElements}>
+      <AddFieldButton
+        label={addFieldInfo?.label}
+        onClick={() => {
+          if (!addFieldInfo) return;
+          const { limitation, fieldData } = addFieldInfo;
 
-export default AdditionalFormElements
+          addField({ inputGroupKey, limitation, fieldData });
+        }}
+      />
+    </div>
+  );
+};
+
+export default AdditionalFormElements;

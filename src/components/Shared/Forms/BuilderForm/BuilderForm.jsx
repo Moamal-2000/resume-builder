@@ -2,9 +2,9 @@
 
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRouter } from "next/navigation";
-import AddFieldButton from "../../Buttons/AddFieldButton/AddFieldButton";
 import Button from "../../Buttons/Button/Button";
 import BuilderInputs from "../../Inputs/BuilderInputs/BuilderInputs";
+import AdditionalFormElements from "./AdditionalFormElements/AdditionalFormElements";
 import s from "./BuilderForm.module.scss";
 
 const BuilderForm = ({
@@ -35,21 +35,12 @@ const BuilderForm = ({
         <BuilderInputs inputGroupKey={inputGroupKey} hasTabs={hasTabs} />
       </div>
 
-      <AdditionalFormElements />
-
-      {hasAdditionalElements && (
-        <div className={s.additionalElements}>
-          <AddFieldButton
-            label={addFieldInfo?.label}
-            onClick={() => {
-              if (!addFieldInfo) return;
-              const { limitation, fieldData } = addFieldInfo;
-
-              addField({ inputGroupKey, limitation, fieldData });
-            }}
-          />
-        </div>
-      )}
+      <AdditionalFormElements
+        hasAdditionalElements={hasAdditionalElements}
+        addFieldInfo={addFieldInfo}
+        addField={addField}
+        inputGroupKey={inputGroupKey}
+      />
 
       <Button fillWidth={true} type="submit">
         {submitButtonText}
