@@ -18,7 +18,7 @@ const Header = () => {
           src="/assets/images/logo.png"
           alt="CB ceVBuilder logo"
           width={150}
-          height={50}
+          height={47}
           priority
         />
       </Link>

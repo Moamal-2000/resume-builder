@@ -6,6 +6,7 @@
   justify-content: space-between;
   padding: 20px 50px;
   border-bottom: solid 2px #E4E7EB;
+  min-height: 95px;
 
   &.homePage {
     box-shadow: 0 4px 8px rgba(0, 0, 0, .07);
@@ -18,7 +19,7 @@
   }
 
   .header .logo>img {
-    width: 120px;
+    width: 144px;
     height: 44px;
   }
 }
