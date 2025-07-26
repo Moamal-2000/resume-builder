@@ -8,12 +8,14 @@ import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { usePathname, useRouter } from "next/navigation";
 import { useLayoutEffect } from "react";
 
-const useProtectBuilderStep = () => {
+const useProtectBuilderStep = (stopProtection) => {
   const pathname = usePathname();
   const checkFormValidity = useFormsStore((s) => s.checkFormValidity);
   const router = useRouter();
 
   useLayoutEffect(() => {
+    if (stopProtection) return;
+
     const unlockAfterKey = BUILDER_SIDEBAR_PAGES.find(
       (page) => page.link === pathname
     ).unlockAfter;

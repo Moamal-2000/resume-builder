@@ -1,6 +1,7 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
+import { STOP_BUILDER_PROTECTION } from "@/data/constants";
 import { getFormLinkClasses } from "@/functions/classNames";
 import { hasFormFilled } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
@@ -29,7 +30,7 @@ const FormLink = ({
     <li className={s.listItem}>
       <Link
         className={formLinkClasses}
-        href={isFormFilled ? link : ""}
+        href={isFormFilled || STOP_BUILDER_PROTECTION ? link : ""}
         title={shouldHideTitle ? title : ""}
         aria-disabled={!isFormFilled}
       >

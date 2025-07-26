@@ -1,3 +1,5 @@
+import { STOP_BUILDER_PROTECTION } from "@/data/constants";
+
 export function getFormLinkClasses({
   cssModule,
   isActive,
@@ -8,7 +10,9 @@ export function getFormLinkClasses({
   const activeClass = isActive ? cssModule.active : "";
   const hideTitleClass = shouldHideTitle ? cssModule.hideTitle : "";
 
-  let disableClass = !isFormFilled ? cssModule.disabled : "";
+  let disableClass =
+    !isFormFilled && !STOP_BUILDER_PROTECTION ? cssModule.disabled : "";
+
   if (unlockAfter === "none") disableClass = "";
 
   return `${activeClass} ${disableClass} ${hideTitleClass}`;

@@ -16,3 +16,6 @@ export const MONTH_NAMES = [
   "November",
   "December",
 ];
+
+// Debugging
+export const STOP_BUILDER_PROTECTION = true;
