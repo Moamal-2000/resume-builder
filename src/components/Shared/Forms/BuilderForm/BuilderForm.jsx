@@ -35,6 +35,8 @@ const BuilderForm = ({
         <BuilderInputs inputGroupKey={inputGroupKey} hasTabs={hasTabs} />
       </div>
 
+      <AdditionalFormElements />
+
       {hasAdditionalElements && (
         <div className={s.additionalElements}>
           <AddFieldButton
