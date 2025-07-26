@@ -199,7 +199,7 @@ export const educationInputs = [
   },
   [
     {
-      label: "Graduastion Month",
+      label: "Graduation Month",
       name: "graduationMonth",
       type: "number",
       value: "",
