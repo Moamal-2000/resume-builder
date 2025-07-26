@@ -64,3 +64,7 @@ export function getCurrentYearAndMonth() {
   const currentMonth = `${now.getMonth() + 1}`.padStart(2, "0");
   return `${currentYear}-${currentMonth}`;
 }
+
+export function getEducationValues(inputs) {
+  return inputs.flat().map((input) => getInputValueOrFallback(input));
+}
