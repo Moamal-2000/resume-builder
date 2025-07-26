@@ -1,5 +1,5 @@
 import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
-import { CERTIFICATION_MAX_COUNT } from "@/data/constents";
+import { CERTIFICATION_MAX_COUNT } from "@/data/constants";
 import { newCertificationField } from "@/data/fields";
 
 export const metadata = {

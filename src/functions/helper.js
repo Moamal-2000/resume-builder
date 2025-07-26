@@ -1,4 +1,4 @@
-import { DESCRIPTION_PLACEHOLDER, MONTH_NAMES } from "@/data/constents";
+import { DESCRIPTION_PLACEHOLDER, MONTH_NAMES } from "@/data/constants";
 
 export function getInputValueOrFallback(input) {
   if (!input) throw Error("'Input' parameter is undefined");

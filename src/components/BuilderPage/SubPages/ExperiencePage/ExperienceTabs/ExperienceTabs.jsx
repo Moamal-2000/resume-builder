@@ -1,7 +1,7 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
-import { EXPERIENCE_MAX_COUNT } from "@/data/constents";
+import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
 import { getInputValueOrFallback } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ExperienceTabs.module.scss";

@@ -1,5 +1,5 @@
 import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
-import { SKILLS_MAX_COUNT } from "@/data/constents";
+import { SKILLS_MAX_COUNT } from "@/data/constants";
 import { newSkillField } from "@/data/fields";
 
 export const metadata = {

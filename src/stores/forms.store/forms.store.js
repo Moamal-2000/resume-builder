@@ -1,4 +1,4 @@
-import { EXPERIENCE_MAX_COUNT } from "@/data/constents";
+import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
 import { create } from "zustand";
 import {
   getCurrentlyWorkingStatus,
