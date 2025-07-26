@@ -2,6 +2,10 @@ import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
 import { CERTIFICATION_MAX_COUNT } from "@/data/constents";
 import { newCertificationField } from "@/data/fields";
 
+export const metadata = {
+  title: "Builder | Certification",
+};
+
 const CertificationPage = () => {
   return (
     <BuilderForm

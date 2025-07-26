@@ -1,5 +1,9 @@
 import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
 
+export const metadata = {
+  title: "Builder | Contact Information",
+};
+
 const ContactInfoPage = () => {
   return (
     <BuilderForm
