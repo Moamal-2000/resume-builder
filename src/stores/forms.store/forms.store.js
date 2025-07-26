@@ -78,7 +78,7 @@ const formsStore = (set, get) => ({
   },
 
   addField: ({ inputGroupKey, limitation, fieldData }) => {
-    const inputs = get()?.[inputGroupKey];
+    const inputs = [...get()?.[inputGroupKey]];
     const numericalId = inputs.length + 1;
 
     if (numericalId > limitation) {
