@@ -8,6 +8,7 @@ import { useRef } from "react";
 import PagesNav from "./PagesNav/PagesNav";
 import s from "./Sidebar.module.scss";
 import SidebarIcon from "./SidebarIcon/SidebarIcon";
+import useProtectBuilderStep from "@/hooks/app/useProtectBuilderStep";
 
 const Sidebar = () => {
   const isAsideOpen = useGlobalStore((s) => s.isAsideOpen);
@@ -19,6 +20,8 @@ const Sidebar = () => {
   const closeClass = isAsideOpen ? s.open : s.close;
   const closedOnceClass = closedOnceRef.current ? s.closedOnce : "";
   const resumeProgress = getResumeProgress(formsStore);
+
+  useProtectBuilderStep();
 
   return (
     <aside
