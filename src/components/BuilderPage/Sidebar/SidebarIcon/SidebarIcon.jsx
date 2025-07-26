@@ -36,6 +36,7 @@ const SidebarIcon = ({ isAsideOpen, sidebarRef, closedOnceRef }) => {
       type="button"
       onClick={handleToggleAside}
       className={`${s.button} ${closeClass}`}
+      title={`${isAsideOpen ? "Close" : "Open"} sidebar`}
     >
       <SvgIcon name={sidebarIconName} />
     </button>
