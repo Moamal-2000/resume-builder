@@ -64,6 +64,7 @@ const Input = (
           onChange={(value) => onChange({ name, value })}
           showMonthYearPicker
           dateFormat="MMMM yyyy"
+          autoComplete="off"
           name={name}
           id={name}
           placeholderText={placeholder}
