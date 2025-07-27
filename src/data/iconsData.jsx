@@ -184,7 +184,7 @@ export const iconsData = [
     ),
   },
   {
-    name: "schedule",
+    name: "calendar",
     icon: (
       <svg
         viewBox="0 0 24 24"

@@ -1,5 +1,6 @@
-.Input-module-scss-module__toi83q__input input {
+.react-datepicker__input-container input {
   word-spacing: 4px;
+  padding-left: 40px !important;
 }
 
 .react-datepicker__tab-loop {
@@ -43,4 +44,15 @@
 .react-datepicker__month-text--disabled,
 .react-datepicker__year-text--disabled {
   user-select: none !important;
+}
+
+.react-datepicker__input-container>svg {
+  position: absolute;
+  left: 15px;
+  top: calc(50% - 2px);
+  translate: 0 -50%;
+  width: 18px;
+  height: 18px;
+  stroke: #000;
+  pointer-events: none;
 }

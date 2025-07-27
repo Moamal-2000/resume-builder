@@ -3,6 +3,7 @@
 import { forwardRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import SvgIcon from "../../SvgIcon";
 import Checkbox from "../Checkbox/Checkbox";
 import Textarea from "../Textarea/Textarea";
 import s from "./Input.module.scss";
@@ -60,6 +61,8 @@ const Input = (
 
       {type === "month" ? (
         <DatePicker
+          showIcon
+          icon={<SvgIcon name="calendar" />}
           selected={value}
           onChange={(value) => onChange({ name, value })}
           showMonthYearPicker
