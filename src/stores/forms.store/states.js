@@ -1,4 +1,4 @@
-import { getCurrentYearAndMonth, getFormattedDate } from "@/functions/helper";
+import { getCurrentYearAndMonth, prettyMonthYear } from "@/functions/helper";
 
 export const personalInfoInputs = [
   {
@@ -88,7 +88,7 @@ export const experienceInputs = [
       name: "endDate",
       type: "month",
       max: getCurrentYearAndMonth(),
-      placeholder: getFormattedDate(getCurrentYearAndMonth()),
+      placeholder: prettyMonthYear(getCurrentYearAndMonth()),
       value: "",
       required: true,
       hasValidValue: false,
@@ -217,7 +217,7 @@ export const educationInputs = [
     value: "",
     min: "1990-01",
     max: getCurrentYearAndMonth(),
-    placeholder: getFormattedDate(getCurrentYearAndMonth()),
+    placeholder: prettyMonthYear(getCurrentYearAndMonth()),
     required: false,
     hasValidValue: true,
     id: 5,

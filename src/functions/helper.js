@@ -1,4 +1,4 @@
-import { DESCRIPTION_PLACEHOLDER, MONTH_NAMES } from "@/data/constants";
+import { DESCRIPTION_PLACEHOLDER } from "@/data/constants";
 
 export function getInputValueOrFallback(input) {
   if (!input) throw Error("'Input' parameter is undefined");
@@ -48,18 +48,6 @@ export function getJobExperienceProps([
   const description = descriptionInput.value || DESCRIPTION_PLACEHOLDER;
 
   return { title, company, startDate, endDate, description };
-}
-
-export function getMonthName(monthNumber) {
-  if (monthNumber < 1 || monthNumber > 12) return "Invalid month";
-  return MONTH_NAMES[monthNumber - 1];
-}
-
-export function getFormattedDate(dateStr) {
-  if (!dateStr) return false;
-
-  const [year, month] = dateStr.split("-");
-  return `${getMonthName(month)} ${year}`;
 }
 
 export function getCurrentYearAndMonth() {
