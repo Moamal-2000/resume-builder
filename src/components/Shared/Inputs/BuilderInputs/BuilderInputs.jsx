@@ -1,6 +1,7 @@
 "use client";
 
 import Input from "@/components/Shared/Inputs/Input/Input";
+import { valueIsDate } from "@/functions/helper";
 import useFocusOnMount from "@/hooks/helper/useFocusOnMount";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRef } from "react";
@@ -19,9 +20,7 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
   useFocusOnMount(firstInputRef);
 
   function handleOnChange(event, index) {
-    const isDate = new Date(event.value).toString() !== "Invalid Date";
-
-    if (isDate) {
+    if (valueIsDate(event.value)) {
       updateInputValue({
         name: event.name,
         value: event.value,

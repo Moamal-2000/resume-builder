@@ -3,10 +3,9 @@ import { DESCRIPTION_PLACEHOLDER, MONTH_NAMES } from "@/data/constants";
 export function getInputValueOrFallback(input) {
   if (!input) throw Error("'Input' parameter is undefined");
 
-  const isDate = new Date(input.value).toString() !== "Invalid Date";
   let value = input.value;
 
-  if (isDate) {
+  if (valueIsDate(input.value)) {
     value = new Date(input.value).toLocaleDateString("en-US", {
       month: "long",
       year: "numeric",
@@ -78,3 +77,6 @@ export function getCurrentYearAndMonth() {
 export function getEducationValues(inputs) {
   return inputs.flat().map((input) => getInputValueOrFallback(input));
 }
+
+export const valueIsDate = (value) =>
+  new Date(value).toString() !== "Invalid Date";
