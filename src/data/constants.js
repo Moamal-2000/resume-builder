@@ -18,4 +18,4 @@ export const MONTH_NAMES = [
 ];
 
 // Debugging
-export const STOP_BUILDER_PROTECTION = false;
+export const STOP_BUILDER_PROTECTION = true;

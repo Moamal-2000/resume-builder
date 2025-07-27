@@ -1,4 +1,8 @@
-import { forwardRef } from "react";
+"use client";
+
+import { forwardRef, useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Checkbox from "../Checkbox/Checkbox";
 import Textarea from "../Textarea/Textarea";
 import s from "./Input.module.scss";
@@ -19,6 +23,8 @@ const Input = (
   },
   ref
 ) => {
+  const [selectedDate, setSelectedDate] = useState("");
+
   if (type === "checkbox")
     return (
       <Checkbox
@@ -54,21 +60,30 @@ const Input = (
         </label>
       )}
 
-      <input
-        type={type}
-        name={name}
-        id={name}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        disabled={disabled}
-        required={required}
-        style={{ minWidth: fillWidth ? "100%" : "352px" }}
-        min={min}
-        max={max}
-        ref={ref}
-        title={disabled ? "Disabled input" : ""}
-      />
+      {type === "month" ? (
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          showMonthYearPicker
+          dateFormat="MM/yyyy"
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          id={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+          required={required}
+          style={{ minWidth: fillWidth ? "100%" : "352px" }}
+          min={min}
+          max={max}
+          ref={ref}
+          title={disabled ? "Disabled input" : ""}
+        />
+      )}
     </div>
   );
 };
