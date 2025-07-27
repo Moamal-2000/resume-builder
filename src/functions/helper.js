@@ -3,16 +3,11 @@ import { DESCRIPTION_PLACEHOLDER, MONTH_NAMES } from "@/data/constants";
 export function getInputValueOrFallback(input) {
   if (!input) throw Error("'Input' parameter is undefined");
 
-  let value = input.value;
+  const value = input.value || "";
 
-  if (valueIsDate(input.value)) {
-    value = new Date(input.value).toLocaleDateString("en-US", {
-      month: "long",
-      year: "numeric",
-    });
-  }
+  if (value === "") return input.placeholder || "";
 
-  return value === "" ? input.placeholder : value;
+  return valueIsDate(value) ? prettyMonthYear(value) : value;
 }
 
 export function getResumeProgress(formStore, decimalPlaces = 0) {
@@ -80,3 +75,12 @@ export function getEducationValues(inputs) {
 
 export const valueIsDate = (value) =>
   new Date(value).toString() !== "Invalid Date";
+
+export function prettyMonthYear(value) {
+  if (value === "") return "";
+
+  return new Date(value).toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+}
