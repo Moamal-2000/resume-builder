@@ -1,0 +1,36 @@
+.react-datepicker__tab-loop {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.react-datepicker__month-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.react-datepicker__month-text {
+  padding: 8px;
+  border-radius: 0 !important;
+}
+
+.react-datepicker__month-text--selected {
+  background: #eb5757 !important;
+}
+
+.react-datepicker__month-text--selected:hover {
+  background: #ec4242 !important;
+}
+
+.react-datepicker__month .react-datepicker__month-text {
+  margin: 0 !important;
+}
+
+.react-datepicker__month-text--keyboard-selected {
+  background: #ff9c9c !important;
+}
+
+.react-datepicker__month-text--keyboard-selected:not([aria-disabled="true"]):hover {
+  background: #eb5757 !important;
+  color: #fff;
+}
