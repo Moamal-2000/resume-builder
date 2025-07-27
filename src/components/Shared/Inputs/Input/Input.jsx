@@ -65,7 +65,15 @@ const Input = (
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date)}
           showMonthYearPicker
-          dateFormat="MM/yyyy"
+          dateFormat="MMMM yyyy"
+          name={name}
+          id={name}
+          placeholderText={placeholder}
+          minDate={min}
+          maxDate={max}
+          required={required}
+          disabled={disabled}
+          ref={ref}
         />
       ) : (
         <input

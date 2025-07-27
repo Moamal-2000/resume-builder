@@ -1,4 +1,4 @@
-import { getCurrentYearAndMonth } from "@/functions/helper";
+import { getCurrentYearAndMonth, getFormattedDate } from "@/functions/helper";
 
 export const personalInfoInputs = [
   {
@@ -215,7 +215,7 @@ export const educationInputs = [
     value: "",
     min: "1990-01",
     max: getCurrentYearAndMonth(),
-    placeholder: "1",
+    placeholder: getFormattedDate(getCurrentYearAndMonth()),
     required: false,
     hasValidValue: true,
     id: 5,
