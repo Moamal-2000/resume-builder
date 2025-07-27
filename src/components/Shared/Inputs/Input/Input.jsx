@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Checkbox from "../Checkbox/Checkbox";
@@ -23,8 +23,6 @@ const Input = (
   },
   ref
 ) => {
-  const [selectedDate, setSelectedDate] = useState("");
-
   if (type === "checkbox")
     return (
       <Checkbox
@@ -62,8 +60,8 @@ const Input = (
 
       {type === "month" ? (
         <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
+          selected={value}
+          onChange={(event) => onChange({ name, value: event })}
           showMonthYearPicker
           dateFormat="MMMM yyyy"
           name={name}

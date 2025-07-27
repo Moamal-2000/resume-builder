@@ -18,8 +18,20 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
   const firstInputRef = useRef();
   useFocusOnMount(firstInputRef);
 
-  function handleOnChange(target, index) {
-    const { name, value, checked, type, validity } = target;
+  function handleOnChange(event, index) {
+    const isDate = new Date(event.value).toString() !== "Invalid Date";
+
+    if (isDate) {
+      updateInputValue({
+        name: event.name,
+        value: event.value,
+        hasValidValue: true,
+        inputGroupKey,
+      });
+      return;
+    }
+
+    const { name, value, checked, type, validity } = event?.target;
     const inputRegex = inputsData[index]?.pattern;
     const regexTest = inputRegex ? RegExp(inputRegex)?.test(value) : true;
     const isRequiredAndEmpty = value === "" && inputsData[index]?.required;
@@ -54,7 +66,7 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
       <Input
         key={item.id}
         {...item}
-        onChange={({ target }) => handleOnChange(target, index)}
+        onChange={(event) => handleOnChange(event, index)}
         ref={index === 0 ? firstInputRef : null}
       />
     );

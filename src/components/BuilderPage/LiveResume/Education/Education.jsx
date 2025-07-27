@@ -12,8 +12,7 @@ const Education = () => {
     universityLocation,
     degree,
     fieldOfStudy,
-    graduateMonth,
-    graduateYear,
+    graduationDate,
   ] = getEducationValues(educationInputs);
 
   return (
@@ -30,7 +29,7 @@ const Education = () => {
           <strong>{universityName}</strong>, {universityLocation}
         </p>
         <p className={s.graduateDate}>
-          <SvgIcon name="schedule" /> Graduated: {graduateMonth} {graduateYear}
+          <SvgIcon name="schedule" /> Graduated: {graduationDate}
         </p>
       </div>
     </section>
