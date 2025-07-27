@@ -40,9 +40,9 @@ export function getJobExperienceProps([
   const title = getInputValueOrFallback(titleInput);
   const company = getInputValueOrFallback(companyInput);
 
-  const startDate = getFormattedDate(startDateInput.value) || "February 2021";
+  const startDate = prettyMonthYear(startDateInput.value) || "February 2021";
 
-  const formattedEndDate = getFormattedDate(endDateInput.value) || "Present";
+  const formattedEndDate = prettyMonthYear(endDateInput.value) || "Present";
   const endDate = endDateInput.disabled ? "Present" : formattedEndDate;
 
   const description = descriptionInput.value || DESCRIPTION_PLACEHOLDER;

@@ -53,7 +53,7 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
             <Input
               key={subItem.id}
               {...subItem}
-              onChange={({ target }) => handleOnChange(target, index)}
+              onChange={(event) => handleOnChange(event, index)}
               fillWidth={true}
             />
           ))}

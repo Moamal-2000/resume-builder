@@ -61,7 +61,7 @@ const Input = (
       {type === "month" ? (
         <DatePicker
           selected={value}
-          onChange={(event) => onChange({ name, value: event })}
+          onChange={(value) => onChange({ name, value })}
           showMonthYearPicker
           dateFormat="MMMM yyyy"
           name={name}
