@@ -15,7 +15,7 @@ export function getResumeProgress(formStore, decimalPlaces = 0) {
 
   const totalInputs = allFormsInputs.length;
   const validInputs = allFormsInputs.filter(
-    (input) => input.hasValidValue || !input.required || input.value !== ""
+    (input) => input.hasValidValue || !input.required
   ).length;
 
   const percentageValue = (validInputs / totalInputs) * 100;
