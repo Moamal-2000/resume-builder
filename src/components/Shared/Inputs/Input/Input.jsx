@@ -64,7 +64,6 @@ const Input = (
           showIcon
           icon={<SvgIcon name="calendar" />}
           selected={value}
-          onChange={(value) => onChange({ name, value })}
           showMonthYearPicker
           dateFormat="MMMM yyyy"
           autoComplete="off"
@@ -76,6 +75,14 @@ const Input = (
           required={required}
           disabled={disabled}
           ref={ref}
+          onChange={(value, event) => {
+            onChange({ name, value });
+            if (value === null) event.target.click();
+          }}
+          onKeyDown={(event) => {
+            const value = event.target.value;
+            if (value === "") event.preventDefault();
+          }}
         />
       ) : (
         <input
