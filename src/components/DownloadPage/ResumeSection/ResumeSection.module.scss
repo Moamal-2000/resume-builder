@@ -9,8 +9,21 @@
   margin-bottom: 10px;
 }
 
-.resumeSection .buttons>a {}
+.resumeSection .buttons>a {
+  width: fit-content;
+  font-family: var(--poppins-font);
+  font-weight: 500;
+  font-size: 1rem;
 
-.resumeSection .buttons .previewButton {}
+  &:hover {
+    text-decoration: underline;
+  }
 
-.resumeSection .buttons .editButton {}
+  &.previewButton {
+    color: #ec6767;
+  }
+
+  &.editButton {
+    color: #0073e6;
+  }
+}
