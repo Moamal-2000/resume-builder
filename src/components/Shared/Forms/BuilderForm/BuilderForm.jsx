@@ -14,6 +14,7 @@ const BuilderForm = ({
   hasAdditionalElements = false,
   hasTabs,
   addFieldInfo,
+  canSubmit = true,
 }) => {
   const { checkFormValidity, addField } = useFormsStore((s) => s);
   const router = useRouter();
@@ -22,6 +23,7 @@ const BuilderForm = ({
 
   function handleSubmit(event) {
     event.preventDefault();
+    if (!canSubmit) return;
 
     const isValidForm = checkFormValidity(inputGroupKey);
     if (!isValidForm) return;
