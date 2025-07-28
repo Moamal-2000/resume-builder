@@ -1,6 +1,6 @@
-import LiveResume from "@/components/BuilderPage/LiveResume/LiveResume";
 import s from "@/components/DownloadPage/DownloadPage.module.scss";
 import ResumeDownloadSuccess from "@/components/DownloadPage/ResumeDownloadSuccess/ResumeDownloadSuccess";
+import ResumeSection from "@/components/DownloadPage/ResumeSection/ResumeSection";
 import SvgIcon from "@/components/Shared/SvgIcon";
 import Link from "next/link";
 
@@ -22,27 +22,7 @@ const DownloadPage = () => {
 
         <div className={s.wrapper}>
           <ResumeDownloadSuccess />
-
-          <section className={s.resumeSection}>
-            <div className={s.buttons}>
-              <Link
-                href="/preview"
-                className={s.previewButton}
-                title="Preview your resume"
-              >
-                Preview
-              </Link>
-              <Link
-                href="/builder"
-                className={s.editButton}
-                title="Edit your resume"
-              >
-                Edit
-              </Link>
-            </div>
-
-            <LiveResume />
-          </section>
+          <ResumeSection />
         </div>
       </div>
     </main>
