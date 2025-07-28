@@ -1,3 +1,29 @@
 .downloadSection {
   margin-top: 210px;
+  margin-left: 80px;
+  width: 419px;
+  font-family: var(--poppins-font);
+}
+
+.downloadSection>h1 {
+  width: fit-content;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 70px;
+  letter-spacing: .0025em;
+  color: #191a29;
+}
+
+.downloadSection>p {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 36px;
+  letter-spacing: .002em;
+  color: #4E4D4D;
+  margin-bottom: 26px;
+}
+
+.downloadSection>button>svg {
+  width: 20px;
+  height: 20px;
 }
