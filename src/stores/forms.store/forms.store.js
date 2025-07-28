@@ -38,8 +38,9 @@ const formsStore = (set, get) => ({
   },
 
   updateInputValue: ({ name, value, hasValidValue, inputGroupKey }) => {
-    const { experiencesTabIndex, experiencesInputs } = get();
+    const { experiencesTabIndex, experiencesInputs, educationInputs } = get();
     const isExperiencesInputs = inputGroupKey === "experiencesInputs";
+    const isEducationInputs = inputGroupKey === "educationInputs";
 
     const inputs = isExperiencesInputs
       ? get()[inputGroupKey][experiencesTabIndex]
@@ -64,6 +65,15 @@ const formsStore = (set, get) => ({
       copyInputs[experiencesTabIndex] = updatedInputs;
       set({ experiencesInputs: copyInputs });
       return;
+    }
+
+    if (isEducationInputs) {
+      const oneOfInputsHasValue = updatedInputs.some((input) => input.value);
+
+      updatedInputs = updatedInputs.map((input) => ({
+        ...input,
+        required: oneOfInputsHasValue,
+      }));
     }
 
     set(() => ({ [inputGroupKey]: updatedInputs }));
