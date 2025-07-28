@@ -1,7 +1,19 @@
-.downloadPage {}
+.downloadPage {
+  padding-bottom: 100px;
+}
 
 .downloadPage .backButton {}
 
-.downloadPage .backButton>svg {}
+.downloadPage .backButton>svg {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 40px;
+  top: 120px;
+}
 
-.downloadPage>.wrapper {}
+.downloadPage .wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}

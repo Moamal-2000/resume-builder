@@ -1,7 +1,7 @@
 import s from "./ResumeDownloadSuccess.module.scss";
 
 const ResumeDownloadSuccess = () => {
-  return <section className={s.resumeDownloadSuccess}></section>;
+  return <section className={s.downloadSection}></section>;
 };
 
 export default ResumeDownloadSuccess;
