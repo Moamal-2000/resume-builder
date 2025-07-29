@@ -72,3 +72,15 @@ export function prettyMonthYear(value) {
     year: "numeric",
   });
 }
+
+export function getCertifications(inputs) {
+  const certifications = [];
+
+  for (let i = 0; i < inputs.length; i += 2) {
+    const name = inputs[i]?.value || "";
+    const url = inputs[i + 1]?.value || "";
+    certifications.push([name, url]);
+  }
+
+  return certifications;
+}
