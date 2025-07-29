@@ -16,8 +16,9 @@ const BuilderForm = ({
   addFieldInfo,
   canSubmit = true,
 }) => {
-  const { checkFormValidity, addField } = useFormsStore((s) => s);
+  const { checkFormValidity, addField, addFields } = useFormsStore((s) => s);
   const router = useRouter();
+  const isFieldDataArray = Array.isArray(addFieldInfo.fieldData);
 
   const hasElementsClass = hasAdditionalElements ? s.hasElements : "";
 
@@ -40,8 +41,9 @@ const BuilderForm = ({
       <AdditionalFormElements
         hasAdditionalElements={hasAdditionalElements}
         addFieldInfo={addFieldInfo}
-        addField={addField}
+        addField={isFieldDataArray ? addFields : addField}
         inputGroupKey={inputGroupKey}
+        isFieldDataArray={isFieldDataArray}
       />
 
       <Button fillWidth={true} type="submit">

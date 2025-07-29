@@ -87,12 +87,32 @@ const formsStore = (set, get) => ({
     return inputs.every((input) => input.hasValidValue || !input.required);
   },
 
+  addFields: ({ inputGroupKey, limitation, fields }) => {
+    const inputs = [...get()?.[inputGroupKey]];
+    const numericalId = inputs.length;
+
+    if (numericalId > limitation) {
+      alert(`You cannot add more than ${limitation} fields.`);
+      return inputs;
+    }
+
+    const deepCopyFields = [...fields].map((field) => ({ ...field }));
+    const updatedFields = deepCopyFields.map((field, index) => {
+      field.id = numericalId + index + 1;
+      field.name = `${field.name}${numericalId + index + 1}`;
+      return field;
+    });
+
+    set({ [inputGroupKey]: inputs.concat(updatedFields) });
+    return inputs;
+  },
+
   addField: ({ inputGroupKey, limitation, fieldData }) => {
     const inputs = [...get()?.[inputGroupKey]];
     const numericalId = inputs.length + 1;
 
     if (numericalId > limitation) {
-      alert(`You cannot add more than ${limitation} certifications.`);
+      alert(`You cannot add more than ${limitation} fields.`);
       return inputs;
     }
 

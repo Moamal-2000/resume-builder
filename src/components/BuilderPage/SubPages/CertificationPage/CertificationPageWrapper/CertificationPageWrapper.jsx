@@ -2,7 +2,7 @@
 
 import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
 import { CERTIFICATION_MAX_COUNT } from "@/data/constants";
-import { newCertificationField } from "@/data/fields";
+import { newCertificationFields } from "@/data/fields";
 import { getResumeProgress } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 
@@ -18,7 +18,7 @@ const CertificationPageWrapper = () => {
       addFieldInfo={{
         label: "Add Certification / License",
         limitation: CERTIFICATION_MAX_COUNT,
-        fieldData: newCertificationField,
+        fieldData: newCertificationFields,
       }}
       canSubmit={resumeProgress === "100%"}
     />

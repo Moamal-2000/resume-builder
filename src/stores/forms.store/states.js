@@ -273,7 +273,7 @@ export const contactInfoInputs = [
 
 export const certificationInputs = [
   {
-    label: "Certification 1",
+    label: "Certification Name",
     name: "certification1",
     type: "text",
     value: "",
@@ -284,25 +284,13 @@ export const certificationInputs = [
     id: 1,
   },
   {
-    label: "Certification 2",
-    name: "certification2",
-    type: "text",
-    pattern: "^[a-zA-Z0-9\\/&.\\-#' ]{2,100}$",
+    label: "Certificate URL",
+    name: "certificationUrl1",
+    type: "url",
     value: "",
-    placeholder: "Certificate of Engineering",
+    placeholder: "https://example.com/certificate",
     required: false,
     hasValidValue: true,
     id: 2,
-  },
-  {
-    label: "Certification 3",
-    name: "certification3",
-    type: "text",
-    pattern: "^[a-zA-Z0-9\\/&.\\-#' ]{2,100}$",
-    value: "",
-    placeholder: "Certificate of Engineering",
-    required: false,
-    hasValidValue: true,
-    id: 3,
   },
 ];

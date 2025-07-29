@@ -6,6 +6,7 @@ const AdditionalFormElements = ({
   addFieldInfo,
   addField,
   inputGroupKey,
+  isFieldDataArray,
 }) => {
   if (!hasAdditionalElements) return null;
 
@@ -16,6 +17,11 @@ const AdditionalFormElements = ({
         onClick={() => {
           if (!addFieldInfo) return;
           const { limitation, fieldData } = addFieldInfo;
+
+          if (isFieldDataArray) {
+            addField({ inputGroupKey, limitation, fields: fieldData });
+            return;
+          }
 
           addField({ inputGroupKey, limitation, fieldData });
         }}
