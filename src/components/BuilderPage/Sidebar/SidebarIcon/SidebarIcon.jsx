@@ -1,6 +1,7 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
+import { SIDEBAR_ICON_DEBOUNCE_DELAY } from "@/data/constants";
 import useAnimationStatus from "@/hooks/helper/useAnimationStatus";
 import useGlobalStore from "@/stores/global.store/global.store";
 import { useEffect, useRef, useState } from "react";
@@ -28,7 +29,7 @@ const SidebarIcon = ({ isAsideOpen, sidebarRef, closedOnceRef }) => {
 
     debounceTimeout.current = setTimeout(() => {
       setSidebarIconName(sidebarIcon);
-    }, 900);
+    }, SIDEBAR_ICON_DEBOUNCE_DELAY);
   }, [isAsideOpen]);
 
   return (
