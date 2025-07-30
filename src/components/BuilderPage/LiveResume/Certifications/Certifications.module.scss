@@ -10,6 +10,7 @@
 .certifications .certificates {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
   margin-top: 8px;
 }
