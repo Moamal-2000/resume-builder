@@ -43,7 +43,7 @@ const formsStore = (set, get) => ({
   },
 
   updateInputValue: ({ name, value, hasValidValue, inputGroupKey }) => {
-    const { experiencesTabIndex, experiencesInputs } = get();
+    const { experiencesTabIndex, updateExperienceInputs } = get();
     const isExperiencesInputs = inputGroupKey === "experiencesInputs";
     const isEducationInputs = inputGroupKey === "educationInputs";
     const isCertificationInputs = inputGroupKey === "certificationInputs";
@@ -67,9 +67,7 @@ const formsStore = (set, get) => ({
     }
 
     if (isExperiencesInputs) {
-      const copyInputs = [...experiencesInputs];
-      copyInputs[experiencesTabIndex] = updatedInputs;
-      set({ experiencesInputs: copyInputs });
+      updateExperienceInputs(updatedInputs);
       return;
     }
 
@@ -164,6 +162,13 @@ const formsStore = (set, get) => ({
   },
 
   updateTabIndex: (index) => set(() => ({ experiencesTabIndex: index })),
+
+  updateExperienceInputs: (updatedInputs) => {
+    const copyInputs = [...get().experiencesInputs];
+    copyInputs[get().experiencesTabIndex] = updatedInputs;
+
+    set({ experiencesInputs: copyInputs });
+  },
 });
 
 // export const useFormsStore = create(persist(formsStore, { name: "forms" }));
