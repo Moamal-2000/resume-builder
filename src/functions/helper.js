@@ -103,3 +103,12 @@ export function setRequiredByValue(inputs) {
 
   return inputs.flat();
 }
+
+export function markAllRequiredIfOneHasValue(inputs) {
+  const oneOfInputsHasValue = inputs.some((input) => input.value);
+
+  return inputs.map((input) => ({
+    ...input,
+    required: oneOfInputsHasValue,
+  }));
+}

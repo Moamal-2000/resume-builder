@@ -1,5 +1,9 @@
 import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
-import { groupInputsByPair, setRequiredByValue } from "@/functions/helper";
+import {
+  groupInputsByPair,
+  markAllRequiredIfOneHasValue,
+  setRequiredByValue,
+} from "@/functions/helper";
 import { create } from "zustand";
 import {
   getCurrentlyWorkingStatus,
@@ -70,12 +74,7 @@ const formsStore = (set, get) => ({
     }
 
     if (isEducationInputs) {
-      const oneOfInputsHasValue = updatedInputs.some((input) => input.value);
-
-      updatedInputs = updatedInputs.map((input) => ({
-        ...input,
-        required: oneOfInputsHasValue,
-      }));
+      updatedInputs = markAllRequiredIfOneHasValue(updatedInputs);
     }
 
     if (isCertificationInputs) {
