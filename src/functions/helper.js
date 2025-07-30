@@ -79,7 +79,11 @@ export function getCertifications(inputs) {
   for (let i = 0; i < inputs.length; i += 2) {
     const name = inputs[i]?.value || "";
     const url = inputs[i + 1]?.value || "";
-    certifications.push([name, url]);
+
+    const urlHasHttp = /https?:\/\//.test(url);
+    const httpUrl = urlHasHttp ? url : `https://${url}`;
+
+    certifications.push([name, httpUrl]);
   }
 
   return certifications;
