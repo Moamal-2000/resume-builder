@@ -8,12 +8,12 @@ export function getFormLinkClasses({
   shouldHideTitle,
 }) {
   const activeClass = isActive ? cssModule.active : "";
-  const hideTitleClass = shouldHideTitle ? cssModule.hideTitle : "";
+  const menuClosedClass = shouldHideTitle ? cssModule.menuClosed : "";
 
   let disableClass =
     !isFormFilled && !STOP_BUILDER_PROTECTION ? cssModule.disabled : "";
 
   if (unlockAfter === "none") disableClass = "";
 
-  return `${activeClass} ${disableClass} ${hideTitleClass}`;
+  return `${activeClass} ${disableClass} ${menuClosedClass}`;
 }

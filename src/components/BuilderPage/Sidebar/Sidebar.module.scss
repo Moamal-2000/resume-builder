@@ -6,26 +6,21 @@
   min-width: 304px;
   width: 304px;
   overflow: hidden;
-  transition: width .9s ease-in-out;
+  transition: width .8s ease-in-out;
 
   &.open.closedOnce {
-    animation: open-menu .9s ease-in-out forwards;
+    animation: open-menu .8s ease-in-out forwards;
   }
 
   &.close {
-    animation: close-menu .9s ease-in-out forwards;
+    animation: close-menu .8s ease-in-out forwards;
   }
 }
 
 @keyframes open-menu {
   0% {
-    min-width: 90px;
-    width: 90px;
-  }
-
-  60% {
-    min-width: 70px;
-    width: 70px;
+    min-width: 64px;
+    width: 64px;
   }
 
   100% {
@@ -40,13 +35,8 @@
     width: 304px;
   }
 
-  60% {
-    min-width: 70px;
-    width: 70px;
-  }
-
   100% {
-    min-width: 90px;
-    width: 90px;
+    min-width: 64px;
+    width: 64px;
   }
 }

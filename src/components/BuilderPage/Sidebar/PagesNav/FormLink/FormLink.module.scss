@@ -34,9 +34,9 @@
   }
 }
 
-.pagesNav.closeMenu>ul>li>a {
-  transition: padding-left .2s .35s ease-in-out;
-  padding-left: 34.5px;
+.listItem>a.menuClosed {
+  transition: padding-left .3s .59s ease-in-out;
+  padding-left: 21px;
 }
 
 .listItem>a>svg {
@@ -54,10 +54,10 @@
 }
 
 .listItem>a .title {
-  transition: opacity .3s .5s ease-in-out;
+  transition: opacity .3s .4s ease-in-out;
 }
 
-.listItem>a.hideTitle .title {
-  transition: opacity .01s .5s ease-in-out;
+.listItem>a.menuClosed .title {
+  transition: opacity .01s .7s ease-in-out;
   opacity: 0;
 }
