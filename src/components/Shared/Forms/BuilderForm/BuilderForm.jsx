@@ -18,7 +18,7 @@ const BuilderForm = ({
 }) => {
   const { checkFormValidity, addField, addFields } = useFormsStore((s) => s);
   const router = useRouter();
-  const isFieldDataArray = Array.isArray(addFieldInfo.fieldData);
+  const isFieldDataArray = Array.isArray(addFieldInfo?.fieldData);
 
   const hasElementsClass = hasAdditionalElements ? s.hasElements : "";
 

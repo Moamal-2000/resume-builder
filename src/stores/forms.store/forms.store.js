@@ -1,4 +1,5 @@
 import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
+import { groupInputsByPair, setRequiredByValue } from "@/functions/helper";
 import { create } from "zustand";
 import {
   getCurrentlyWorkingStatus,
@@ -38,9 +39,10 @@ const formsStore = (set, get) => ({
   },
 
   updateInputValue: ({ name, value, hasValidValue, inputGroupKey }) => {
-    const { experiencesTabIndex, experiencesInputs, educationInputs } = get();
+    const { experiencesTabIndex, experiencesInputs } = get();
     const isExperiencesInputs = inputGroupKey === "experiencesInputs";
     const isEducationInputs = inputGroupKey === "educationInputs";
+    const isCertificationInputs = inputGroupKey === "certificationInputs";
 
     const inputs = isExperiencesInputs
       ? get()[inputGroupKey][experiencesTabIndex]
@@ -74,6 +76,11 @@ const formsStore = (set, get) => ({
         ...input,
         required: oneOfInputsHasValue,
       }));
+    }
+
+    if (isCertificationInputs) {
+      const pairs = groupInputsByPair(updatedInputs);
+      updatedInputs = setRequiredByValue(pairs);
     }
 
     set(() => ({ [inputGroupKey]: updatedInputs }));

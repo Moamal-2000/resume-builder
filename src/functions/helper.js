@@ -84,3 +84,22 @@ export function getCertifications(inputs) {
 
   return certifications;
 }
+
+export function groupInputsByPair(inputs) {
+  const pairs = [];
+
+  for (let i = 0; i < inputs.length; i += 2) {
+    pairs.push([{ ...inputs[i] }, { ...inputs[i + 1] }]);
+  }
+
+  return pairs;
+}
+
+export function setRequiredByValue(inputs) {
+  inputs.forEach((inputsGroup) => {
+    const required = inputsGroup.some((input) => input.value !== "");
+    inputsGroup.forEach((input) => (input.required = required));
+  });
+
+  return inputs.flat();
+}
