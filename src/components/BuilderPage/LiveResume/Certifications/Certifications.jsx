@@ -1,8 +1,8 @@
 "use client";
 
+import Certification from "@/components/Shared/Certification/Certification";
 import { getCertifications } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
-import Image from "next/image";
 import s from "./Certifications.module.scss";
 
 const Certifications = () => {
@@ -14,23 +14,9 @@ const Certifications = () => {
       <h2>Certification</h2>
 
       <ul className={s.certificates}>
-        {certificationsData.map(([name, url], index) => {
-          if (name === "") return null;
-
-          return (
-            <li key={`${name}-${index}`}>
-              <a href={url} target="_blank" rel="noreferrer noopenner">
-                <Image
-                  width={26}
-                  height={26}
-                  src="/assets/images/certificateMark.png"
-                  alt="Certificate logo"
-                />
-                {name}
-              </a>
-            </li>
-          );
-        })}
+        {certificationsData.map((data, index) => (
+          <Certification key={`${data.name}-${index}`} data={data} />
+        ))}
       </ul>
     </section>
   );

@@ -1,9 +1,21 @@
-import s from './Certification.module.scss'
+import Image from "next/image";
 
-const Certification = () => {
+const Certification = ({ data: [name, url] }) => {
+  if (name === "") return null;
+
   return (
-    <div>Certification</div>
-  )
-}
+    <li>
+      <a href={url} target="_blank" rel="noreferrer noopenner">
+        <Image
+          width={26}
+          height={26}
+          src="/assets/images/certificateMark.png"
+          alt="Certificate logo"
+        />
+        {name}
+      </a>
+    </li>
+  );
+};
 
-export default Certification
+export default Certification;
