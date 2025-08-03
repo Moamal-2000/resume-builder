@@ -61,8 +61,11 @@ export function getEducationValues(inputs) {
   return inputs.flat().map((input) => getInputValueOrFallback(input));
 }
 
-export const valueIsDate = (value) =>
-  new Date(value).toString() !== "Invalid Date";
+export const valueIsDate = (value) => {
+  const isDate = new Date(value).toString() !== "Invalid Date";
+  const isPlainNumber = !isNaN(parseInt(value));
+  return isDate && !isPlainNumber;
+};
 
 export function prettyMonthYear(value) {
   if (value === "") return "";
