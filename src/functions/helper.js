@@ -79,14 +79,17 @@ export function getCertifications(inputs) {
   for (let i = 0; i < inputs.length; i += 2) {
     const name = inputs[i]?.value || "";
     const url = inputs[i + 1]?.value || "";
-
-    const urlHasHttp = /https?:\/\//.test(url);
-    const httpUrl = urlHasHttp ? url : `https://${url}`;
+    const httpUrl = supportHttp(url);
 
     certifications.push([name, httpUrl]);
   }
 
   return certifications;
+}
+
+export function supportHttp(url) {
+  const urlHasHttp = /https?:\/\//.test(url);
+  return urlHasHttp ? url : `https://${url}`;
 }
 
 export function groupInputsByPair(inputs) {
@@ -130,4 +133,42 @@ export function mapKeysToInputValues(inputs, keys) {
   });
 
   return result;
+}
+
+export function getContactInfo(inputs, email) {
+  const { phoneNumber, linkedin, github, portfolio } =
+    getInputValuesByName(inputs);
+
+  return [
+    {
+      title: email,
+      href: `mailto:${email}`,
+      iconName: "email",
+      id: 1,
+    },
+    {
+      title: phoneNumber,
+      href: `tel:${phoneNumber}`,
+      iconName: "phone",
+      id: 2,
+    },
+    {
+      title: linkedin,
+      href: supportHttp(linkedin),
+      iconName: "linkedin",
+      id: 3,
+    },
+    {
+      title: github,
+      href: supportHttp(github),
+      iconName: "github",
+      id: 4,
+    },
+    {
+      title: portfolio,
+      href: supportHttp(portfolio),
+      iconName: "myPortfolioLogo",
+      id: 5,
+    },
+  ];
 }

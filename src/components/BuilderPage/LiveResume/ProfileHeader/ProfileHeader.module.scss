@@ -11,8 +11,9 @@
 .profileHeader .socialMedia {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4px 18px;
+  gap: 4px;
   margin-block: 6px 14px;
+  width: 82%;
 }
 
 .profileHeader .media {

@@ -1,32 +1,38 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
-import { getInputValuesByName } from "@/functions/helper";
+import { getContactInfo, getInputValuesByName } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ProfileHeader.module.scss";
 
 const ProfileHeader = () => {
-  const personalInfoInputs = useFormsStore((s) => s.personalInfoInputs);
+  const { personalInfoInputs, contactInfoInputs } = useFormsStore((s) => s);
 
   const { fullName, profession, email, address } =
     getInputValuesByName(personalInfoInputs);
+
+  const contactInfoData = getContactInfo(contactInfoInputs, email);
 
   return (
     <section className={s.profileHeader}>
       <h2>{fullName}</h2>
       <h2>{profession}</h2>
 
-      <div className={s.socialMedia}>
-        <a
-          href={`mailto:${email}`}
-          className={s.media}
-          target="_blank"
-          rel="noreferrer noopenner"
-        >
-          <SvgIcon name="email" />
-          <span>{email}</span>
-        </a>
-      </div>
+      <ul className={s.socialMedia}>
+        {contactInfoData.map(({ title, href, iconName, id }) => (
+          <li key={id}>
+            <a
+              href={href}
+              className={s.media}
+              target="_blank"
+              rel="noreferrer noopenner"
+            >
+              <SvgIcon name={iconName} />
+              <span>{title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
 
       <div className={s.textBox}>
         <h2>Address</h2>
