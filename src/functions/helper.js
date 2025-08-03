@@ -116,3 +116,18 @@ export function markAllRequiredIfOneHasValue(inputs) {
     required: oneOfInputsHasValue,
   }));
 }
+
+export function getInputValuesByName(inputs) {
+  const keys = inputs.map((input) => input.name);
+  return mapKeysToInputValues(inputs, keys);
+}
+
+export function mapKeysToInputValues(inputs, keys) {
+  const result = {};
+
+  keys.forEach((key, index) => {
+    result[key] = getInputValueOrFallback(inputs[index]);
+  });
+
+  return result;
+}

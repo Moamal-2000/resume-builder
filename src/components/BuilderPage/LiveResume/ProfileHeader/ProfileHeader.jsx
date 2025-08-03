@@ -1,19 +1,15 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
-import { getInputValueOrFallback } from "@/functions/helper";
+import { getInputValuesByName } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ProfileHeader.module.scss";
 
 const ProfileHeader = () => {
   const personalInfoInputs = useFormsStore((s) => s.personalInfoInputs);
 
-  const [fullName, profession, email, address] = [
-    getInputValueOrFallback(personalInfoInputs[0]),
-    getInputValueOrFallback(personalInfoInputs[1]),
-    getInputValueOrFallback(personalInfoInputs[2]),
-    getInputValueOrFallback(personalInfoInputs[3]),
-  ];
+  const { fullName, profession, email, address } =
+    getInputValuesByName(personalInfoInputs);
 
   return (
     <section className={s.profileHeader}>
