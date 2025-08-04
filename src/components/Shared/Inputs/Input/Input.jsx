@@ -58,7 +58,12 @@ const Input = (
     );
 
   function handleClick() {
+    const isCertificationField = inputGroupKey === "certificationInputs";
+
     removeField({ inputGroupKey, fieldId: id });
+    if (!isCertificationField) return;
+
+    removeField({ inputGroupKey, fieldId: id + 1 });
   }
 
   return (
