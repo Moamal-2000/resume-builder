@@ -59,7 +59,7 @@ const Input = (
         </label>
       )}
 
-      {type === "month" ? (
+      {type === "month" && (
         <DatePicker
           showIcon
           icon={<SvgIcon name="calendar" />}
@@ -74,6 +74,7 @@ const Input = (
           maxDate={max}
           required={required}
           disabled={disabled}
+          focusSelectedMonth
           ref={ref}
           onChange={(value, event) => {
             onChange({ name, value });
@@ -84,7 +85,9 @@ const Input = (
             if (value === "") event.preventDefault();
           }}
         />
-      ) : (
+      )}
+
+      {type !== "month" && (
         <input
           type={type}
           name={name}
