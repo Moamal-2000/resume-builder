@@ -1,6 +1,5 @@
 "use client";
 
-import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { forwardRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,6 +7,7 @@ import SvgIcon from "../../SvgIcon";
 import Checkbox from "../Checkbox/Checkbox";
 import Textarea from "../Textarea/Textarea";
 import s from "./Input.module.scss";
+import RemoveButton from "./RemoveButton/RemoveButton";
 
 const Input = (
   {
@@ -28,8 +28,6 @@ const Input = (
   },
   ref
 ) => {
-  const { removeField } = useFormsStore((s) => s);
-
   if (type === "checkbox")
     return (
       <Checkbox
@@ -56,15 +54,6 @@ const Input = (
         max={max}
       />
     );
-
-  function handleClick() {
-    const isCertificationField = inputGroupKey === "certificationInputs";
-
-    removeField({ inputGroupKey, fieldId: id });
-    if (!isCertificationField) return;
-
-    removeField({ inputGroupKey, fieldId: id + 1 });
-  }
 
   return (
     <div className={s.input}>
@@ -121,14 +110,7 @@ const Input = (
       )}
 
       {hasRemoveIcon && (
-        <button
-          type="button"
-          className={s.removeButton}
-          title="Remove"
-          onClick={handleClick}
-        >
-          <SvgIcon name="xMark2" />
-        </button>
+        <RemoveButton inputGroupKey={inputGroupKey} fieldId={id} />
       )}
     </div>
   );
