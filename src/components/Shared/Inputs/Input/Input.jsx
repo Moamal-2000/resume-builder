@@ -21,6 +21,7 @@ const Input = (
     fillWidth = false,
     min,
     max,
+    hasRemoveIcon = false,
   },
   ref
 ) => {
@@ -103,6 +104,12 @@ const Input = (
           ref={ref}
           title={disabled ? "Disabled input" : ""}
         />
+      )}
+
+      {hasRemoveIcon && (
+        <button type="button" className={s.removeButton} title="Remove">
+          <SvgIcon name="xMark2" />
+        </button>
       )}
     </div>
   );

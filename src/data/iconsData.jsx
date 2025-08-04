@@ -140,6 +140,14 @@ export const iconsData = [
     ),
   },
   {
+    name: "xMark2",
+    icon: (
+      <svg viewBox="0 0 350 512">
+        <path d="M343 151a32 32 0 0 0-46-46L192 211 87 105a32 32 0 0 0-46 46l106 105L41 361a32 32 0 0 0 46 46l105-106 105 106a32 32 0 0 0 46-46L237 256l106-105z" />
+      </svg>
+    ),
+  },
+  {
     name: "linkedin",
     icon: (
       <svg viewBox="0 0 29 29" fill="#404553">

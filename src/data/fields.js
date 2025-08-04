@@ -8,6 +8,7 @@ export const newCertificationFields = [
     placeholder: "Certificate of Engineering",
     required: false,
     hasValidValue: true,
+    hasRemoveIcon: true,
     id: null,
   },
   {
@@ -18,6 +19,7 @@ export const newCertificationFields = [
     placeholder: "https://example.com/certificate",
     required: false,
     hasValidValue: true,
+    hasRemoveIcon: false,
     id: null,
   },
 ];
@@ -31,5 +33,6 @@ export const newSkillField = {
   placeholder: "JavaScript",
   required: true,
   hasValidValue: false,
+  hasRemoveIcon: true,
   id: null,
 };
