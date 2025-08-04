@@ -170,7 +170,7 @@ export function getContactInfo(inputs, email) {
     {
       title: portfolio,
       href: supportHttp(portfolio),
-      iconName: "myPortfolioLogo",
+      iconName: "network",
       id: 5,
     },
   ];
