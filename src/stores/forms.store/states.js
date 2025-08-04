@@ -128,7 +128,6 @@ export const techSkillsInputs = [
     placeholder: "JavaScript",
     required: true,
     hasValidValue: false,
-    hasRemoveIcon: true,
     id: 1,
   },
   {
@@ -140,7 +139,6 @@ export const techSkillsInputs = [
     placeholder: "React",
     required: true,
     hasValidValue: false,
-    hasRemoveIcon: true,
     id: 2,
   },
   {
@@ -152,7 +150,6 @@ export const techSkillsInputs = [
     placeholder: "Node.js",
     required: true,
     hasValidValue: false,
-    hasRemoveIcon: true,
     id: 3,
   },
   {
@@ -164,7 +161,6 @@ export const techSkillsInputs = [
     placeholder: "MongoDB",
     required: true,
     hasValidValue: false,
-    hasRemoveIcon: true,
     id: 4,
   },
 ];
@@ -285,7 +281,6 @@ export const certificationInputs = [
     placeholder: "Certificate of Engineering",
     required: false,
     hasValidValue: true,
-    hasRemoveIcon: true,
     id: 1,
   },
   {
@@ -296,7 +291,6 @@ export const certificationInputs = [
     placeholder: "https://example.com/certificate",
     required: false,
     hasValidValue: true,
-    hasRemoveIcon: true,
     id: 2,
   },
 ];
