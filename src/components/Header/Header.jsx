@@ -23,7 +23,7 @@ const Header = () => {
         />
       </Link>
 
-      <Button href="/builder">Get Started</Button>
+      {isHomePage && <Button href="/builder">Get Started</Button>}
     </header>
   );
 };
