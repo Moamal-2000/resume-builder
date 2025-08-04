@@ -55,6 +55,7 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
               {...subItem}
               onChange={(event) => handleOnChange(event, index)}
               fillWidth={true}
+              inputGroupKey={inputGroupKey}
             />
           ))}
         </div>
@@ -66,6 +67,7 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
         key={item.id}
         {...item}
         onChange={(event) => handleOnChange(event, index)}
+        inputGroupKey={inputGroupKey}
         ref={index === 0 ? firstInputRef : null}
       />
     );

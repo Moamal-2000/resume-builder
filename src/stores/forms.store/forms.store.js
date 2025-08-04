@@ -131,6 +131,13 @@ const formsStore = (set, get) => ({
     return inputs;
   },
 
+  removeField: ({ inputGroupKey, fieldId }) => {
+    const inputs = get()?.[inputGroupKey];
+    const updatedInputs = inputs.filter((input) => input.id !== fieldId);
+
+    set({ [inputGroupKey]: updatedInputs });
+  },
+
   addExperience: () => {
     const { experiencesInputs } = get();
     const totalJobExperience = experiencesInputs.length + 1;
