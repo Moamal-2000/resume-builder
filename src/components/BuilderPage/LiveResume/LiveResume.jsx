@@ -9,8 +9,8 @@ const LiveResume = () => {
   return (
     <section className={s.liveResume}>
       <ProfileHeader />
-      <Education />
       <TechSkills />
+      <Education />
       <Certifications />
       <Experiences />
     </section>

@@ -1,11 +1,11 @@
 @use "@/styles/mixins/mixins" as m;
 
 .liveResume {
+  border-radius: 20px;
+  margin-top: 6px;
   display: grid;
   grid-template-columns: repeat(2, 377px);
   gap: 10px;
-  border-radius: 20px;
-  margin-top: 6px;
   grid-template-areas:
     "personal personal"
     "skills experience"
@@ -25,11 +25,11 @@
 }
 
 .liveResume>section:nth-child(2) {
-  grid-area: education;
+  grid-area: skills;
 }
 
 .liveResume>section:nth-child(3) {
-  grid-area: skills;
+  grid-area: education;
 }
 
 .liveResume>section:nth-child(4) {
