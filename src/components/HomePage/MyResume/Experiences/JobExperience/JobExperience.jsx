@@ -6,9 +6,9 @@ const JobExperience = ({ title, company, startDate, endDate, description }) => {
       <h3 className={s.title}>
         {title} | {company}
       </h3>
-      <span className={s.date}>
+      <time className={s.date}>
         {startDate} - {endDate}
-      </span>
+      </time>
       <p className={s.description}>{description}</p>
     </div>
   );

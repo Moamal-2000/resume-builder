@@ -8,7 +8,7 @@ const Education = () => {
       <div className={s.educationContent}>
         <p className={s.degree}>Write Degree Here</p>
         <p className={s.university}>Your University Name Here</p>
-        <div className={s.graduateDate}>2015 - 2019</div>
+        <time className={s.graduateDate}>2015 - 2019</time>
       </div>
     </section>
   );

@@ -29,7 +29,8 @@ const Education = () => {
           <strong>{universityName}</strong>, {universityLocation}
         </p>
         <p className={s.graduateDate}>
-          <SvgIcon name="calendar" /> Graduated: {graduationDate}
+          <SvgIcon name="calendar" /> <span>Graduated:</span>
+          <time>{graduationDate}</time>
         </p>
       </div>
     </section>
