@@ -1,6 +1,5 @@
 import s from "@/components/DownloadPage/DownloadPage.module.scss";
-import ResumeDownloadSuccess from "@/components/DownloadPage/ResumeDownloadSuccess/ResumeDownloadSuccess";
-import ResumeSection from "@/components/DownloadPage/ResumeSection/ResumeSection";
+import PrintableResume from "@/components/DownloadPage/PrintableResume/PrintableResume";
 import SvgIcon from "@/components/Shared/SvgIcon";
 import Link from "next/link";
 
@@ -20,10 +19,7 @@ const DownloadPage = () => {
           <SvgIcon name="arrowLeft" />
         </Link>
 
-        <div className={s.wrapper}>
-          <ResumeDownloadSuccess />
-          <ResumeSection />
-        </div>
+        <PrintableResume />
       </div>
     </main>
   );
