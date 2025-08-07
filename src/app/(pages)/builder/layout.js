@@ -1,17 +1,7 @@
-import LiveResume from "@/components/BuilderPage/LiveResume/LiveResume";
-import Sidebar from "@/components/BuilderPage/Sidebar/Sidebar";
-import s from "./Layout.module.scss";
+import BuilderRootLayout from "@/components/BuilderPage/BuilderRootLayout/BuilderRootLayout";
 
 const BuilderLayout = ({ children }) => {
-  return (
-    <div className={s.builderLayout}>
-      <Sidebar />
-      <main className={s.main}>
-        {children}
-        <LiveResume />
-      </main>
-    </div>
-  );
+  return <BuilderRootLayout>{children}</BuilderRootLayout>;
 };
 
 export default BuilderLayout;
