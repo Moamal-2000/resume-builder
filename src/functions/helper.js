@@ -1,5 +1,4 @@
 import { DESCRIPTION_PLACEHOLDER, RESUME_OPTIONS } from "@/data/constants";
-import html2pdf from "html2pdf.js";
 
 export function getInputValueOrFallback(input) {
   if (!input) throw Error("'Input' parameter is undefined");
@@ -178,5 +177,7 @@ export function getContactInfo(inputs, email) {
 }
 
 export async function downloadResume(resumeRef) {
+  const html2pdf = (await import("html2pdf.js")).default;
+
   html2pdf().set(RESUME_OPTIONS).from(resumeRef.current).save();
 }
