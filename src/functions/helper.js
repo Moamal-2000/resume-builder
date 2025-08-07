@@ -175,3 +175,17 @@ export function getContactInfo(inputs, email) {
     },
   ];
 }
+
+export async function downloadResume(resumeRef) {
+  const html2pdf = (await import("html2pdf.js")).default;
+
+  const opt = {
+    filename: "MoamalAlaa_FrontendDeveloper_Resume.pdf",
+    image: { type: "webp", quality: 1 },
+    html2canvas: { scale: 3 },
+    jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+    pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+  };
+
+  html2pdf().set(opt).from(resumeRef.current).save();
+}
