@@ -6,10 +6,12 @@ export const personalInfoInputs = [
     name: "fullName",
     type: "text",
     value: "",
-    pattern: "^[A-Za-z]{2,}([ '-][A-Za-z.]+)*$",
+    pattern: "^[A-Za-z]{2,}[ '-][A-Za-z.]+$",
     placeholder: "John Doe",
     required: true,
     hasValidValue: false,
+    warningMessage:
+      "Please enter first and last name separated by space, hyphen or apostrophe.",
     id: 1,
   },
   {
@@ -21,6 +23,8 @@ export const personalInfoInputs = [
     placeholder: "Software Engineer",
     required: true,
     hasValidValue: false,
+    warningMessage:
+      "Please enter a valid profession (letters and / & . - allowed).",
     id: 2,
   },
   {
@@ -32,6 +36,7 @@ export const personalInfoInputs = [
     placeholder: "john.doe@example.com",
     required: true,
     hasValidValue: false,
+    warningMessage: "Please enter a valid email, (e.g. name@example.com.)",
     id: 3,
   },
   {
@@ -43,6 +48,7 @@ export const personalInfoInputs = [
     placeholder: "City, Country (e.g. Baghdad, Iraq)",
     required: false,
     hasValidValue: true,
+    warningMessage: "Please enter a valid address (e.g., City, Country).",
     id: 4,
   },
 ];
