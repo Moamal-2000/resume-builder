@@ -56,8 +56,8 @@ const Input = (
         required={required}
         disabled={disabled}
         placeholder={placeholder}
-        min={min}
-        max={max}
+        warningMessage={warningMessage}
+        hasValidValue={hasValidValue}
       />
     );
 
