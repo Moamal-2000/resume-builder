@@ -34,7 +34,8 @@ export function hasFormFilled({ formGroupKey, formsStore }) {
 export function getJobExperienceProps([
   titleInput,
   companyInput,
-  [startDateInput, endDateInput],
+  startDateInput,
+  endDateInput,
   descriptionInput,
 ]) {
   const title = getInputValueOrFallback(titleInput);

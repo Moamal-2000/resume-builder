@@ -46,6 +46,10 @@
   user-select: none !important;
 }
 
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
 .react-datepicker__input-container>svg {
   position: absolute;
   left: 15px;
