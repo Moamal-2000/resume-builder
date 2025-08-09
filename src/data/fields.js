@@ -9,6 +9,8 @@ export const newCertificationFields = [
     required: false,
     hasValidValue: true,
     hasRemoveIcon: true,
+    warningMessage:
+      "Please enter a valid certification name (2-100 chars, letters, numbers, & . - # allowed).",
     id: null,
   },
   {
@@ -20,6 +22,7 @@ export const newCertificationFields = [
     required: false,
     hasValidValue: true,
     hasRemoveIcon: false,
+    warningMessage: "Please enter a valid certificate URL.",
     id: null,
   },
 ];
@@ -34,5 +37,7 @@ export const newSkillField = {
   required: true,
   hasValidValue: false,
   hasRemoveIcon: true,
+  warningMessage:
+    "Please enter a valid skill (2-30 chars, letters, numbers, . + -).",
   id: null,
 };
