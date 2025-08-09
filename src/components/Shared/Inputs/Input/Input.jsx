@@ -30,6 +30,8 @@ const Input = (
   },
   ref
 ) => {
+  const invalidClass = warningMessage && !hasValidValue ? s.invalid : "";
+
   if (type === "checkbox")
     return (
       <Checkbox
@@ -58,7 +60,7 @@ const Input = (
     );
 
   return (
-    <div className={s.input}>
+    <div className={`${s.input} ${invalidClass}`}>
       {label && (
         <label htmlFor={name} data-required={required}>
           {label}
@@ -115,13 +117,7 @@ const Input = (
         <RemoveButton inputGroupKey={inputGroupKey} fieldId={id} />
       )}
 
-      <p
-        className={`${s.warningMessage} ${
-          warningMessage && !hasValidValue ? s.show : ""
-        }`}
-      >
-        {warningMessage}
-      </p>
+      <p className={`${s.warningMessage} ${invalidClass}`}>{warningMessage}</p>
     </div>
   );
 };
