@@ -11,7 +11,8 @@ export const personalInfoInputs = [
     required: true,
     hasValidValue: false,
     warningMessage:
-      "Please enter first and last name separated by space, hyphen or apostrophe.",
+      "Please Enter first and last name separated by space, hyphen, or apostrophe.",
+
     id: 1,
   },
   {
@@ -63,6 +64,8 @@ export const experienceInputs = [
     placeholder: "Front-End Developer",
     required: true,
     hasValidValue: false,
+    warningMessage:
+      "Please enter a valid job title (letters and / & . - allowed).",
     id: 1,
   },
   {
@@ -74,6 +77,8 @@ export const experienceInputs = [
     placeholder: "Google",
     required: true,
     hasValidValue: false,
+    warningMessage:
+      "Please enter a valid company name (letters, numbers, & . - , ' allowed).",
     id: 2,
   },
   [
@@ -87,6 +92,8 @@ export const experienceInputs = [
       placeholder: "January 1990",
       required: true,
       hasValidValue: false,
+      warningMessage:
+        "Please select a valid start date (from Jan 1990 to today).",
       id: 3,
     },
     {
@@ -99,6 +106,8 @@ export const experienceInputs = [
       required: true,
       hasValidValue: false,
       disabled: false,
+      warningMessage:
+        "Please select a valid end date (from Jan 1990 to today).",
       id: 4,
     },
   ],
@@ -111,6 +120,7 @@ export const experienceInputs = [
     placeholder: "Describe your responsibilities, achievements, and skills...",
     required: true,
     hasValidValue: false,
+    warningMessage: "Please enter 30 to 800 characters describing your job.",
     id: 5,
   },
   {
@@ -134,6 +144,8 @@ export const techSkillsInputs = [
     placeholder: "JavaScript",
     required: true,
     hasValidValue: false,
+    warningMessage:
+      "Please enter a valid skill (2-30 chars, letters, numbers, . + -).",
     id: 1,
   },
   {
@@ -145,6 +157,8 @@ export const techSkillsInputs = [
     placeholder: "React",
     required: true,
     hasValidValue: false,
+    warningMessage:
+      "Please enter a valid skill (2-30 chars, letters, numbers, . + -).",
     id: 2,
   },
   {
@@ -156,6 +170,8 @@ export const techSkillsInputs = [
     placeholder: "Node.js",
     required: true,
     hasValidValue: false,
+    warningMessage:
+      "Please enter a valid skill (2-30 chars, letters, numbers, . + -).",
     id: 3,
   },
   {
@@ -167,6 +183,8 @@ export const techSkillsInputs = [
     placeholder: "MongoDB",
     required: true,
     hasValidValue: false,
+    warningMessage:
+      "Please enter a valid skill (2-30 chars, letters, numbers, . + -).",
     id: 4,
   },
 ];
@@ -181,6 +199,8 @@ export const educationInputs = [
     placeholder: "University of Lagos",
     required: false,
     hasValidValue: true,
+    warningMessage:
+      "Please enter a valid university name (3-100 chars, letters, numbers, & . - allowed).",
     id: 1,
   },
   {
@@ -192,6 +212,8 @@ export const educationInputs = [
     placeholder: "Lagos",
     required: false,
     hasValidValue: true,
+    warningMessage:
+      "Please enter a valid university location (2-50 chars, letters, numbers, , . - / allowed).",
     id: 2,
   },
   {
@@ -203,6 +225,8 @@ export const educationInputs = [
     placeholder: "Bachelor of Science",
     required: false,
     hasValidValue: true,
+    warningMessage:
+      "Please enter a valid degree or program (2-100 chars, letters, numbers, / & . - allowed).",
     id: 3,
   },
   {
@@ -214,6 +238,8 @@ export const educationInputs = [
     placeholder: "Computer Science",
     required: false,
     hasValidValue: true,
+    warningMessage:
+      "Please enter a valid field of study (2-70 chars, letters, numbers, / & . - allowed).",
     id: 4,
   },
   {
@@ -226,6 +252,8 @@ export const educationInputs = [
     placeholder: prettyMonthYear(getCurrentYearAndMonth()),
     required: false,
     hasValidValue: true,
+    warningMessage:
+      "Please select a valid graduation date (from Jan 1990 to today).",
     id: 5,
   },
 ];
@@ -240,6 +268,7 @@ export const contactInfoInputs = [
     placeholder: "+1 (123) 456-7890",
     required: true,
     hasValidValue: false,
+    warningMessage: "Please enter a valid phone number (7-20 digits).",
     id: 5,
   },
   {
@@ -251,6 +280,7 @@ export const contactInfoInputs = [
     placeholder: "www.linkedin.com/in/moamal-alaa",
     required: true,
     hasValidValue: false,
+    warningMessage: "Please copy/paste your full LinkedIn profile URL",
     id: 6,
   },
   {
@@ -262,6 +292,7 @@ export const contactInfoInputs = [
     placeholder: "github.com/Moamal-2000",
     required: true,
     hasValidValue: false,
+    warningMessage: "Please copy/paste your full GitHub profile URL",
     id: 7,
   },
   {
@@ -273,6 +304,7 @@ export const contactInfoInputs = [
     placeholder: "moamalalaa.netlify.app",
     required: false,
     hasValidValue: false,
+    warningMessage: "Please enter a valid URL.",
     id: 8,
   },
 ];
@@ -287,6 +319,8 @@ export const certificationInputs = [
     placeholder: "Certificate of Engineering",
     required: false,
     hasValidValue: true,
+    warningMessage:
+      "Please enter a valid certification name (2-100 chars, letters, numbers, & . - # allowed).",
     id: 1,
   },
   {
@@ -297,6 +331,7 @@ export const certificationInputs = [
     placeholder: "https://example.com/certificate",
     required: false,
     hasValidValue: true,
+    warningMessage: "Please enter a valid certificate URL.",
     id: 2,
   },
 ];
