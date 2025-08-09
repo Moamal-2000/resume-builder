@@ -9,8 +9,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { useLayoutEffect } from "react";
 
 const useProtectBuilderStep = (stopProtection) => {
-  const pathname = usePathname();
   const checkFormValidity = useFormsStore((s) => s.checkFormValidity);
+  const pathname = usePathname();
   const router = useRouter();
 
   useLayoutEffect(() => {
@@ -22,10 +22,10 @@ const useProtectBuilderStep = (stopProtection) => {
 
     if (unlockAfterKey === "none") return;
 
-    const previousFormValid = checkFormValidity(unlockAfterKey);
+    const isPreviousFormValid = checkFormValidity(unlockAfterKey);
     const previousFormPath = builderInputKeysToPath[unlockAfterKey];
 
-    if (!previousFormValid) router.push(previousFormPath);
+    if (!isPreviousFormValid) router.push(previousFormPath);
   }, [pathname]);
 };
 
