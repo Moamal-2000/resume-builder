@@ -1,0 +1,17 @@
+.warningMessage {
+  font-family: var(--poppins-font);
+  font-weight: 400;
+  font-size: .8rem;
+  line-height: 16px;
+  color: #df2121;
+  margin-top: 4px;
+  text-wrap: balance;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+}

@@ -1,9 +1,11 @@
-import s from './ValidationMessage.module.scss'
+import s from "./ValidationMessage.module.scss";
 
-const ValidationMessage = () => {
+const ValidationMessage = ({ showMessage, children }) => {
   return (
-    <div>ValidationMessage</div>
-  )
-}
+    <p className={`${s.warningMessage} ${showMessage ? s.show : ""}`}>
+      {children}
+    </p>
+  );
+};
 
-export default ValidationMessage
+export default ValidationMessage;

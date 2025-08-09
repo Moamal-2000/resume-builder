@@ -4,6 +4,7 @@ import { forwardRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import SvgIcon from "../../SvgIcon";
+import ValidationMessage from "../../ValidationMessage/ValidationMessage";
 import Checkbox from "../Checkbox/Checkbox";
 import Textarea from "../Textarea/Textarea";
 import s from "./Input.module.scss";
@@ -30,7 +31,8 @@ const Input = (
   },
   ref
 ) => {
-  const invalidClass = warningMessage && !hasValidValue ? s.invalid : "";
+  const shouldShowWarning = warningMessage && !hasValidValue;
+  const invalidClass = shouldShowWarning ? s.invalid : "";
 
   if (type === "checkbox")
     return (
@@ -117,7 +119,9 @@ const Input = (
         <RemoveButton inputGroupKey={inputGroupKey} fieldId={id} />
       )}
 
-      <p className={`${s.warningMessage} ${invalidClass}`}>{warningMessage}</p>
+      <ValidationMessage showMessage={shouldShowWarning}>
+        {warningMessage}
+      </ValidationMessage>
     </div>
   );
 };
