@@ -25,6 +25,8 @@ const Input = (
     id,
     hasRemoveIcon = false,
     inputGroupKey,
+    warningMessage,
+    hasValidValue,
   },
   ref
 ) => {
@@ -112,6 +114,14 @@ const Input = (
       {hasRemoveIcon && (
         <RemoveButton inputGroupKey={inputGroupKey} fieldId={id} />
       )}
+
+      <p
+        className={`${s.warningMessage} ${
+          warningMessage && !hasValidValue ? s.show : ""
+        }`}
+      >
+        {warningMessage}
+      </p>
     </div>
   );
 };
