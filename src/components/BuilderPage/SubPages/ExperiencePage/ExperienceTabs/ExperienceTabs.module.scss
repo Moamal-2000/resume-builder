@@ -18,6 +18,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 3px;
+  position: relative;
   transition:
     background-color .1s ease-in-out,
     border-color .1s ease-in-out,
@@ -53,4 +54,32 @@
 
 .experienceTabs .addTab {
   border: dashed 2px #808080;
+}
+
+.experienceTabs>button .iconHolder {
+  padding: 4px;
+  position: absolute;
+  right: -28px;
+  top: 50%;
+  translate: 0 -50%;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
+.experienceTabs>button .iconHolder>svg {
+  width: 100%;
+  height: 100%;
+}
+
+.experienceTabs>button .iconHolder.checkMark>svg {
+  fill: #12ba23 !important;
+}
+
+.experienceTabs>button .iconHolder.warning>svg {
+  stroke: #ff6c6f !important;
+
+  &>circle {
+    fill: #ff6c6f !important;
+  }
 }

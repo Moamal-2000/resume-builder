@@ -2,7 +2,7 @@
 
 import SvgIcon from "@/components/Shared/SvgIcon";
 import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
-import { getInputValueOrFallback } from "@/functions/helper";
+import { getInputValueOrFallback, hasFormFilled } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ExperienceTabs.module.scss";
 
@@ -10,13 +10,20 @@ const ExperienceTabs = () => {
   const {
     addExperience,
     removeExperience,
+    updateTabIndex,
     experiencesInputs,
     experiencesTabIndex,
-    updateTabIndex,
   } = useFormsStore((s) => s);
   const mainExperienceInputs = experiencesInputs[0];
   const mainTabTitle = getInputValueOrFallback(mainExperienceInputs[0]);
   const shouldHideAddButton = experiencesInputs.length >= EXPERIENCE_MAX_COUNT;
+
+  const formsFilled = experiencesInputs.map((input) =>
+    hasFormFilled({
+      formGroupKey: "experiencesInputs",
+      formsStore: { experiencesInputs: [input] },
+    })
+  );
 
   function handleTabClick(event, index) {
     const clickedTagName = event.target.tagName;
@@ -40,29 +47,60 @@ const ExperienceTabs = () => {
     <div className={s.experienceTabs}>
       <button
         type="button"
-        className={`${s.mainTab} ${experiencesTabIndex === 0 ? s.active : ""}`}
+        className={`${s.mainTab} ${experiencesTabIndex === 0 ? s.active : ""} ${
+          formsFilled[0] ? "" : s.invalidForm
+        }`}
         onClick={() => updateTabIndex(0)}
       >
         {mainTabTitle}
+
+        {formsFilled[0] && (
+          <span className={`${s.iconHolder} ${s.checkMark}`}>
+            <SvgIcon name="checked" />
+          </span>
+        )}
+
+        {!formsFilled[0] && (
+          <span className={`${s.iconHolder} ${s.warning}`}>
+            <SvgIcon name="warning" />
+          </span>
+        )}
       </button>
 
-      {experiencesInputs.slice(1).map((experienceInput, index) => (
-        <button
-          type="button"
-          key={index}
-          className={index + 1 === experiencesTabIndex ? s.active : ""}
-          onClick={(event) => handleTabClick(event, index)}
-        >
-          {getInputValueOrFallback(experienceInput[0])}
-          <span
-            className={s.xMark}
-            onClick={(event) => handleRemoveExperience(event, index)}
-            title="Remove experience"
+      {experiencesInputs.slice(1).map((experienceInput, index) => {
+        console.log(formsFilled[index + 1]);
+        return (
+          <button
+            type="button"
+            key={index}
+            className={`${index + 1 === experiencesTabIndex ? s.active : ""} ${
+              formsFilled[index + 1] ? s.validForm : s.invalidForm
+            }`}
+            onClick={(event) => handleTabClick(event, index)}
           >
-            <SvgIcon name="xMark" />
-          </span>
-        </button>
-      ))}
+            {getInputValueOrFallback(experienceInput[0])}
+            <span
+              className={s.xMark}
+              onClick={(event) => handleRemoveExperience(event, index)}
+              title="Remove experience"
+            >
+              <SvgIcon name="xMark" />
+            </span>
+
+            {formsFilled[index + 1] && (
+              <span className={`${s.iconHolder} ${s.checkMark}`}>
+                <SvgIcon name="checked" />
+              </span>
+            )}
+
+            {!formsFilled[index + 1] && (
+              <span className={`${s.iconHolder} ${s.warning}`}>
+                <SvgIcon name="warning" />
+              </span>
+            )}
+          </button>
+        );
+      })}
 
       {!shouldHideAddButton && (
         <button type="button" onClick={addExperience} className={s.addTab}>
