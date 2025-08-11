@@ -59,7 +59,7 @@ const Input = (
         disabled={disabled}
         placeholder={placeholder}
         warningMessage={warningMessage}
-        hasValidValue={hasValidValue}
+        shouldShowWarning={shouldShowWarning}
       />
     );
 

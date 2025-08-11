@@ -10,9 +10,8 @@ const Textarea = ({
   disabled,
   placeholder,
   warningMessage,
-  hasValidValue,
+  shouldShowWarning,
 }) => {
-  const shouldShowWarning = warningMessage && !hasValidValue;
   const invalidClass = shouldShowWarning ? s.invalid : "";
 
   return (
