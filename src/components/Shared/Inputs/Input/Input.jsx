@@ -33,7 +33,7 @@ const Input = (
   ref
 ) => {
   const shouldShowWarning =
-    warningMessage && !hasValidValue && hasFormSubmitOnce;
+    warningMessage && !hasValidValue && hasFormSubmitOnce && !disabled;
   const invalidClass = shouldShowWarning ? s.invalid : "";
 
   if (type === "checkbox")
