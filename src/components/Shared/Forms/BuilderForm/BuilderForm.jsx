@@ -2,6 +2,7 @@
 
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import Button from "../../Buttons/Button/Button";
 import BuilderInputs from "../../Inputs/BuilderInputs/BuilderInputs";
 import AdditionalFormElements from "./AdditionalFormElements/AdditionalFormElements";
@@ -19,10 +20,13 @@ const BuilderForm = ({
   const { checkFormValidity, addField, addFields } = useFormsStore((s) => s);
   const router = useRouter();
   const isFieldDataArray = Array.isArray(addFieldInfo?.fieldData);
+  const [hasFormSubmitOnce, setHasFormSubmitOnce] = useState(false);
 
   const hasElementsClass = hasAdditionalElements ? s.hasElements : "";
 
   function handleSubmit(event) {
+    setHasFormSubmitOnce(true);
+
     event.preventDefault();
     if (!canSubmit) return;
 
@@ -35,7 +39,11 @@ const BuilderForm = ({
   return (
     <form className={`${s.form} ${hasElementsClass}`} onSubmit={handleSubmit}>
       <div className={s.inputs}>
-        <BuilderInputs inputGroupKey={inputGroupKey} hasTabs={hasTabs} />
+        <BuilderInputs
+          inputGroupKey={inputGroupKey}
+          hasTabs={hasTabs}
+          hasFormSubmitOnce={hasFormSubmitOnce}
+        />
       </div>
 
       <AdditionalFormElements

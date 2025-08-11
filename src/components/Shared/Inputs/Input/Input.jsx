@@ -28,10 +28,12 @@ const Input = (
     inputGroupKey,
     warningMessage,
     hasValidValue,
+    hasFormSubmitOnce,
   },
   ref
 ) => {
-  const shouldShowWarning = warningMessage && !hasValidValue;
+  const shouldShowWarning =
+    warningMessage && !hasValidValue && hasFormSubmitOnce;
   const invalidClass = shouldShowWarning ? s.invalid : "";
 
   if (type === "checkbox")

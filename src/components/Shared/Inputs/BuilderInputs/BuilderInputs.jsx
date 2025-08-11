@@ -7,7 +7,11 @@ import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { useRef } from "react";
 import s from "./BuilderInputs.module.scss";
 
-const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
+const BuilderInputs = ({
+  inputGroupKey,
+  hasTabs = false,
+  hasFormSubmitOnce,
+}) => {
   const updateInputValue = useFormsStore((s) => s.updateInputValue);
   const activeTabIndex = useFormsStore(
     (s) => s[inputGroupKey.replace("Inputs", "TabIndex")]
@@ -56,6 +60,7 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
               onChange={(event) => handleOnChange(event, index)}
               fillWidth={true}
               inputGroupKey={inputGroupKey}
+              hasFormSubmitOnce={hasFormSubmitOnce}
             />
           ))}
         </div>
@@ -68,6 +73,7 @@ const BuilderInputs = ({ inputGroupKey, hasTabs = false }) => {
         {...item}
         onChange={(event) => handleOnChange(event, index)}
         inputGroupKey={inputGroupKey}
+        hasFormSubmitOnce={hasFormSubmitOnce}
         ref={index === 0 ? firstInputRef : null}
       />
     );
