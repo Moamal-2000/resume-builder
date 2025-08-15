@@ -245,4 +245,13 @@ export const iconsData = [
       </svg>
     ),
   },
+  {
+    name: "circleCheck",
+    icon: (
+      <svg viewBox="0 0 15 15" fill="none" stroke="#393E4D">
+        <path d="M7.5 13.7a6.2 6.2 0 1 0 0-12.5 6.2 6.2 0 0 0 0 12.5Z" />
+        <path d="m5.3 7.8 1.2 1.2 3.1-3.1" />
+      </svg>
+    ),
+  },
 ];

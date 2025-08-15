@@ -18,7 +18,7 @@ const TechSkills = () => {
 
           return (
             <li key={`${skill}-${index}`}>
-              <SvgIcon name="circularCorrect" />
+              <SvgIcon name="circleCheck" />
               {skill}
             </li>
           );

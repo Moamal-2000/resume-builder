@@ -10,7 +10,7 @@ const TechSkills = () => {
       <ul className={s.skills}>
         {MY_TECH_SKILLS.map((skill, index) => (
           <li key={`${skill}-${index}`}>
-            <SvgIcon name="circularCorrect" />
+            <SvgIcon name="circleCheck" />
             {skill}
           </li>
         ))}
