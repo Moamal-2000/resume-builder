@@ -17,7 +17,13 @@
   .header {
     padding: 20px;
   }
+}
 
+.header .logo {
+  user-select: none;
+}
+
+@include m.small {
   .header .logo>img {
     width: 144px;
     height: 44px;
