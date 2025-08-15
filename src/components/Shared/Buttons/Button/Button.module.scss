@@ -19,6 +19,7 @@
   line-height: 27px;
   text-wrap: nowrap;
   text-align: center;
+  user-select: none;
 }
 
 @include m.small {
