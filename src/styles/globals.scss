@@ -19,6 +19,11 @@ body.homePage {
   background-color: #fff;
 }
 
+body::selection {
+  background: #ffe78c;
+  color: #000;
+}
+
 main {
   min-height: 100dvh;
   margin-bottom: 100px;
