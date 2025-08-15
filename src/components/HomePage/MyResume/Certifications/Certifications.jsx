@@ -1,4 +1,3 @@
-import Image from "next/image";
 import s from "./Certifications.module.scss";
 
 const Certifications = () => {
@@ -7,25 +6,8 @@ const Certifications = () => {
       <h2>Certification</h2>
 
       <ul className={s.certificates}>
-        <li>
-          <Image
-            width={26}
-            height={26}
-            src="/assets/images/certificateMark.png"
-            alt="Certificate logo"
-          />
-          Certificate Title
-        </li>
-
-        <li>
-          <Image
-            width={26}
-            height={26}
-            src="/assets/images/certificateMark.png"
-            alt="Certificate logo"
-          />
-          Certificate Title
-        </li>
+        <li>Certificate Title</li>
+        <li>Certificate Title</li>
       </ul>
     </section>
   );
