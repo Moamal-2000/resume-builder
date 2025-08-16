@@ -6,7 +6,9 @@ import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ExperienceTab.module.scss";
 
 const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
-  const { experiencesTabIndex, removeExperience } = useFormsStore((s) => s);
+  const { experiencesTabIndex, removeExperience, experiencesInputs } =
+    useFormsStore((s) => s);
+  const isFormEmpty = experiencesInputs[index].every((input) => !input.value);
 
   const tabWrapperClasses = experienceTabClasses({
     cssModule: s,
@@ -31,7 +33,9 @@ const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
         )}
 
         {!hasFormFilled && (
-          <span className={`${s.iconHolder} ${s.warning}`}>
+          <span
+            className={`${s.iconHolder} ${isFormEmpty ? s.warning : s.error}`}
+          >
             <SvgIcon name="warning" />
           </span>
         )}

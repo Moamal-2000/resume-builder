@@ -73,18 +73,27 @@
 }
 
 .tab .iconHolder>svg {
+  --svg-color: #000;
   width: 100%;
   height: 100%;
 }
 
-.tab .iconHolder.checkMark>svg {
-  fill: #12ba23 !important;
+.tab .iconHolder>svg:not(.checkMark) {
+  stroke: var(--svg-color) !important;
+
+  &>circle {
+    fill: var(--svg-color) !important;
+  }
 }
 
 .tab .iconHolder.warning>svg {
-  stroke: #ff6c6f !important;
+  --svg-color: #EAB308;
+}
 
-  &>circle {
-    fill: #ff6c6f !important;
-  }
+.tab .iconHolder.error>svg {
+  --svg-color: #ff6c6f;
+}
+
+.tab .iconHolder.checkMark>svg {
+  fill: #12ba23;
 }
