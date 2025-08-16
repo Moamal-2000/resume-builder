@@ -1,15 +1,14 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
-import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
 import { getInputValueOrFallback, hasFormFilled } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
+import AddExperienceButton from "./AddExperienceButton/AddExperienceButton";
 import s from "./ExperienceTabs.module.scss";
 import MainExperienceTab from "./MainExperienceTab/MainExperienceTab";
 
 const ExperienceTabs = () => {
   const {
-    addExperience,
     removeExperience,
     updateTabIndex,
     experiencesInputs,
@@ -17,7 +16,6 @@ const ExperienceTabs = () => {
   } = useFormsStore((s) => s);
   const mainExperienceInputs = experiencesInputs[0];
   const mainTabTitle = getInputValueOrFallback(mainExperienceInputs[0]);
-  const shouldHideAddButton = experiencesInputs.length >= EXPERIENCE_MAX_COUNT;
 
   const formsFilled = experiencesInputs.map((input) =>
     hasFormFilled({
@@ -82,11 +80,7 @@ const ExperienceTabs = () => {
         );
       })}
 
-      {!shouldHideAddButton && (
-        <button type="button" onClick={addExperience} className={s.addTab}>
-          + Add Experience
-        </button>
-      )}
+      <AddExperienceButton />
     </div>
   );
 };

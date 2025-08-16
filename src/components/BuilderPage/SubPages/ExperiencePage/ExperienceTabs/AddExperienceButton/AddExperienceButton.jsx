@@ -1,9 +1,20 @@
-import s from './AddExperienceButton.module.scss'
+"use client";
+
+import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
+import s from "./AddExperienceButton.module.scss";
 
 const AddExperienceButton = () => {
-  return (
-    <div>AddExperienceButton</div>
-  )
-}
+  const { experiencesInputs, addExperience } = useFormsStore((s) => s);
+  const shouldHideAddButton = experiencesInputs.length >= EXPERIENCE_MAX_COUNT;
 
-export default AddExperienceButton
+  if (shouldHideAddButton) return null;
+
+  return (
+    <button type="button" onClick={addExperience} className={s.addTab}>
+      + Add Experience
+    </button>
+  );
+};
+
+export default AddExperienceButton;
