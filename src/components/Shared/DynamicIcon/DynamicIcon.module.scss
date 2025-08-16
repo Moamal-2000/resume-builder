@@ -35,7 +35,7 @@
   fill: #12ba23;
 }
 
-.mainWrapper:hover p[data-is-tooltip=true] {
+.mainWrapper:where(:hover, :focus-visible) p[data-is-tooltip=true] {
   transition: opacity .2s .2s ease-in-out;
   opacity: 1;
 }

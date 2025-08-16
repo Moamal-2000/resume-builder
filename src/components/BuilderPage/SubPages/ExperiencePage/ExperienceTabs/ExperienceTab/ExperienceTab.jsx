@@ -27,7 +27,11 @@ const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
       >
         {title}
 
-        <DynamicIcon isFormEmpty={isFormEmpty} hasFormFilled={hasFormFilled} />
+        <DynamicIcon
+          isFormEmpty={isFormEmpty}
+          hasFormFilled={hasFormFilled}
+          ariaDescribedby="form-status-tooltip"
+        />
       </button>
 
       <button

@@ -1,6 +1,11 @@
 import s from "./FormTabToolTip.module.scss";
 
-const FormTabToolTip = ({ hasFormFilled, isFormEmpty, id }) => {
+const FormTabToolTip = ({
+  hasFormFilled,
+  isFormEmpty,
+  id,
+  isTooltipVisible,
+}) => {
   const formStatus = hasFormFilled
     ? "completely filled"
     : isFormEmpty
@@ -8,7 +13,13 @@ const FormTabToolTip = ({ hasFormFilled, isFormEmpty, id }) => {
     : "partially filled";
 
   return (
-    <p className={s.tooltip} data-is-tooltip="true" id={id}>
+    <p
+      className={s.tooltip}
+      data-is-tooltip="true"
+      id={id}
+      role="tooltip"
+      aria-hidden={isTooltipVisible ? "false" : "true"}
+    >
       The form is {formStatus}
     </p>
   );
