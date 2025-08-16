@@ -1,11 +1,12 @@
 export function experienceTabClasses({
   cssModule,
   activeIndex,
+  index,
   hasFormFilled,
 }) {
   return [
     cssModule.tab,
-    activeIndex === 0 ? cssModule.active : "",
+    activeIndex === index ? cssModule.active : "",
     hasFormFilled ? "" : cssModule.invalidForm,
   ].join(" ");
 }

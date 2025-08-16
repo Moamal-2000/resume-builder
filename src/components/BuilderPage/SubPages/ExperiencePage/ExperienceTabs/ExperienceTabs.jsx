@@ -26,13 +26,13 @@ const ExperienceTabs = () => {
 
   function handleTabClick(event, index) {
     const clickedTagName = event.target.tagName;
-    const sameTabClicked = experiencesTabIndex === index + 1;
+    const sameTabClicked = experiencesTabIndex === index;
     const removeIconClicked =
       clickedTagName === "svg" || clickedTagName === "path";
 
     if (removeIconClicked || sameTabClicked) return false;
 
-    updateTabIndex(index + 1);
+    updateTabIndex(index);
   }
 
   function handleRemoveExperience(event, index) {
@@ -44,7 +44,11 @@ const ExperienceTabs = () => {
 
   return (
     <div className={s.experienceTabs}>
-      <MainExperienceTab hasFormFilled={formsFilled[0]} title={mainTabTitle} />
+      <MainExperienceTab
+        hasFormFilled={formsFilled[0]}
+        title={mainTabTitle}
+        index={0}
+      />
 
       {experiencesInputs.slice(1).map((experienceInput, index) => {
         return (
@@ -54,7 +58,7 @@ const ExperienceTabs = () => {
             title={getInputValueOrFallback(experienceInput[0])}
             hasFormFilled={formsFilled[index + 1]}
             key={index}
-            index={index}
+            index={index + 1}
           />
         );
       })}

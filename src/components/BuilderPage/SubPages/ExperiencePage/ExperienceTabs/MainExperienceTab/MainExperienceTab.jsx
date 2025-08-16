@@ -5,12 +5,13 @@ import { experienceTabClasses } from "@/data/classNames";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./MainExperienceTab.module.scss";
 
-const MainExperienceTab = ({ hasFormFilled, title }) => {
+const MainExperienceTab = ({ hasFormFilled, title, index }) => {
   const { updateTabIndex, experiencesTabIndex } = useFormsStore((s) => s);
 
   const classes = experienceTabClasses({
     cssModule: s,
     activeIndex: experiencesTabIndex,
+    index,
     hasFormFilled,
   });
 

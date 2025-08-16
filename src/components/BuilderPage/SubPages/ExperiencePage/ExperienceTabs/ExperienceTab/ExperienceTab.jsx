@@ -17,6 +17,7 @@ const ExperienceTab = ({
   const classes = experienceTabClasses({
     cssModule: s,
     activeIndex: experiencesTabIndex,
+    index,
     hasFormFilled,
   });
 
