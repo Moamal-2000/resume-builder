@@ -30,7 +30,7 @@ const ExperienceTab = ({
       {title}
       <button
         type="button"
-        className={s.xMark}
+        className={s.removeButton}
         onClick={(event) => handleRemoveExperience(event, index)}
         title="Remove experience"
       >

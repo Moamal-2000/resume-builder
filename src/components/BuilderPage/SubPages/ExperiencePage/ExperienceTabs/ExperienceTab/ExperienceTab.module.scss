@@ -24,7 +24,7 @@
     border-color: #ff6c6f;
     color: #fff;
 
-    & .xMark>svg {
+    & .removeButton>svg {
       fill: #fff;
     }
   }
@@ -36,13 +36,13 @@
   }
 }
 
-.tab .xMark {
+.tab .removeButton {
   background-color: transparent;
   border: none;
   padding: 4px;
 }
 
-.tab .xMark>svg {
+.tab .removeButton>svg {
   width: 10px;
   height: 10px;
   fill: #0a0a0a;
