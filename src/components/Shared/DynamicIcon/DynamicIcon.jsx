@@ -1,13 +1,8 @@
+import FormTabToolTip from "../FormTabToolTip/FormTabToolTip";
 import SvgIcon from "../SvgIcon";
 import s from "./DynamicIcon.module.scss";
 
 const DynamicIcon = ({ hasFormFilled, isFormEmpty }) => {
-  const formStatus = hasFormFilled
-    ? "completely filled"
-    : isFormEmpty
-    ? "Empty"
-    : "partially filled";
-
   return (
     <div className={s.mainWrapper}>
       {hasFormFilled && (
@@ -24,7 +19,11 @@ const DynamicIcon = ({ hasFormFilled, isFormEmpty }) => {
         </span>
       )}
 
-      <p className={s.tooltip}>The form is {formStatus}</p>
+      <FormTabToolTip
+        hasFormFilled={hasFormFilled}
+        isFormEmpty={isFormEmpty}
+        id="form-status-tooltip"
+      />
     </div>
   );
 };
