@@ -28,13 +28,14 @@ const ExperienceTab = ({
       onClick={(event) => handleTabClick(event, index)}
     >
       {title}
-      <span
+      <button
+        type="button"
         className={s.xMark}
         onClick={(event) => handleRemoveExperience(event, index)}
         title="Remove experience"
       >
         <SvgIcon name="xMark" />
-      </span>
+      </button>
 
       {hasFormFilled && (
         <span className={`${s.iconHolder} ${s.checkMark}`}>

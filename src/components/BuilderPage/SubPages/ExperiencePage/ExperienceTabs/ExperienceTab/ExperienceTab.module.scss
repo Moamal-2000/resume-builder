@@ -24,7 +24,7 @@
     border-color: #ff6c6f;
     color: #fff;
 
-    &>span>svg {
+    & .xMark>svg {
       fill: #fff;
     }
   }
@@ -37,6 +37,8 @@
 }
 
 .tab .xMark {
+  background-color: transparent;
+  border: none;
   padding: 4px;
 }
 
