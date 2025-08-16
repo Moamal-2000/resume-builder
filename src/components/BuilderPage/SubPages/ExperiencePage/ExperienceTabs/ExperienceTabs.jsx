@@ -8,12 +8,8 @@ import s from "./ExperienceTabs.module.scss";
 import MainExperienceTab from "./MainExperienceTab/MainExperienceTab";
 
 const ExperienceTabs = () => {
-  const {
-    removeExperience,
-    updateTabIndex,
-    experiencesInputs,
-    experiencesTabIndex,
-  } = useFormsStore((s) => s);
+  const { updateTabIndex, experiencesInputs, experiencesTabIndex } =
+    useFormsStore((s) => s);
   const mainExperienceInputs = experiencesInputs[0];
   const mainTabTitle = getInputValueOrFallback(mainExperienceInputs[0]);
 
@@ -35,13 +31,6 @@ const ExperienceTabs = () => {
     updateTabIndex(index);
   }
 
-  function handleRemoveExperience(event, index) {
-    const clickedTagName = event.target.tagName;
-    if (clickedTagName === "SPAN") return false;
-
-    removeExperience(index);
-  }
-
   return (
     <div className={s.experienceTabs}>
       <MainExperienceTab
@@ -53,7 +42,6 @@ const ExperienceTabs = () => {
       {experiencesInputs.slice(1).map((experienceInput, index) => {
         return (
           <ExperienceTab
-            handleRemoveExperience={handleRemoveExperience}
             handleTabClick={handleTabClick}
             title={getInputValueOrFallback(experienceInput[0])}
             hasFormFilled={formsFilled[index + 1]}

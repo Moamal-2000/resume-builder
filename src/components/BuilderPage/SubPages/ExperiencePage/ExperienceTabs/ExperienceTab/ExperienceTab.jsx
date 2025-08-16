@@ -5,14 +5,8 @@ import { experienceTabClasses } from "@/data/classNames";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ExperienceTab.module.scss";
 
-const ExperienceTab = ({
-  handleRemoveExperience,
-  handleTabClick,
-  hasFormFilled,
-  title,
-  index,
-}) => {
-  const { experiencesTabIndex } = useFormsStore((s) => s);
+const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
+  const { experiencesTabIndex, removeExperience } = useFormsStore((s) => s);
 
   const classes = experienceTabClasses({
     cssModule: s,
@@ -31,7 +25,7 @@ const ExperienceTab = ({
       <button
         type="button"
         className={s.removeButton}
-        onClick={(event) => handleRemoveExperience(event, index)}
+        onClick={() => removeExperience(index)}
         title="Remove experience"
       >
         <SvgIcon name="xMark" />
