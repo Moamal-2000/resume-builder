@@ -1,9 +1,19 @@
-import s from './DynamicIcon.module.scss'
+import SvgIcon from "../SvgIcon";
+import s from "./DynamicIcon.module.scss";
 
-const DynamicIcon = () => {
+const DynamicIcon = ({ hasFormFilled, isFormEmpty }) => {
+  if (hasFormFilled)
+    return (
+      <span className={`${s.iconHolder} ${s.checkMark}`}>
+        <SvgIcon name="checked" />
+      </span>
+    );
+
   return (
-    <div>DynamicIcon</div>
-  )
-}
+    <span className={`${s.iconHolder} ${isFormEmpty ? s.warning : s.error}`}>
+      <SvgIcon name="warning" />
+    </span>
+  );
+};
 
-export default DynamicIcon
+export default DynamicIcon;

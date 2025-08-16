@@ -1,5 +1,6 @@
 "use client";
 
+import DynamicIcon from "@/components/Shared/DynamicIcon/DynamicIcon";
 import SvgIcon from "@/components/Shared/SvgIcon";
 import { experienceTabClasses } from "@/data/classNames";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
@@ -26,19 +27,7 @@ const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
       >
         {title}
 
-        {hasFormFilled && (
-          <span className={`${s.iconHolder} ${s.checkMark}`}>
-            <SvgIcon name="checked" />
-          </span>
-        )}
-
-        {!hasFormFilled && (
-          <span
-            className={`${s.iconHolder} ${isFormEmpty ? s.warning : s.error}`}
-          >
-            <SvgIcon name="warning" />
-          </span>
-        )}
+        <DynamicIcon isFormEmpty={isFormEmpty} hasFormFilled={hasFormFilled} />
       </button>
 
       <button
