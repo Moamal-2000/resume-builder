@@ -8,7 +8,7 @@ import s from "./ExperienceTab.module.scss";
 const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
   const { experiencesTabIndex, removeExperience } = useFormsStore((s) => s);
 
-  const classes = experienceTabClasses({
+  const tabWrapperClasses = experienceTabClasses({
     cssModule: s,
     activeIndex: experiencesTabIndex,
     index,
@@ -16,12 +16,27 @@ const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
   });
 
   return (
-    <button
-      type="button"
-      className={classes}
-      onClick={(event) => handleTabClick(event, index)}
-    >
-      {title}
+    <div className={tabWrapperClasses}>
+      <button
+        type="button"
+        className={s.tabButton}
+        onClick={(event) => handleTabClick(event, index)}
+      >
+        {title}
+
+        {hasFormFilled && (
+          <span className={`${s.iconHolder} ${s.checkMark}`}>
+            <SvgIcon name="checked" />
+          </span>
+        )}
+
+        {!hasFormFilled && (
+          <span className={`${s.iconHolder} ${s.warning}`}>
+            <SvgIcon name="warning" />
+          </span>
+        )}
+      </button>
+
       <button
         type="button"
         className={s.removeButton}
@@ -30,19 +45,7 @@ const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
       >
         <SvgIcon name="xMark" />
       </button>
-
-      {hasFormFilled && (
-        <span className={`${s.iconHolder} ${s.checkMark}`}>
-          <SvgIcon name="checked" />
-        </span>
-      )}
-
-      {!hasFormFilled && (
-        <span className={`${s.iconHolder} ${s.warning}`}>
-          <SvgIcon name="warning" />
-        </span>
-      )}
-    </button>
+    </div>
   );
 };
 
