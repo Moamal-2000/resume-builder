@@ -46,7 +46,7 @@ const ExperienceTabs = () => {
 
   return (
     <div className={s.experienceTabs}>
-    <MainExperienceTab formsFilled={formsFilled} title={mainTabTitle} />
+      <MainExperienceTab hasFormFilled={formsFilled[0]} title={mainTabTitle} />
 
       {experiencesInputs.slice(1).map((experienceInput, index) => {
         console.log(formsFilled[index + 1]);
