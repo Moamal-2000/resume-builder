@@ -1,20 +1,21 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
+import { experienceTabClasses } from "@/data/classNames";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./MainExperienceTab.module.scss";
 
 const MainExperienceTab = ({ formsFilled, title }) => {
   const { updateTabIndex, experiencesTabIndex } = useFormsStore((s) => s);
 
+  const classes = experienceTabClasses({
+    cssModule: s,
+    activeIndex: experiencesTabIndex,
+    hasFormFilled: formsFilled[0],
+  });
+
   return (
-    <button
-      type="button"
-      className={`${s.mainTab} ${experiencesTabIndex === 0 ? s.active : ""} ${
-        formsFilled[0] ? "" : s.invalidForm
-      }`}
-      onClick={() => updateTabIndex(0)}
-    >
+    <button type="button" className={classes} onClick={() => updateTabIndex(0)}>
       {title}
 
       {formsFilled[0] && (
