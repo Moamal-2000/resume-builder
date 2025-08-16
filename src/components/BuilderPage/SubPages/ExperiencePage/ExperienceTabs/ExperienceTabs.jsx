@@ -1,9 +1,9 @@
 "use client";
 
-import SvgIcon from "@/components/Shared/SvgIcon";
 import { getInputValueOrFallback, hasFormFilled } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import AddExperienceButton from "./AddExperienceButton/AddExperienceButton";
+import ExperienceTab from "./ExperienceTab/ExperienceTab";
 import s from "./ExperienceTabs.module.scss";
 import MainExperienceTab from "./MainExperienceTab/MainExperienceTab";
 
@@ -48,35 +48,14 @@ const ExperienceTabs = () => {
 
       {experiencesInputs.slice(1).map((experienceInput, index) => {
         return (
-          <button
-            type="button"
+          <ExperienceTab
+            handleRemoveExperience={handleRemoveExperience}
+            handleTabClick={handleTabClick}
+            title={getInputValueOrFallback(experienceInput[0])}
+            hasFormFilled={formsFilled[index + 1]}
             key={index}
-            className={`${index + 1 === experiencesTabIndex ? s.active : ""} ${
-              formsFilled[index + 1] ? s.validForm : s.invalidForm
-            }`}
-            onClick={(event) => handleTabClick(event, index)}
-          >
-            {getInputValueOrFallback(experienceInput[0])}
-            <span
-              className={s.xMark}
-              onClick={(event) => handleRemoveExperience(event, index)}
-              title="Remove experience"
-            >
-              <SvgIcon name="xMark" />
-            </span>
-
-            {formsFilled[index + 1] && (
-              <span className={`${s.iconHolder} ${s.checkMark}`}>
-                <SvgIcon name="checked" />
-              </span>
-            )}
-
-            {!formsFilled[index + 1] && (
-              <span className={`${s.iconHolder} ${s.warning}`}>
-                <SvgIcon name="warning" />
-              </span>
-            )}
-          </button>
+            index={index}
+          />
         );
       })}
 

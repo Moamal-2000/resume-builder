@@ -23,13 +23,27 @@
     background-color: #ff6c6f;
     border-color: #ff6c6f;
     color: #fff;
+
+    &>span>svg {
+      fill: #fff;
+    }
   }
 
   &:active {
-    background-color: #ff5e61 !important;
-    border-color: #ff5e61 !important;
-    color: #fff !important;
+    background-color: #ff5e61;
+    border-color: #ff5e61;
+    color: #fff;
   }
+}
+
+.tab .xMark {
+  padding: 4px;
+}
+
+.tab .xMark>svg {
+  width: 10px;
+  height: 10px;
+  fill: #0a0a0a;
 }
 
 .tab .iconHolder {
