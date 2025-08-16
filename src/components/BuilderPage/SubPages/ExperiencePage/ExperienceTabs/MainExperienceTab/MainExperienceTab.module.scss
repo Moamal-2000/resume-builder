@@ -1,0 +1,33 @@
+.mainTab {
+  border: solid 2px #dadfec;
+  padding: 10px 12px;
+  background-color: transparent;
+  color: #0a1125;
+  font-size: .8rem;
+  font-family: var(--poppins-font);
+  font-weight: 500;
+  border-radius: 6px;
+  text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+  position: relative;
+  transition:
+    background-color .1s ease-in-out,
+    border-color .1s ease-in-out,
+    color .1s ease-in-out;
+
+  &.active,
+  &:not(.active):hover {
+    background-color: #ff6c6f;
+    border-color: #ff6c6f;
+    color: #fff;
+  }
+
+  &:active {
+    background-color: #ff5e61 !important;
+    border-color: #ff5e61 !important;
+    color: #fff !important;
+  }
+}
