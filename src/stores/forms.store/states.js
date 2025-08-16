@@ -45,7 +45,7 @@ export const personalInfoInputs = [
     name: "address",
     type: "text",
     value: "",
-    pattern: "^[A-Za-z0-9s,.'-/]{2,100}$",
+    pattern: "^[A-Za-z0-9s,.'-/ ]{2,100}$",
     placeholder: "City, Country (e.g. Baghdad, Iraq)",
     required: false,
     hasValidValue: true,
