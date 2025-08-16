@@ -39,7 +39,7 @@ const ExperienceTabs = () => {
     const clickedTagName = event.target.tagName;
     if (clickedTagName === "SPAN") return false;
 
-    removeExperience(index + 1);
+    removeExperience(index);
   }
 
   return (
