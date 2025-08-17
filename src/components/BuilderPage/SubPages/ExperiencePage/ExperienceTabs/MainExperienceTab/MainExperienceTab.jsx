@@ -18,11 +18,17 @@ const MainExperienceTab = ({ hasFormFilled, title, index }) => {
   });
 
   return (
-    <button type="button" className={classes} onClick={() => updateTabIndex(0)}>
-      {title}
+    <div className={s.tabWrapper}>
+      <button
+        type="button"
+        className={classes}
+        onClick={() => updateTabIndex(0)}
+      >
+        {title}
+      </button>
 
       <DynamicIcon isFormEmpty={isFormEmpty} hasFormFilled={hasFormFilled} />
-    </button>
+    </div>
   );
 };
 

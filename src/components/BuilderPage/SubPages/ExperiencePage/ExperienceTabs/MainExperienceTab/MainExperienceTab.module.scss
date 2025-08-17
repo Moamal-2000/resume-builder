@@ -1,7 +1,12 @@
+.tabWrapper {
+  position: relative;
+}
+
 .tab {
   border: solid 2px #dadfec;
   padding: 10px 12px;
   background-color: transparent;
+  width: 100%;
   color: #0a1125;
   font-size: .8rem;
   font-family: var(--poppins-font);
@@ -12,7 +17,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 3px;
-  position: relative;
   transition:
     background-color .1s ease-in-out,
     border-color .1s ease-in-out,
