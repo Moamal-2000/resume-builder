@@ -20,28 +20,30 @@ const ExperienceTab = ({ handleTabClick, hasFormFilled, title, index }) => {
 
   return (
     <div className={tabWrapperClasses}>
-      <button
-        type="button"
-        className={s.tabButton}
-        onClick={(event) => handleTabClick(event, index)}
-      >
-        {title}
+      <div className={s.buttons}>
+        <button
+          type="button"
+          className={s.tabButton}
+          onClick={(event) => handleTabClick(event, index)}
+        >
+          {title}
+        </button>
 
-        <DynamicIcon
-          isFormEmpty={isFormEmpty}
-          hasFormFilled={hasFormFilled}
-          ariaDescribedby="form-status-tooltip"
-        />
-      </button>
+        <button
+          type="button"
+          className={s.removeButton}
+          onClick={() => removeExperience(index)}
+          title="Remove experience"
+        >
+          <SvgIcon name="xMark" />
+        </button>
+      </div>
 
-      <button
-        type="button"
-        className={s.removeButton}
-        onClick={() => removeExperience(index)}
-        title="Remove experience"
-      >
-        <SvgIcon name="xMark" />
-      </button>
+      <DynamicIcon
+        isFormEmpty={isFormEmpty}
+        hasFormFilled={hasFormFilled}
+        ariaDescribedby="form-status-tooltip"
+      />
     </div>
   );
 };

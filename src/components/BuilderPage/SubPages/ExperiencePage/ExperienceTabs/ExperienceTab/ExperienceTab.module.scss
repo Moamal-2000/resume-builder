@@ -1,9 +1,8 @@
 .tab {
-  border-radius: 6px;
   position: relative;
 }
 
-.tabButton {
+.buttons .tabButton {
   width: 100%;
   border: solid 2px #dadfec;
   background-color: transparent;
@@ -12,7 +11,7 @@
   font-size: .8rem;
   font-family: var(--poppins-font);
   font-weight: 500;
-  border-radius: inherit;
+  border-radius: 6px;
   text-wrap: nowrap;
   display: flex;
   align-items: center;
@@ -32,7 +31,7 @@
 }
 
 .tab.active .tabButton,
-.tab:not(.active):hover .tabButton {
+.tab:not(.active) .buttons:hover .tabButton {
   background-color: #ff6c6f;
   border-color: #ff6c6f;
   color: #fff;
@@ -55,8 +54,7 @@
   fill: #0a0a0a;
 }
 
-.tab.active .removeButton>svg,
-.tab.active:hover .removeButton>svg,
-.tab:not(.active):hover .removeButton>svg {
+.tab.active .buttons .removeButton>svg,
+.tab:not(.active) .buttons:hover .removeButton>svg {
   fill: #fff;
 }
