@@ -40,12 +40,23 @@
 .tab .removeButton {
   background-color: transparent;
   border: none;
+  outline: solid 1px transparent;
+  outline-offset: 2px;
   padding: 4px;
   position: absolute;
   right: 10px;
   top: 50%;
   translate: 0 -50%;
   cursor: pointer;
+
+  &:focus-visible {
+    outline-color: #0a0a0a;
+  }
+}
+
+.tab.active:has(:focus-visible) .removeButton,
+.tab:not(.active) .buttons:has(:focus-visible):hover .removeButton {
+  outline-color: #fff;
 }
 
 .tab .removeButton>svg {
