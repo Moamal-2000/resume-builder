@@ -24,9 +24,9 @@
     color .1s ease-in-out;
 
   &:active {
-    background-color: #ff5e61;
-    border-color: #ff5e61;
-    color: #fff;
+    background-color: #ff5e61 !important;
+    border-color: #ff5e61 !important;
+    color: #fff !important;
   }
 }
 
