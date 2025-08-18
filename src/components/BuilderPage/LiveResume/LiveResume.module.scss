@@ -1,6 +1,7 @@
 @use "@/styles/mixins/mixins" as m;
 
 .liveResume {
+  max-height: 1200px;
   border-radius: 20px;
   margin-top: 6px;
   display: grid;
