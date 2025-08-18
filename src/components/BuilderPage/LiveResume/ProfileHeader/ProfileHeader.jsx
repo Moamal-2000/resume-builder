@@ -8,7 +8,7 @@ import s from "./ProfileHeader.module.scss";
 const ProfileHeader = () => {
   const { personalInfoInputs, contactInfoInputs } = useFormsStore((s) => s);
 
-  const { fullName, profession, email, address } =
+  const { fullName, profession, email, address, summery } =
     getInputValuesByName(personalInfoInputs);
 
   const contactInfoData = getContactInfo(contactInfoInputs, email);
@@ -41,11 +41,7 @@ const ProfileHeader = () => {
 
       <div className={s.textBox}>
         <h2>Summery</h2>
-        <p>
-          Explain briefly who you are and your background here in not more than
-          3 lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-          aliquam,
-        </p>
+        <p>{summery}</p>
       </div>
     </section>
   );

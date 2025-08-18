@@ -52,6 +52,19 @@ export const personalInfoInputs = [
     warningMessage: "Please enter a valid address (e.g., City, Country).",
     id: 4,
   },
+  {
+    label: "Summery",
+    name: "summery",
+    type: "textarea",
+    value: "",
+    pattern: "^.{30,800}$",
+    placeholder:
+      "Explain briefly who you are and your background here in not more than 3 lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,",
+    required: true,
+    hasValidValue: false,
+    warningMessage: "Please enter 30 to 800 characters describing your job.",
+    id: 5,
+  },
 ];
 
 export const experienceInputs = [
