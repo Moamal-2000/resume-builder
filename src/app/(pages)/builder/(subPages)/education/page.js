@@ -8,7 +8,7 @@ const EducationPages = () => {
   return (
     <BuilderForm
       inputGroupKey="educationInputs"
-      nextPageRoute="/builder/contactInfo"
+      nextPageRoute="/builder/contact-info"
       submitButtonText="Next"
     />
   );

@@ -13,4 +13,4 @@ export const RESUME_OPTIONS = {
 };
 
 // Debugging
-export const STOP_BUILDER_PROTECTION = true;
+export const STOP_BUILDER_PROTECTION = false;

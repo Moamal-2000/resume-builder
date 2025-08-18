@@ -12,7 +12,7 @@ const Experiencepage = () => {
       <ExperienceTabs />
       <BuilderForm
         inputGroupKey="experiencesInputs"
-        nextPageRoute="/builder/techSkills"
+        nextPageRoute="/builder/tech-skills"
         submitButtonText="Next"
         hasTabs
       />

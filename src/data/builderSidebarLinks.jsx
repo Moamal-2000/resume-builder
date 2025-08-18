@@ -15,7 +15,7 @@ export const BUILDER_SIDEBAR_PAGES = [
   },
   {
     title: "Technical Skills",
-    link: "/builder/techSkills",
+    link: "/builder/tech-skills",
     iconName: "stats",
     unlockAfter: "experiencesInputs",
     id: 3,
@@ -29,7 +29,7 @@ export const BUILDER_SIDEBAR_PAGES = [
   },
   {
     title: "Contact Information",
-    link: "/builder/contactInfo",
+    link: "/builder/contact-info",
     iconName: "userInfo",
     unlockAfter: "techSkillsInputs",
     id: 5,
@@ -46,8 +46,8 @@ export const BUILDER_SIDEBAR_PAGES = [
 export const builderInputKeysToPath = {
   personalInfoInputs: "/builder",
   experiencesInputs: "/builder/experience",
-  techSkillsInputs: "/builder/techSkills",
+  techSkillsInputs: "/builder/tech-skills",
   educationInputs: "/builder/education",
-  contactInfoInputs: "/builder/contactInfo",
+  contactInfoInputs: "/builder/contact-info",
   certificationInputs: "/builder/certification",
 };
