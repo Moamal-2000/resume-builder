@@ -2,6 +2,7 @@ import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
 import {
   groupInputsByPair,
   markAllRequiredIfOneHasValue,
+  markPortfolioFieldIfHasValue,
   setRequiredByValue,
 } from "@/functions/helper";
 import { create } from "zustand";
@@ -47,6 +48,8 @@ const formsStore = (set, get) => ({
     const isExperiencesInputs = inputGroupKey === "experiencesInputs";
     const isEducationInputs = inputGroupKey === "educationInputs";
     const isCertificationInputs = inputGroupKey === "certificationInputs";
+    const isContactInfoInputs = inputGroupKey === "contactInfoInputs";
+    const isPortfolioField = name === "portfolio";
 
     const inputs = isExperiencesInputs
       ? get()[inputGroupKey][experiencesTabIndex]
@@ -78,6 +81,10 @@ const formsStore = (set, get) => ({
     if (isCertificationInputs) {
       const pairs = groupInputsByPair(updatedInputs);
       updatedInputs = setRequiredByValue(pairs);
+    }
+
+    if (isContactInfoInputs && isPortfolioField) {
+      updatedInputs = markPortfolioFieldIfHasValue(updatedInputs);
     }
 
     set(() => ({ [inputGroupKey]: updatedInputs }));

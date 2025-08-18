@@ -124,6 +124,13 @@ export function markAllRequiredIfOneHasValue(inputs) {
   }));
 }
 
+export function markPortfolioFieldIfHasValue(updatedInputs) {
+  return updatedInputs.map((input) => {
+    if (input.name !== "portfolio") return input;
+    return { ...input, required: input.value !== "" };
+  });
+}
+
 export function getInputValuesByName(inputs) {
   const keys = inputs.map((input) => input.name);
   return mapKeysToInputValues(inputs, keys);
