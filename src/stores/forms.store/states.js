@@ -6,13 +6,12 @@ export const personalInfoInputs = [
     name: "fullName",
     type: "text",
     value: "",
-    pattern: "^[A-Za-z]{2,}[ '-][A-Za-z.]+$",
+    pattern: "^[A-Za-z][A-Za-z' -]{1,59}$",
     placeholder: "John Doe",
     required: true,
     hasValidValue: false,
     warningMessage:
-      "Please Enter first and last name separated by space, hyphen, or apostrophe.",
-
+      "Please enter a valid full name (letters only, separated by space, hyphen, or apostrophe, 2-60 characters).",
     id: 1,
   },
   {
