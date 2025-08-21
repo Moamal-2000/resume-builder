@@ -1,0 +1,16 @@
+.certifications>h2 {
+  font-family: var(--euclid-circular-font);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 30px;
+  color: #393E4D;
+  text-transform: uppercase;
+}
+
+.certifications .certificates {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}

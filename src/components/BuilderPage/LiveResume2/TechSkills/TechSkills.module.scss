@@ -1,0 +1,30 @@
+.techSkills>h2 {
+  font-family: var(--euclid-circular-font);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 30px;
+  color: #393E4D;
+  text-transform: uppercase;
+}
+
+.techSkills .skills {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  margin-top: 8px;
+}
+
+.techSkills .skills>li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666a75;
+  font-family: var(--font-euclid-circular);
+  font-weight: 400;
+  font-size: .8rem;
+  line-height: 31px;
+}
+
+.techSkills .skills>li>svg {
+  width: 18px;
+  height: 18px;
+}
