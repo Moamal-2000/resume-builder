@@ -2,10 +2,8 @@
   background-color: #fff;
   border-right: solid 2px #e4e7eb;
   position: relative;
-  padding-top: 70px;
   min-width: 304px;
   width: 304px;
-  overflow: hidden;
   transition: width .8s ease-in-out;
 
   &.open.closedOnce {
@@ -15,6 +13,14 @@
   &.close {
     animation: close-menu .8s ease-in-out forwards;
   }
+}
+
+.sidebar .wrapper {
+  position: sticky;
+  padding-top: 70px;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 @keyframes open-menu {

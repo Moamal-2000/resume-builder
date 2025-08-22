@@ -29,13 +29,15 @@ const Sidebar = () => {
       className={`${s.sidebar} ${closeClass} ${closedOnceClass}`}
       ref={sidebarRef}
     >
-      <SidebarIcon
-        isAsideOpen={isAsideOpen}
-        sidebarRef={sidebarRef}
-        closedOnceRef={closedOnceRef}
-      />
-      <PagesNav />
-      <ProgressBar progress={resumeProgress} relatedTo="sidebar" />
+      <div className={s.wrapper}>
+        <SidebarIcon
+          isAsideOpen={isAsideOpen}
+          sidebarRef={sidebarRef}
+          closedOnceRef={closedOnceRef}
+        />
+        <PagesNav />
+        <ProgressBar progress={resumeProgress} relatedTo="sidebar" />
+      </div>
     </aside>
   );
 };
