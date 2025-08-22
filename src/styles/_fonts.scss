@@ -57,8 +57,18 @@ $aileron-font-map: (
   )
 );
 
+$glacial-indifference-font-map: (
+  name: "Glacial Indifference",
+  format: 'opentype',
+  ext: "otf",
+  weights: (400: "Regular",
+    700: "Bold",
+  )
+);
+
 @include gfc.generate-font-faces($poppins-font-map);
 @include gfc.generate-font-faces($euclid-circular-font-map);
 @include gfc.generate-font-faces($roboto-font-map);
 @include gfc.generate-font-faces($dm-sans-font-map);
 @include gfc.generate-font-faces($aileron-font-map);
+@include gfc.generate-font-faces($glacial-indifference-font-map);
