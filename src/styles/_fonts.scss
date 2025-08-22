@@ -44,7 +44,21 @@ $dm-sans-font-map: (
   )
 );
 
+$aileron-font-map: (
+  name: "Aileron",
+  format: 'opentype',
+  ext: "otf",
+  weights: (300: "Light",
+    400: "Regular",
+    600: "SemiBold",
+    700: "Bold",
+    800: "Heavy",
+    900: "Black"
+  )
+);
+
 @include gfc.generate-font-faces($poppins-font-map);
 @include gfc.generate-font-faces($euclid-circular-font-map);
 @include gfc.generate-font-faces($roboto-font-map);
 @include gfc.generate-font-faces($dm-sans-font-map);
+@include gfc.generate-font-faces($aileron-font-map);
