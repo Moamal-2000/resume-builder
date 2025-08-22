@@ -3,12 +3,12 @@
 }
 
 .certifications>h2 {
-  font-family: var(--euclid-circular-font);
+  font-family: var(--aileron-font);
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 30px;
   color: #393E4D;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .certifications .certificates {
