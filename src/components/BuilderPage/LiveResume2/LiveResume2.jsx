@@ -12,11 +12,14 @@ const LiveResume2 = () => {
       <ResumeLines />
       <ProfileHeader />
 
-      <div className={s.wrapper}>
+      <div className={s.mainWrapper}>
         <Experiences />
-        <TechSkills />
-        <Education />
-        <Certifications />
+
+        <div className={s.wrapper}>
+          <TechSkills />
+          <Education />
+          <Certifications />
+        </div>
       </div>
     </section>
   );

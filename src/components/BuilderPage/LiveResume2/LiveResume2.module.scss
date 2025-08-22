@@ -9,13 +9,15 @@
   position: relative;
 }
 
-.liveResume .wrapper {
+.liveResume .mainWrapper {
   width: 100%;
   display: grid;
   grid-template-columns: 65% 35%;
   gap: 40px;
-  grid-template-areas:
-    "experiences skills"
-    "experiences education"
-    "experiences certifications";
+}
+
+.mainWrapper .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
