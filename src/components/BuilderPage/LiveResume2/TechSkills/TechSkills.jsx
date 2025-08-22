@@ -1,6 +1,5 @@
 "use client";
 
-import SvgIcon from "@/components/Shared/SvgIcon";
 import { getInputValueOrFallback } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./TechSkills.module.scss";
@@ -10,18 +9,13 @@ const TechSkills = () => {
 
   return (
     <section className={s.techSkills}>
-      <h2>Technical Skills</h2>
+      <h2>Skills</h2>
 
       <ul className={s.skills}>
         {techSkillsInputs.map((input, index) => {
           const skill = getInputValueOrFallback(input);
 
-          return (
-            <li key={`${skill}-${index}`}>
-              <SvgIcon name="circleCheck" />
-              {skill}
-            </li>
-          );
+          return <li key={`${skill}-${index}`}>{skill}, </li>;
         })}
       </ul>
     </section>

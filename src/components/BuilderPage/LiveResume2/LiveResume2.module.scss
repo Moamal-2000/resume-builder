@@ -2,9 +2,15 @@
 
 .liveResume {
   width: 764px;
-  max-height: 1200px;
+  height: 1123px;
   margin-top: 6px;
   background-color: #fff;
   padding: 60px;
   position: relative;
+}
+
+.liveResume .wrapper {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 40px;
 }
