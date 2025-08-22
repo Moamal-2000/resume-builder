@@ -1,3 +1,5 @@
+import Certifications from "./Certifications/Certifications";
+import Education from "./Education/Education";
 import Experiences from "./Experiences/Experiences";
 import s from "./LiveResume2.module.scss";
 import ProfileHeader from "./ProfileHeader/ProfileHeader";
@@ -13,10 +15,9 @@ const LiveResume2 = () => {
       <div className={s.wrapper}>
         <Experiences />
         <TechSkills />
+        <Education />
+        <Certifications />
       </div>
-
-      {/* <Education /> */}
-      {/* <Certifications /> */}
     </section>
   );
 };
