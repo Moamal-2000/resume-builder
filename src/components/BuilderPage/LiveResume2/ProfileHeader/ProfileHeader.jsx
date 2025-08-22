@@ -8,15 +8,15 @@ import s from "./ProfileHeader.module.scss";
 const ProfileHeader = () => {
   const { personalInfoInputs, contactInfoInputs } = useFormsStore((s) => s);
 
-  const { fullName, profession, email, address, summery } =
+  const { fullName, profession, email, summery } =
     getInputValuesByName(personalInfoInputs);
 
   const contactInfoData = getContactInfo(contactInfoInputs, email);
 
   return (
     <section className={s.profileHeader}>
-      <h2>{fullName}</h2>
-      <h2>{profession}</h2>
+      <h2 className={s.name}>{fullName}</h2>
+      <h2 className={s.profession}>{profession}</h2>
 
       <ul className={s.socialMedia}>
         {contactInfoData.map(({ title, href, iconName, id }) => (
@@ -34,13 +34,8 @@ const ProfileHeader = () => {
         ))}
       </ul>
 
-      <div className={s.textBox}>
-        <h2>Address</h2>
-        <p>{address}</p>
-      </div>
-
-      <div className={s.textBox}>
-        <h2>Summery</h2>
+      <div className={s.summery}>
+        <h2>Basic Information</h2>
         <p>{summery}</p>
       </div>
     </section>
