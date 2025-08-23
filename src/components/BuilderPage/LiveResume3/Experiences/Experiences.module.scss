@@ -1,15 +1,14 @@
 .experiences>h2 {
-  font-family: var(--aileron-font);
   font-weight: 700;
-  font-size: 1.3rem;
-  line-height: 30px;
-  color: #393E4D;
-  text-transform: capitalize;
+  font-size: 1.35rem;
+  color: var(--resume3-color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .experiences .experiencesWrapper {
   margin-top: 8px;
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 14px;
 }

@@ -1,3 +1,4 @@
+import Experiences from "./Experiences/Experiences";
 import s from "./LiveResume3.module.scss";
 import ProfileHeader from "./ProfileHeader/ProfileHeader";
 
@@ -5,7 +6,7 @@ const LiveResume3 = () => {
   return (
     <section className={s.liveResume}>
       <ProfileHeader />
-      {/* <Experiences /> */}
+      <Experiences />
       {/* <TechSkills /> */}
       {/* <Education /> */}
       {/* <Certifications /> */}

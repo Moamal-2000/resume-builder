@@ -2,24 +2,24 @@
   font-family: var(--euclid-circular-font);
 }
 
-.title {
+.jobExperience .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jobExperience .wrapper :where(.title, .date) {
   font-weight: 500;
   font-size: 1rem;
   line-height: 22px;
-  color: #404553;
+  color: #1e1e1e;
 }
 
-.date {
+.jobExperience .description {
   font-weight: 400;
   font-size: .9rem;
-  color: #9fa1a8;
-}
-
-.description {
-  font-weight: 400;
-  font-size: .8rem;
   line-height: 22px;
-  color: #5e6c74;
+  color: #1e1e1e;
   margin-top: 8px;
 
   hyphens: auto;
