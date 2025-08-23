@@ -1,72 +1,65 @@
-.profileHeader {
-  padding: 24px;
-  margin-bottom: 50px;
+.profileHeader p {
+  color: #1e1e1e;
 }
 
-.profileHeader>h2 {
-  font-family: var(--aileron-font);
-  color: #26292a;
+// Lines
+.profileHeader header::before,
+.profileHeader footer::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--resume3-color);
+}
+
+.profileHeader header {
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.profileHeader header .name {
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: var(--resume3-color);
   word-spacing: 3px;
-  margin-bottom: 20px;
-}
-
-.profileHeader .name {
-  font-size: 2.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 33px;
-}
-
-.profileHeader .profession {
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-
-.profileHeader .socialMedia {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px 24px;
-  margin-block: 6px 14px;
-}
-
-.profileHeader .media {
-  font-family: var(--roboto-font);
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  font-size: .8rem;
-  text-wrap: nowrap;
-  width: fit-content;
-  color: #5e6c74;
-}
-
-.profileHeader svg {
-  width: 20px;
-  height: 20px;
-  stroke: #5e6c74;
-}
-
-.profileHeader .summery {
-  margin-top: 50px;
-}
-
-.profileHeader .summery>h2 {
-  font-family: var(--aileron-font);
+  margin-bottom: 10px;
+  font-size: 2.4rem;
   font-weight: 700;
-  font-size: 1rem;
-  color: #4d525f;
-  text-transform: capitalize;
-  letter-spacing: .4;
+  text-transform: uppercase;
 }
 
-.profileHeader .summery>p {
-  font-family: var(--glacial-indifference-font);
+.profileHeader header .info {
+  display: flex;
+  justify-content: center;
+  font-size: .9rem;
+}
+
+.profileHeader header .info .dot {
+  margin: 0 4px;
+  font-size: 2.4rem;
+  line-height: .1;
+}
+
+.profileHeader footer {
+  margin-block: 16px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.profileHeader footer>h2 {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--resume3-color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.profileHeader footer>p {
   font-weight: 400;
-  font-size: .8rem;
-  line-height: 18px;
-  color: #5e6c74;
-  margin-top: 4px;
+  font-size: .9rem;
+  line-height: 22px;
 
   hyphens: auto;
   overflow-wrap: break-word;

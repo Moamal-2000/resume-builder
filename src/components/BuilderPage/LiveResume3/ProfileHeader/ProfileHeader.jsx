@@ -1,6 +1,5 @@
 "use client";
 
-import SvgIcon from "@/components/Shared/SvgIcon";
 import { getContactInfo, getInputValuesByName } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
 import s from "./ProfileHeader.module.scss";
@@ -8,36 +7,30 @@ import s from "./ProfileHeader.module.scss";
 const ProfileHeader = () => {
   const { personalInfoInputs, contactInfoInputs } = useFormsStore((s) => s);
 
-  const { fullName, profession, email, summery } =
+  const { fullName, email, summery, address } =
     getInputValuesByName(personalInfoInputs);
 
-  const contactInfoData = getContactInfo(contactInfoInputs, email);
+  const [emailData, phoneData, , , personalWebsiteData] = getContactInfo(
+    contactInfoInputs,
+    email
+  );
 
   return (
     <section className={s.profileHeader}>
-      <h2 className={s.name}>{fullName}</h2>
-      <h2 className={s.profession}>{profession}</h2>
+      <header>
+        <h2 className={s.name}>{fullName}</h2>
 
-      <ul className={s.socialMedia}>
-        {contactInfoData.map(({ title, href, iconName, id }) => (
-          <li key={id}>
-            <a
-              href={href}
-              className={s.media}
-              target="_blank"
-              rel="noreferrer noopenner"
-            >
-              <SvgIcon name={iconName} />
-              <span>{title}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+        <p className={s.info}>
+          {address} <span className={s.dot}>.</span> {phoneData.title}
+          <span className={s.dot}>.</span> {emailData.title}
+        </p>
+        <p className={s.personalWebsite}>{personalWebsiteData.title}</p>
+      </header>
 
-      <div className={s.summery}>
-        <h2>Basic Information</h2>
+      <footer>
+        <h2>Summery</h2>
         <p>{summery}</p>
-      </div>
+      </footer>
     </section>
   );
 };
