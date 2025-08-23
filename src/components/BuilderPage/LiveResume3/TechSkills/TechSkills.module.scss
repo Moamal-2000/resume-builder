@@ -1,0 +1,26 @@
+.techSkills>h2 {
+  font-family: var(--aileron-font);
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 30px;
+  color: #393E4D;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.techSkills .skills {
+  line-height: 1.2;
+}
+
+.techSkills .skills>li {
+  display: inline;
+  color: #5e6c74;
+  font-family: var(--font-euclid-circular);
+  font-weight: 400;
+  font-size: .8rem;
+}
+
+.techSkills .skills>li>svg {
+  width: 18px;
+  height: 18px;
+}

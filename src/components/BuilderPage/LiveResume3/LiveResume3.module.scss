@@ -1,0 +1,9 @@
+@use "@/styles/mixins/mixins" as m;
+
+.liveResume {
+  width: 764px;
+  height: 1123px;
+  margin-top: 6px;
+  background-color: #fff;
+  position: relative;
+}
