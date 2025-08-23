@@ -1,9 +1,7 @@
-import s from './SectionTitle.module.scss'
+import s from "./SectionTitle.module.scss";
 
-const SectionTitle = () => {
-  return (
-    <div>SectionTitle</div>
-  )
-}
+const SectionTitle = ({ children }) => {
+  return <h2 className={s.title}>{children}</h2>;
+};
 
-export default SectionTitle
+export default SectionTitle;

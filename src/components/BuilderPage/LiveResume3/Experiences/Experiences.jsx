@@ -2,6 +2,7 @@
 
 import { getJobExperienceProps } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
+import SectionTitle from "../SectionTitle/SectionTitle";
 import s from "./Experiences.module.scss";
 import JobExperience from "./JobExperience/JobExperience";
 
@@ -10,7 +11,7 @@ const Experiences = () => {
 
   return (
     <section className={s.experiences}>
-      <h2>Experiences</h2>
+      <SectionTitle>Experiences</SectionTitle>
 
       <div className={s.experiencesWrapper}>
         {experiencesInputs.map((experienceData, index) => {

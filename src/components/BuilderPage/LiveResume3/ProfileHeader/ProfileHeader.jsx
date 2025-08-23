@@ -2,6 +2,7 @@
 
 import { getContactInfo, getInputValuesByName } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
+import SectionTitle from "../SectionTitle/SectionTitle";
 import s from "./ProfileHeader.module.scss";
 
 const ProfileHeader = () => {
@@ -28,7 +29,7 @@ const ProfileHeader = () => {
       </header>
 
       <footer>
-        <h2>Summery</h2>
+        <SectionTitle>Summery</SectionTitle>
         <p>{summery}</p>
       </footer>
     </section>
