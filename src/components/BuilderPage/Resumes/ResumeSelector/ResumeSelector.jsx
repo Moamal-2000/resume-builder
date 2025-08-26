@@ -1,20 +1,12 @@
 import { RESUMES } from "@/data/staticData";
-import Image from "next/image";
+import ResumeFrame from "./ResumeFrame/ResumeFrame";
 import s from "./ResumeSelector.module.scss";
 
 const ResumeSelector = () => {
   return (
     <div className={s.selector}>
-      {RESUMES.map(({ name, imagePath, id }) => (
-        <div className={s.resumeFrame} key={id}>
-          <Image
-            src={imagePath}
-            alt="Resume template"
-            width={350}
-            height={360}
-          />
-          <input type="radio" name="resume" value={name} />
-        </div>
+      {RESUMES.map((resumeData) => (
+        <ResumeFrame resumeData={resumeData} />
       ))}
     </div>
   );
