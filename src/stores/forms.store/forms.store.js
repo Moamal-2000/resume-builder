@@ -1,5 +1,4 @@
 import { EXPERIENCE_MAX_COUNT } from "@/data/constants";
-import { RESUMES } from "@/data/staticData";
 import {
   groupInputsByPair,
   markAllRequiredIfOneHasValue,
@@ -30,9 +29,6 @@ const formsStore = (set, get) => ({
   contactInfoInputs,
   certificationInputs,
   experiencesTabIndex: 0,
-  selectedResume: RESUMES[0].name,
-
-  updateSelectedResume: (selectedResume) => set({ selectedResume }),
 
   getAllInputs: () => {
     const state = get();

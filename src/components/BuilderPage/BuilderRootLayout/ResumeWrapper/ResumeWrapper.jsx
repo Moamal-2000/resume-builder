@@ -1,7 +1,7 @@
 "use client";
 
 import { RESUMES } from "@/data/staticData";
-import { useFormsStore } from "@/stores/forms.store/forms.store";
+import useGlobalStore from "@/stores/global.store/global.store";
 import { usePathname } from "next/navigation";
 
 const ResumeWrapper = () => {
@@ -10,7 +10,7 @@ const ResumeWrapper = () => {
 
   if (isRootPage) return;
 
-  const selectedResume = useFormsStore((s) => s.selectedResume);
+  const selectedResume = useGlobalStore((s) => s.selectedResume);
   const selectedResumeData = RESUMES.find(
     (resume) => resume.name === selectedResume
   );
