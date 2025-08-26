@@ -1,17 +1,5 @@
-import BuilderForm from "@/components/Shared/Forms/BuilderForm/BuilderForm";
-
-export const metadata = {
-  title: "Builder | Personal Information",
+const ResumesPage = () => {
+  return <div>ResumesPage</div>;
 };
 
-const BuilderPage = () => {
-  return (
-    <BuilderForm
-      inputGroupKey="personalInfoInputs"
-      nextPageRoute="/builder/experience"
-      submitButtonText="Next"
-    />
-  );
-};
-
-export default BuilderPage;
+export default ResumesPage;

@@ -1,7 +1,14 @@
 export const BUILDER_SIDEBAR_PAGES = [
   {
-    title: "Personal Information",
+    title: "Resumes",
     link: "/builder",
+    iconName: "user",
+    unlockAfter: "none",
+    id: 0,
+  },
+  {
+    title: "Personal Information",
+    link: "/builder/personal-info",
     iconName: "user",
     unlockAfter: "none",
     id: 1,
@@ -44,7 +51,8 @@ export const BUILDER_SIDEBAR_PAGES = [
 ];
 
 export const builderInputKeysToPath = {
-  personalInfoInputs: "/builder",
+  resumesInputs: "/builder",
+  personalInfoInputs: "/builder/personal-info",
   experiencesInputs: "/builder/experience",
   techSkillsInputs: "/builder/tech-skills",
   educationInputs: "/builder/education",
