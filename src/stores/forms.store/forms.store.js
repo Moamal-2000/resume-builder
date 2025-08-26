@@ -30,7 +30,9 @@ const formsStore = (set, get) => ({
   contactInfoInputs,
   certificationInputs,
   experiencesTabIndex: 0,
-  selectedResume: RESUMES[1].name,
+  selectedResume: RESUMES[0].name,
+
+  updateSelectedResume: (selectedResume) => set({ selectedResume }),
 
   getAllInputs: () => {
     const state = get();
