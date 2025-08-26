@@ -1,1 +1,34 @@
-.selector {}
+.selector {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 352px;
+  min-width: 352px;
+  gap: 10px;
+  margin-top: 45px;
+}
+
+.resumeFrame {
+  flex: 1;
+  min-width: 110px;
+  max-width: 110px;
+  min-height: 160px;
+  height: 160px;
+  position: relative;
+  cursor: pointer;
+}
+
+.resumeFrame>img {
+  object-fit: cover;
+}
+
+.resumeFrame>input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+}
