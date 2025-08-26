@@ -1,7 +1,8 @@
 "use client";
 
+import { RESUMES } from "@/data/staticData";
+import { useFormsStore } from "@/stores/forms.store/forms.store";
 import { usePathname } from "next/navigation";
-import LiveResume2 from "../../Resumes/LiveResume2/LiveResume2";
 
 const ResumeWrapper = () => {
   const pathname = usePathname();
@@ -9,7 +10,12 @@ const ResumeWrapper = () => {
 
   if (isRootPage) return;
 
-  return <LiveResume2 />;
+  const selectedResume = useFormsStore((s) => s.selectedResume);
+  const selectedResumeData = RESUMES.find(
+    (resume) => resume.name === selectedResume
+  );
+
+  return selectedResumeData.component;
 };
 
 export default ResumeWrapper;
