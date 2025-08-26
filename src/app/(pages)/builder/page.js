@@ -1,5 +1,7 @@
+import ResumeSelector from "@/components/BuilderPage/Resumes/ResumeSelector/ResumeSelector";
+
 const ResumesPage = () => {
-  return <div>ResumesPage</div>;
+  return <ResumeSelector />;
 };
 
 export default ResumesPage;

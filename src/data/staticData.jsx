@@ -1,3 +1,7 @@
+import LiveResume from "@/components/BuilderPage/Resumes/LiveResume/LiveResume";
+import LiveResume2 from "@/components/BuilderPage/Resumes/LiveResume2/LiveResume2";
+import LiveResume3 from "@/components/BuilderPage/Resumes/LiveResume3/LiveResume3";
+
 export const MY_SOCIAL_MEDIA = [
   {
     socialName: "Gmail",
@@ -85,5 +89,26 @@ export const MOCK_EXPERIENCE = [
     description:
       "Explain briefly what you do at the company here in not more than 40 words. Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,",
     id: 4,
+  },
+];
+
+export const RESUMES = [
+  {
+    name: "resume 1",
+    imagePath: "",
+    component: <LiveResume />,
+    id: 1,
+  },
+  {
+    name: "resume 2",
+    imagePath: "",
+    component: <LiveResume2 />,
+    id: 2,
+  },
+  {
+    name: "resume 3",
+    imagePath: "",
+    component: <LiveResume3 />,
+    id: 3,
   },
 ];

@@ -1,9 +1,7 @@
-import s from './ResumeSelector.module.scss'
+import s from "./ResumeSelector.module.scss";
 
 const ResumeSelector = () => {
-  return (
-    <div>ResumeSelector</div>
-  )
-}
+  return <div className={s.selector}></div>;
+};
 
-export default ResumeSelector
+export default ResumeSelector;
