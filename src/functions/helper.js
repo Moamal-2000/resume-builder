@@ -24,6 +24,8 @@ export function getResumeProgress(formStore, decimalPlaces = 0) {
 }
 
 export function hasFormFilled({ formGroupKey, formsStore }) {
+  if (formGroupKey === "none") return true;
+
   const formInputs = Object?.values(
     formsStore?.[formGroupKey]?.flat() || formsStore.personalInfoInputs
   ).flat();
