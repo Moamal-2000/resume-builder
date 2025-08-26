@@ -1,4 +1,4 @@
-import LiveResume from "@/components/BuilderPage/LiveResume/LiveResume";
+import LiveResume from "@/components/BuilderPage/Resumes/LiveResume/LiveResume";
 import s from "./ResumeSection.module.scss";
 
 const ResumeSection = ({ resumeRef }) => {

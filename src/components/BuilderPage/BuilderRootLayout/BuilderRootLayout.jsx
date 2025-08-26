@@ -1,4 +1,4 @@
-import LiveResume3 from "../LiveResume3/LiveResume3";
+import LiveResume3 from "../Resumes/LiveResume3/LiveResume3";
 import Sidebar from "../Sidebar/Sidebar";
 import s from "./BuilderRootLayout.module.scss";
 
