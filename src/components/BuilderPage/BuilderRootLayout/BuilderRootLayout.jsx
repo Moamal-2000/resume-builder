@@ -1,6 +1,6 @@
-import LiveResume from "../Resumes/LiveResume/LiveResume";
 import Sidebar from "../Sidebar/Sidebar";
 import s from "./BuilderRootLayout.module.scss";
+import ResumeWrapper from "./ResumeWrapper/ResumeWrapper";
 
 const BuilderRootLayout = ({ children }) => {
   return (
@@ -8,7 +8,7 @@ const BuilderRootLayout = ({ children }) => {
       <Sidebar />
       <main className={s.main}>
         {children}
-        <LiveResume />
+        <ResumeWrapper />
       </main>
     </div>
   );
