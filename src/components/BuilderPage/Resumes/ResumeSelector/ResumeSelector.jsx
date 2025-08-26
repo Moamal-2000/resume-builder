@@ -6,7 +6,7 @@ const ResumeSelector = () => {
   return (
     <div className={s.selector}>
       {RESUMES.map((resumeData) => (
-        <ResumeFrame resumeData={resumeData} />
+        <ResumeFrame resumeData={resumeData} key={resumeData.id} />
       ))}
     </div>
   );
