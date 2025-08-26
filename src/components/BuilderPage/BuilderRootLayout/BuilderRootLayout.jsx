@@ -1,4 +1,4 @@
-import LiveResume3 from "../Resumes/LiveResume3/LiveResume3";
+import LiveResume from "../Resumes/LiveResume/LiveResume";
 import Sidebar from "../Sidebar/Sidebar";
 import s from "./BuilderRootLayout.module.scss";
 
@@ -8,7 +8,7 @@ const BuilderRootLayout = ({ children }) => {
       <Sidebar />
       <main className={s.main}>
         {children}
-        <LiveResume3 />
+        <LiveResume />
       </main>
     </div>
   );

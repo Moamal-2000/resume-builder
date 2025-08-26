@@ -10,8 +10,8 @@ const ResumeSelector = () => {
           <Image
             src={imagePath}
             alt="Resume template"
-            width={134}
-            height={160}
+            width={350}
+            height={360}
           />
           <input type="radio" name="resume" value={name} />
         </div>

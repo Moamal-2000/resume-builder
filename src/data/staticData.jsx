@@ -95,13 +95,13 @@ export const MOCK_EXPERIENCE = [
 export const RESUMES = [
   {
     name: "resume 1",
-    imagePath: "",
+    imagePath: "/assets/images/resume1.png",
     component: <LiveResume />,
     id: 1,
   },
   {
     name: "resume 2",
-    imagePath: "",
+    imagePath: "/assets/images/resume2.png",
     component: <LiveResume2 />,
     id: 2,
   },
