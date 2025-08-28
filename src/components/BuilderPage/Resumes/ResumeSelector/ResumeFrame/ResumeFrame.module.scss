@@ -6,6 +6,10 @@
   border: solid 2px #e1e4e7;
   border-radius: var(--border-radius);
   box-shadow: 0 0 8px -4px transparent;
+
+  &.active {
+    border-color: #ea6565;
+  }
 }
 
 .resumeFrame:hover [data-type=layer] {
