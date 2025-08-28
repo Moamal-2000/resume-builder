@@ -5,10 +5,11 @@ import Image from "next/image";
 import s from "./ResumeFrame.module.scss";
 
 const ResumeFrame = ({ resumeData: { name, imagePath } }) => {
-  const updateSelectedResume = useGlobalStore((s) => s.updateSelectedResume);
+  const { selectedResume, updateSelectedResume } = useGlobalStore((s) => s);
+  const activeClass = selectedResume === name ? s.active : "";
 
   return (
-    <div className={s.resumeFrame}>
+    <div className={`${s.resumeFrame} ${activeClass}`}>
       <Image src={imagePath} alt="Resume template" width={350} height={360} />
       <input
         type="radio"
