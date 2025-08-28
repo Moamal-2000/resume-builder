@@ -27,6 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   transition: background-color .2s ease-in-out;
 
   &:hover {
@@ -41,4 +42,11 @@
 .layer .buttons>button>svg {
   width: 18px;
   height: 18px;
+}
+
+.layer .buttons>button>input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
 }

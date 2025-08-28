@@ -6,20 +6,13 @@ import s from "./ResumeFrame.module.scss";
 import ResumeFrameLayer from "./ResumeFrameLayer/ResumeFrameLayer";
 
 const ResumeFrame = ({ resumeData: { name, imagePath } }) => {
-  const { selectedResume, updateSelectedResume } = useGlobalStore((s) => s);
+  const selectedResume = useGlobalStore((s) => s.selectedResume);
   const activeClass = selectedResume === name ? s.active : "";
 
   return (
     <div className={`${s.resumeFrame} ${activeClass}`}>
       <Image src={imagePath} alt="Resume template" width={350} height={360} />
-      <input
-        type="radio"
-        name="resume"
-        value={name}
-        onChange={() => updateSelectedResume(name)}
-      />
-
-      <ResumeFrameLayer />
+      <ResumeFrameLayer resumeName={name} />
     </div>
   );
 };
