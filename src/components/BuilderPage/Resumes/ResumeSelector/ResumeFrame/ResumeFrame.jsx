@@ -1,5 +1,6 @@
 "use client";
 
+import SvgIcon from "@/components/Shared/SvgIcon";
 import useGlobalStore from "@/stores/global.store/global.store";
 import Image from "next/image";
 import s from "./ResumeFrame.module.scss";
@@ -18,7 +19,17 @@ const ResumeFrame = ({ resumeData: { name, imagePath } }) => {
         onChange={() => updateSelectedResume(name)}
       />
 
-      <div className={s.layer}></div>
+      <div className={s.layer}>
+        <div className={s.buttons}>
+          <button type="button" title="Select resume">
+            <SvgIcon name="checked" />
+          </button>
+
+          <button type="button" title="Preview resume">
+            <SvgIcon name="eye" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
