@@ -17,6 +17,8 @@ const ResumeFrame = ({ resumeData: { name, imagePath } }) => {
         value={name}
         onChange={() => updateSelectedResume(name)}
       />
+
+      <div className={s.layer}></div>
     </div>
   );
 };

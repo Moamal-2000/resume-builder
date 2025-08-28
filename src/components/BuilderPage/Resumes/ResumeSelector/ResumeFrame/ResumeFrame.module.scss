@@ -1,10 +1,15 @@
 .resumeFrame {
+  --border-radius: 6px;
   position: relative;
   cursor: pointer;
   width: 240px;
   border: solid 2px #e1e4e7;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   box-shadow: 0 0 8px -4px transparent;
+}
+
+.resumeFrame:hover .layer {
+  opacity: 1;
 }
 
 .resumeFrame>img {
@@ -23,4 +28,14 @@
   z-index: 1;
   opacity: 0;
   cursor: pointer;
+}
+
+.resumeFrame .layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: calc(var(--border-radius) - 2px);
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
 }
