@@ -1,3 +1,5 @@
+@use "@/styles/mixins/mixins" as m;
+
 .layer {
   position: absolute;
   inset: 0;
@@ -51,4 +53,11 @@
   inset: 0;
   opacity: 0;
   cursor: pointer;
+}
+
+@include m.medium {
+  .layer .buttons .previewButton {
+    display: none;
+    pointer-events: none;
+  }
 }

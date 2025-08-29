@@ -32,6 +32,7 @@ const ResumeFrameLayer = ({ resumeName }) => {
           type="button"
           title="Preview resume"
           onClick={handlePreviewClick}
+          className={s.previewButton}
         >
           <SvgIcon name="eye" />
         </button>
