@@ -11,6 +11,10 @@ const ResumeFrameLayer = ({ resumeName }) => {
     updateGlobalState({ selectedResume: resumeName });
   }
 
+  function handlePreviewClick() {
+    updateGlobalState({ isGlobalOverlayActive: true });
+  }
+
   return (
     <div className={s.layer} data-type="layer">
       <div className={s.buttons}>
@@ -24,7 +28,11 @@ const ResumeFrameLayer = ({ resumeName }) => {
           <SvgIcon name="checked" />
         </button>
 
-        <button type="button" title="Preview resume">
+        <button
+          type="button"
+          title="Preview resume"
+          onClick={handlePreviewClick}
+        >
           <SvgIcon name="eye" />
         </button>
       </div>
