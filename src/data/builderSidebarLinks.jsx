@@ -2,7 +2,7 @@ export const BUILDER_SIDEBAR_PAGES = [
   {
     title: "Resumes",
     link: "/builder",
-    iconName: "user",
+    iconName: "resume",
     unlockAfter: "none",
     id: 0,
   },

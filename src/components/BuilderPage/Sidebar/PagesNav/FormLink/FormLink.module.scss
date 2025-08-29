@@ -53,6 +53,10 @@
   stroke: #B1B2B9;
 }
 
+.listItem>a svg[data-type=resume] {
+  scale: 1.2;
+}
+
 .listItem>a .title {
   transition: opacity .3s .4s ease-in-out;
 }
