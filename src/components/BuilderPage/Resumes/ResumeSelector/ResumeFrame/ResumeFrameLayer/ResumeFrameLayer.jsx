@@ -5,14 +5,10 @@ import useGlobalStore from "@/stores/global.store/global.store";
 import s from "./ResumeFrameLayer.module.scss";
 
 const ResumeFrameLayer = ({ resumeName }) => {
-  const updateGlobalState = useGlobalStore((s) => s.updateGlobalState);
+  const { updateGlobalState, showResumePreview } = useGlobalStore((s) => s);
 
   function handleOnChange() {
     updateGlobalState({ selectedResume: resumeName });
-  }
-
-  function handlePreviewClick() {
-    updateGlobalState({ isGlobalOverlayActive: true });
   }
 
   return (
@@ -31,7 +27,7 @@ const ResumeFrameLayer = ({ resumeName }) => {
         <button
           type="button"
           title="Preview resume"
-          onClick={handlePreviewClick}
+          onClick={showResumePreview}
         >
           <SvgIcon name="eye" />
         </button>

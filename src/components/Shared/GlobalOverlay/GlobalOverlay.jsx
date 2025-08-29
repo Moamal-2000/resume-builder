@@ -9,6 +9,7 @@ const GlobalOverlay = () => {
 
   function closeOverlay() {
     updateGlobalState({ isGlobalOverlayActive: false });
+    updateGlobalState({ isResumePreviewActive: false });
   }
 
   return (
