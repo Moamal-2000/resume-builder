@@ -5,7 +5,11 @@ import useGlobalStore from "@/stores/global.store/global.store";
 import s from "./ResumeFrameLayer.module.scss";
 
 const ResumeFrameLayer = ({ resumeName }) => {
-  const updateSelectedResume = useGlobalStore((s) => s.updateSelectedResume);
+  const updateGlobalState = useGlobalStore((s) => s.updateGlobalState);
+
+  function handleOnChange() {
+    updateGlobalState({ selectedResume: resumeName });
+  }
 
   return (
     <div className={s.layer} data-type="layer">
@@ -15,7 +19,7 @@ const ResumeFrameLayer = ({ resumeName }) => {
             type="radio"
             name="resume"
             value={resumeName}
-            onChange={() => updateSelectedResume(resumeName)}
+            onChange={handleOnChange}
           />
           <SvgIcon name="checked" />
         </button>
