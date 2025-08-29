@@ -5,6 +5,7 @@
   background-color: rgba(0, 0, 0, .2);
   border-radius: calc(var(--border-radius) - 2px);
   opacity: 0;
+  pointer-events: none;
   transition: opacity .2s ease-in-out;
 }
 
@@ -14,6 +15,7 @@
   top: 10px;
   display: flex;
   gap: 8px;
+  pointer-events: all;
 }
 
 .layer .buttons>button {
