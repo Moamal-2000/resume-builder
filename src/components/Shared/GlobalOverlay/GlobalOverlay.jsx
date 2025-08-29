@@ -1,9 +1,24 @@
-import s from './GlobalOverlay.module.scss'
+"use client";
+
+import useGlobalStore from "@/stores/global.store/global.store";
+import s from "./GlobalOverlay.module.scss";
 
 const GlobalOverlay = () => {
-  return (
-    <div>GlobalOverlay</div>
-  )
-}
+  const { isGlobalOverlayActive, updateGlobalState } = useGlobalStore((s) => s);
+  const activeClass = isGlobalOverlayActive ? s.active : "";
 
-export default GlobalOverlay
+  function closeOverlay() {
+    updateGlobalState({ isGlobalOverlayActive: false });
+  }
+
+  return (
+    <button
+      type="button"
+      className={`${s.overlay} ${activeClass}`}
+      aria-label="Close overlay"
+      onClick={closeOverlay}
+    />
+  );
+};
+
+export default GlobalOverlay;
