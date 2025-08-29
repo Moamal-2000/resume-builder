@@ -1,9 +1,21 @@
-import s from './ResumePreview.module.scss'
+"use client";
+
+import { RESUMES } from "@/data/staticData";
+import useGlobalStore from "@/stores/global.store/global.store";
+import s from "./ResumePreview.module.scss";
 
 const ResumePreview = () => {
-  return (
-    <div>ResumePreview</div>
-  )
-}
+  const { selectedPreviewResume, isResumePreviewActive } = useGlobalStore(
+    (s) => s
+  );
 
-export default ResumePreview
+  if (!isResumePreviewActive) return null;
+
+  const selectedResumeData = RESUMES.find(
+    (resume) => resume.name === selectedPreviewResume
+  );
+
+  return <div className={s.preview}>{selectedResumeData.component}</div>;
+};
+
+export default ResumePreview;

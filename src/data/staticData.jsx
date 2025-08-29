@@ -1,6 +1,6 @@
-import LiveResume from "@/components/BuilderPage/Resumes/LiveResume/LiveResume";
 import LiveResume2 from "@/components/BuilderPage/Resumes/LiveResume2/LiveResume2";
 import LiveResume3 from "@/components/BuilderPage/Resumes/LiveResume3/LiveResume3";
+import ResumeSection from "@/components/DownloadPage/PrintableResume/ResumeSection/ResumeSection";
 
 export const MY_SOCIAL_MEDIA = [
   {
@@ -96,7 +96,7 @@ export const RESUMES = [
   {
     name: "resume 1",
     imagePath: "/assets/images/resume1.png",
-    component: <LiveResume />,
+    component: <ResumeSection />,
     id: 1,
   },
   {

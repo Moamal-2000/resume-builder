@@ -1,0 +1,17 @@
+.preview {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 11;
+  overflow-y: scroll;
+  height: 100dvh;
+}
+
+.preview::-webkit-scrollbar {
+  display: none;
+}
+
+.preview>* {
+  scale: .9;
+}

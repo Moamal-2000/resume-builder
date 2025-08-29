@@ -11,6 +11,10 @@ const ResumeFrameLayer = ({ resumeName }) => {
     updateGlobalState({ selectedResume: resumeName });
   }
 
+  function handlePreviewClick() {
+    showResumePreview(resumeName)
+  }
+
   return (
     <div className={s.layer} data-type="layer">
       <div className={s.buttons}>
@@ -27,7 +31,7 @@ const ResumeFrameLayer = ({ resumeName }) => {
         <button
           type="button"
           title="Preview resume"
-          onClick={showResumePreview}
+          onClick={handlePreviewClick}
         >
           <SvgIcon name="eye" />
         </button>
