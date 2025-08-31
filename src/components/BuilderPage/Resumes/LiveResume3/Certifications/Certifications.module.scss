@@ -1,16 +1,26 @@
-.certifications>h2 {
-  font-family: var(--aileron-font);
-  font-weight: 700;
-  font-size: 1.3rem;
-  line-height: 30px;
-  color: #393E4D;
-  text-transform: capitalize;
+.certifications {
+  position: relative;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.certifications::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--resume3-color);
 }
 
 .certifications .certificates {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 8px;
+}
+
+.certifications .certificates>*:not(:first-child):not(:nth-child(4n))::before {
+  content: '|';
+  margin-inline: 8px;
 }

@@ -3,6 +3,7 @@
 import Certification from "@/components/Shared/Certification/Certification";
 import { getCertifications } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
+import SectionTitle from "../SectionTitle/SectionTitle";
 import s from "./Certifications.module.scss";
 
 const Certifications = () => {
@@ -11,7 +12,7 @@ const Certifications = () => {
 
   return (
     <section className={s.certifications}>
-      <h2>Certification</h2>
+      <SectionTitle>Certification</SectionTitle>
 
       <ul className={s.certificates}>
         {certificationsData.map((data, index) => (
