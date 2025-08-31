@@ -107,7 +107,7 @@ export const RESUMES = [
   },
   {
     name: "resume 3",
-    imagePath: "",
+    imagePath: "/assets/images/resume3.png",
     component: <LiveResume3 />,
     id: 3,
   },
