@@ -1,0 +1,10 @@
+.certifications .certificates {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.certifications .certificates>*:not(:first-child):not(:nth-child(4n))::before {
+  content: '|';
+  margin-inline: 8px;
+}

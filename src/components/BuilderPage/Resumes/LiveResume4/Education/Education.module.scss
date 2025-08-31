@@ -1,0 +1,38 @@
+.education .educationContent {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--euclid-circular-font);
+  margin-top: 8px;
+}
+
+.educationContent .degree {
+  color: #1e1e1e;
+  font-size: 1rem;
+  line-height: 22px;
+}
+
+.educationContent .degree>strong {
+  font-weight: 500;
+}
+
+.educationContent .fieldOfStudy {
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 22px;
+  color: #1e1e1e;
+
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.educationContent .fieldOfStudy>strong {
+  font-weight: 400;
+}
+
+.educationContent .graduateDate {
+  color: #1e1e1e;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 22px;
+}

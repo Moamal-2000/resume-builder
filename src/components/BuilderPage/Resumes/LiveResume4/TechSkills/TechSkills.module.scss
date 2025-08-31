@@ -1,0 +1,11 @@
+.techSkills .skills {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  row-gap: 4px;
+}
+
+.techSkills .skills>li {
+  list-style: disc;
+  list-style-position: inside;
+}

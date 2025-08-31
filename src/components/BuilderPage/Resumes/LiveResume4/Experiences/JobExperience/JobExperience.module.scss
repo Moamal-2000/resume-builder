@@ -1,0 +1,28 @@
+.jobExperience {
+  font-family: var(--euclid-circular-font);
+}
+
+.jobExperience .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jobExperience .wrapper :where(.title, .date) {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 22px;
+  color: #1e1e1e;
+}
+
+.jobExperience .description {
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 22px;
+  color: #1e1e1e;
+  margin-top: 8px;
+
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}

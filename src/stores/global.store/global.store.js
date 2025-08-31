@@ -3,7 +3,7 @@ import { create } from "zustand";
 
 export const useGlobalStore = create((set) => ({
   isAsideOpen: true,
-  selectedResume: RESUMES[2].name,
+  selectedResume: RESUMES[3].name,
   selectedPreviewResume: RESUMES[0].name,
   isGlobalOverlayActive: false,
   isResumePreviewActive: false,

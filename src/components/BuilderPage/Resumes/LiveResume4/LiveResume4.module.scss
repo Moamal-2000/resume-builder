@@ -1,0 +1,27 @@
+@use "@/styles/mixins/mixins" as m;
+
+.liveResume {
+  width: 764px;
+  height: 1123px;
+  padding: 50px;
+  padding-top: 70px;
+  margin-top: 6px;
+  background-color: #fff;
+  position: relative;
+}
+
+.liveResume>* {
+  position: relative;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.liveResume>*:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--resume3-color);
+}

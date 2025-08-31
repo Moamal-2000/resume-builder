@@ -1,0 +1,66 @@
+.profileHeader p {
+  color: #1e1e1e;
+}
+
+// Line
+.profileHeader header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--resume3-color);
+}
+
+.profileHeader header {
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.profileHeader header .name {
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: var(--resume3-color);
+  word-spacing: 3px;
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.profileHeader header .info {
+  display: flex;
+  justify-content: center;
+  font-size: .9rem;
+}
+
+.profileHeader header .info .dot {
+  margin: 0 4px;
+  font-size: 2.4rem;
+  line-height: .1;
+}
+
+.profileHeader footer {
+  margin-block: 16px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.profileHeader footer>h2 {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--resume3-color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.profileHeader footer>p {
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 22px;
+
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
