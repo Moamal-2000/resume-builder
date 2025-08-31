@@ -1,8 +1,8 @@
 "use client";
 
-import SvgIcon from "@/components/Shared/SvgIcon";
 import { getEducationValues } from "@/functions/helper";
 import { useFormsStore } from "@/stores/forms.store/forms.store";
+import SectionTitle from "../SectionTitle/SectionTitle";
 import s from "./Education.module.scss";
 
 const Education = () => {
@@ -17,19 +17,21 @@ const Education = () => {
 
   return (
     <section className={s.education}>
-      <h2>Education</h2>
+      <SectionTitle>Education</SectionTitle>
 
       <div className={s.educationContent}>
-        <p className={s.degree}>
-          <strong>{degree}</strong>
-        </p>
-        <p className={s.fieldOfStudy}>{fieldOfStudy}</p>
+        <div className={s.wrapper}>
+          <p className={s.degree}>
+            <strong>{degree}</strong>
+          </p>
 
-        <p className={s.university}>
-          <strong>{universityName}</strong>, {universityLocation}
-        </p>
+          <p className={s.fieldOfStudy}>
+            {fieldOfStudy} at <strong>{universityName}</strong>,{" "}
+            {universityLocation}
+          </p>
+        </div>
+
         <p className={s.graduateDate}>
-          <SvgIcon name="calendar" /> <span>Graduated:</span>
           <time>{graduationDate}</time>
         </p>
       </div>
