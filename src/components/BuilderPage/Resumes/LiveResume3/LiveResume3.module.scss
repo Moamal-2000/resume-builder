@@ -9,3 +9,19 @@
   background-color: #fff;
   position: relative;
 }
+
+.liveResume>* {
+  position: relative;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.liveResume>*:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--resume3-color);
+}

@@ -2,9 +2,8 @@
   color: #1e1e1e;
 }
 
-// Lines
-.profileHeader header::before,
-.profileHeader footer::before {
+// Line
+.profileHeader header::before {
   content: '';
   position: absolute;
   left: 0;
