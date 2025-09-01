@@ -1,3 +1,4 @@
+import Certifications from "./Certifications/Certifications";
 import Education from "./Education/Education";
 import Experiences from "./Experiences/Experiences";
 import s from "./LiveResume4.module.scss";
@@ -11,7 +12,7 @@ const LiveResume4 = () => {
       <Experiences />
       <TechSkills />
       <Education />
-      {/* <Certifications /> */}
+      <Certifications />
     </section>
   );
 };

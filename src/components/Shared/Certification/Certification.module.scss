@@ -1,9 +1,9 @@
 .certificate>a {
-  color: #1e1e1e;
+  color: var(--resume4-color);
   hyphens: auto;
   overflow-wrap: break-word;
   word-break: break-word;
-  font-size: .9rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 22px;
 }
