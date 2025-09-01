@@ -1,0 +1,11 @@
+.info {
+  display: flex;
+  font-size: 1rem;
+}
+
+.info .verticalBar {
+  border-right: solid 2px var(--resume4-color);
+  width: 20px;
+  position: relative;
+  right: 10px;
+}
