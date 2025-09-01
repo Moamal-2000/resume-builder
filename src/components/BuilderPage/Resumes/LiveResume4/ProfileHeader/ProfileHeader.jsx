@@ -8,24 +8,32 @@ import s from "./ProfileHeader.module.scss";
 const ProfileHeader = () => {
   const { personalInfoInputs, contactInfoInputs } = useFormsStore((s) => s);
 
-  const { fullName, email, summery, address } =
+  const { fullName, profession, email, summery, address } =
     getInputValuesByName(personalInfoInputs);
 
-  const [emailData, phoneData, , , personalWebsiteData] = getContactInfo(
-    contactInfoInputs,
-    email
-  );
+  const [emailData, phoneData, linkedinData, githubData, personalWebsiteData] =
+    getContactInfo(contactInfoInputs, email);
 
   return (
     <section className={s.profileHeader}>
       <header>
         <h2 className={s.name}>{fullName}</h2>
+        <h2 className={s.profession}>{profession}</h2>
 
         <p className={s.info}>
-          {address} <span className={s.dot}>.</span> {phoneData.title}
-          <span className={s.dot}>.</span> {emailData.title}
+          {address}
+          <span className={s.verticalBar} />
+          {emailData.title}
+          <span className={s.verticalBar} />
+          {personalWebsiteData.title}
         </p>
-        <p className={s.personalWebsite}>{personalWebsiteData.title}</p>
+        <p className={s.info}>
+          {phoneData.title}
+          <span className={s.verticalBar} />
+          {linkedinData.title}
+          <span className={s.verticalBar} />
+          {githubData.title}
+        </p>
       </header>
 
       <footer>
