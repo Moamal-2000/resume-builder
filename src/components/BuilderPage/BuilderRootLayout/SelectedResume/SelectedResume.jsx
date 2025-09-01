@@ -4,7 +4,7 @@ import { RESUMES } from "@/data/staticData";
 import useGlobalStore from "@/stores/global.store/global.store";
 import { usePathname } from "next/navigation";
 
-const ResumeWrapper = () => {
+const SelectedResume = () => {
   const selectedResume = useGlobalStore((s) => s.selectedResume);
   const pathname = usePathname();
   const isRootPage = pathname === "/builder";
@@ -18,4 +18,4 @@ const ResumeWrapper = () => {
   return selectedResumeData.component;
 };
 
-export default ResumeWrapper;
+export default SelectedResume;

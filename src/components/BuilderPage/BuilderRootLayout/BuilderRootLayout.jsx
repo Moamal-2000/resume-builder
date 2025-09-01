@@ -1,7 +1,7 @@
 import Sidebar from "../Sidebar/Sidebar";
 import s from "./BuilderRootLayout.module.scss";
 import ResumePreview from "./ResumePreview/ResumePreview";
-import ResumeWrapper from "./ResumeWrapper/ResumeWrapper";
+import SelectedResume from "./SelectedResume/SelectedResume";
 
 const BuilderRootLayout = ({ children }) => {
   return (
@@ -9,7 +9,7 @@ const BuilderRootLayout = ({ children }) => {
       <Sidebar />
       <main className={s.main}>
         {children}
-        <ResumeWrapper />
+        <SelectedResume />
       </main>
       <ResumePreview />
     </div>
