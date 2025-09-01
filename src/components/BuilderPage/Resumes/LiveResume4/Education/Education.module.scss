@@ -1,3 +1,7 @@
+.education h2 {
+  color: var(--resume4-color);
+}
+
 .education .educationContent {
   display: flex;
   justify-content: space-between;
@@ -6,8 +10,8 @@
 }
 
 .educationContent .degree {
-  color: #1e1e1e;
-  font-size: 1rem;
+  color: var(--resume4-color);
+  font-size: 1.2rem;
   line-height: 22px;
 }
 
@@ -17,9 +21,9 @@
 
 .educationContent .fieldOfStudy {
   font-weight: 400;
-  font-size: .9rem;
+  font-size: 1rem;
   line-height: 22px;
-  color: #1e1e1e;
+  color: var(--resume4-color);
 
   hyphens: auto;
   overflow-wrap: break-word;
@@ -31,8 +35,8 @@
 }
 
 .educationContent .graduateDate {
-  color: #1e1e1e;
-  font-size: 1rem;
+  color: var(--resume4-color);
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 22px;
 }
