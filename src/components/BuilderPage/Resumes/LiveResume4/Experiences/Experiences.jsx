@@ -11,7 +11,7 @@ const Experiences = () => {
 
   return (
     <section className={s.experiences}>
-      <SectionTitle>Experiences</SectionTitle>
+      <SectionTitle>Professional Experiences</SectionTitle>
 
       <div className={s.experiencesWrapper}>
         {experiencesInputs.map((experienceData, index) => {
