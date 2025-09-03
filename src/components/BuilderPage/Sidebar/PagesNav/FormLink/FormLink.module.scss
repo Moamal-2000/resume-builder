@@ -1,10 +1,11 @@
 .listItem>a {
-  width: 100%;
+  --padding-left: 40px;
+  width: calc(100% + var(--padding-left));
   height: 62px;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-left: 40px;
+  padding-left: var(--padding-left);
   font-family: var(--poppins-font);
   font-weight: 500;
   font-size: .93rem;
@@ -12,7 +13,9 @@
   text-transform: capitalize;
   color: #404653;
   text-wrap: nowrap;
-  transition: padding-left .2s .55s ease-in-out;
+  position: relative;
+  translate: 0;
+  transition: translate .2s .55s ease-in-out;
 
   &.active {
     background-color: #fbdddd;
@@ -38,8 +41,8 @@
 }
 
 .listItem>a.menuClosed {
-  transition: padding-left .3s .59s ease-in-out;
-  padding-left: 21px;
+  transition: translate .3s .59s ease-in-out;
+  translate: -21px 0;
 }
 
 .listItem>a>svg {
