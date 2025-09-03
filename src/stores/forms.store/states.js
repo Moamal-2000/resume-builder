@@ -7,12 +7,12 @@ export const personalInfoInputs = [
     type: "text",
     value: "",
     autoComplete: "name",
-    pattern: "^[A-Za-z][A-Za-z' -]{1,59}$",
+    pattern: "^(?=.{2,60}$)[A-Za-z]+(?:[ '-][A-Za-z]+)+$",
     placeholder: "John Doe",
     required: true,
     hasValidValue: false,
     warningMessage:
-      "Please enter a valid full name (letters only, separated by space, hyphen, or apostrophe, 2-60 characters).",
+      "Enter at least two names (letters, spaces, hyphens, apostrophes, 2-60 chars).",
     id: 1,
   },
   {
