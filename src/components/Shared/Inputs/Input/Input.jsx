@@ -29,6 +29,7 @@ const Input = (
     warningMessage,
     hasValidValue,
     hasFormSubmitOnce,
+    autoComplete = "on",
   },
   ref
 ) => {
@@ -45,6 +46,7 @@ const Input = (
         onChange={onChange}
         required={required}
         disabled={disabled}
+        autoComplete={autoComplete}
       />
     );
 
@@ -58,6 +60,7 @@ const Input = (
         required={required}
         disabled={disabled}
         placeholder={placeholder}
+        autoComplete={autoComplete}
         warningMessage={warningMessage}
         shouldShowWarning={shouldShowWarning}
       />
@@ -105,6 +108,7 @@ const Input = (
           name={name}
           id={name}
           placeholder={placeholder}
+          autoComplete={autoComplete}
           value={value}
           onChange={onChange}
           disabled={disabled}

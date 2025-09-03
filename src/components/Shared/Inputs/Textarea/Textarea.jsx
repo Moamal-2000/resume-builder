@@ -9,6 +9,7 @@ const Textarea = ({
   required,
   disabled,
   placeholder,
+  autoComplete,
   warningMessage,
   shouldShowWarning,
 }) => {
@@ -30,6 +31,7 @@ const Textarea = ({
         onChange={onChange}
         required={required}
         disabled={disabled}
+        autoComplete={autoComplete}
       ></textarea>
 
       <ValidationMessage showMessage={shouldShowWarning}>
