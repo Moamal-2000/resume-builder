@@ -7,7 +7,7 @@ import s from "./ResumeFrameLayer.module.scss";
 const ResumeFrameLayer = ({ resumeName }) => {
   const { updateGlobalState, showResumePreview } = useGlobalStore((s) => s);
 
-  function handleOnChange() {
+  function selectResume() {
     updateGlobalState({ selectedResume: resumeName });
   }
 
@@ -20,7 +20,7 @@ const ResumeFrameLayer = ({ resumeName }) => {
       className={s.layer}
       role="button"
       tabIndex="0"
-      onClick={handleOnChange}
+      onClick={selectResume}
       data-type="layer"
     >
       <div className={s.buttons}>
@@ -29,7 +29,7 @@ const ResumeFrameLayer = ({ resumeName }) => {
             type="radio"
             name="resume"
             value={resumeName}
-            onChange={handleOnChange}
+            onChange={selectResume}
           />
           <SvgIcon name="checked" />
         </button>
