@@ -12,11 +12,17 @@ const ResumeFrameLayer = ({ resumeName }) => {
   }
 
   function handlePreviewClick() {
-    showResumePreview(resumeName)
+    showResumePreview(resumeName);
   }
 
   return (
-    <div className={s.layer} data-type="layer">
+    <div
+      className={s.layer}
+      role="button"
+      tabIndex="0"
+      onClick={handleOnChange}
+      data-type="layer"
+    >
       <div className={s.buttons}>
         <button type="button" title="Select resume">
           <input
