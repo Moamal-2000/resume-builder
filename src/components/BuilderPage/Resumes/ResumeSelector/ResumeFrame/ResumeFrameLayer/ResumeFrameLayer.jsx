@@ -32,6 +32,7 @@ const ResumeFrameLayer = ({ resumeName }) => {
             name="resume"
             value={resumeName}
             onChange={selectResume}
+            aria-label="Select resume"
           />
           <SvgIcon name="checked" />
         </button>
