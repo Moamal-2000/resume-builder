@@ -9,9 +9,13 @@
   &.active {
     border-color: #ea6565;
   }
+
+  &:not(.active):has(:focus-visible) {
+    border-color: #ff9e9e;
+  }
 }
 
-.resumeFrame:hover [data-type=layer] {
+.resumeFrame:where(:hover, :has(:focus-visible)) [data-type=layer] {
   opacity: 1;
 }
 

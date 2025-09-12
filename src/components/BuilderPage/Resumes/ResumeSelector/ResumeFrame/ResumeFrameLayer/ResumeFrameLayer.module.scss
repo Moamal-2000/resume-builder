@@ -1,6 +1,7 @@
 @use "@/styles/mixins/mixins" as m;
 
 .layer {
+  outline: none;
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -9,6 +10,10 @@
   opacity: 0;
   cursor: pointer;
   transition: opacity .2s ease-in-out;
+
+  &:has(:focus-visible) {
+    border-color: #ff9e9e;
+  }
 }
 
 .layer .buttons {
