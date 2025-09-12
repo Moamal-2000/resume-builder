@@ -11,7 +11,7 @@ const ResumeFrame = ({ resumeData: { name, imagePath } }) => {
 
   return (
     <div className={`${s.resumeFrame} ${activeClass}`}>
-      <Image src={imagePath} alt="Resume template" width={350} height={360} />
+      <Image src={imagePath} alt="Resume template" width={236} height={373} />
       <ResumeFrameLayer resumeName={name} />
     </div>
   );
