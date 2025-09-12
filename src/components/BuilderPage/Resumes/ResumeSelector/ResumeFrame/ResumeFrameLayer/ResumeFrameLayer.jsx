@@ -1,6 +1,7 @@
 "use client";
 
 import SvgIcon from "@/components/Shared/SvgIcon";
+import { handleAccessibleKeyPress } from "@/functions/helper";
 import useGlobalStore from "@/stores/global.store/global.store";
 import s from "./ResumeFrameLayer.module.scss";
 
@@ -22,6 +23,7 @@ const ResumeFrameLayer = ({ resumeName }) => {
       tabIndex="0"
       onClick={selectResume}
       data-type="layer"
+      onKeyDown={(event) => handleAccessibleKeyPress(event, selectResume)}
     >
       <div className={s.buttons}>
         <button type="button" title="Select resume">

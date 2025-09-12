@@ -191,3 +191,8 @@ export async function downloadResume(resumeRef) {
 
   html2pdf().set(RESUME_OPTIONS).from(resumeRef.current).save();
 }
+
+export function handleAccessibleKeyPress(event, callback) {
+  const isActivationKey = event.key === "Enter" || event.key === " ";
+  if (isActivationKey) callback();
+}
