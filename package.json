@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@types/html2pdf.js": "^0.10.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "sass": "^1.99.0"
   }
 }
